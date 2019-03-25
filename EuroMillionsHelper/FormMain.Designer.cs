@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,8 +69,10 @@
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageArchive = new System.Windows.Forms.TabPage();
       this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.listView1 = new System.Windows.Forms.ListView();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
+      this.tabPageArchive.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -381,6 +384,7 @@
       // 
       // tabPageArchive
       // 
+      this.tabPageArchive.Controls.Add(this.listView1);
       this.tabPageArchive.Location = new System.Drawing.Point(4, 22);
       this.tabPageArchive.Name = "tabPageArchive";
       this.tabPageArchive.Padding = new System.Windows.Forms.Padding(3);
@@ -399,6 +403,16 @@
       this.tabPage2.Text = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
       // 
+      // listView1
+      // 
+      this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+      this.listView1.Location = new System.Drawing.Point(54, 54);
+      this.listView1.Name = "listView1";
+      this.listView1.Size = new System.Drawing.Size(276, 250);
+      this.listView1.TabIndex = 0;
+      this.listView1.UseCompatibleStateImageBehavior = false;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +430,7 @@
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.tabControlMain.ResumeLayout(false);
+      this.tabPageArchive.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -463,5 +478,6 @@
     private System.Windows.Forms.TabControl tabControlMain;
     private System.Windows.Forms.TabPage tabPageArchive;
     private System.Windows.Forms.TabPage tabPage2;
+    private System.Windows.Forms.ListView listView1;
   }
 }
