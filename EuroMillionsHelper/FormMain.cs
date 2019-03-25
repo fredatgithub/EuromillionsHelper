@@ -53,6 +53,90 @@ namespace EuroMillionsHelper
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
+      InitializeHistoryListView(listViewHistory);
+      LoadHistoryDraws();
+    }
+
+    private static void InitializeHistoryListView(ListView listview)
+    {
+      listview.BackColor = System.Drawing.SystemColors.Control;
+      listview.Dock = DockStyle.Fill;
+      listview.TabIndex = 0;
+      listview.View = View.Details;
+      listview.MultiSelect = true;
+      listview.HideSelection = false;
+      listview.HeaderStyle = ColumnHeaderStyle.Clickable;
+      listview.Columns.Add("boule1", "Boule 1");
+      listview.Columns.Add("boule2", "Boule 2");
+      listview.Columns.Add("boule3", "Boule 3");
+      listview.Columns.Add("boule4", "Boule 4");
+      listview.Columns.Add("boule5", "Boule 5");
+      listview.Columns.Add("etoile1", "Etoile 1");
+      listview.Columns.Add("etoile2", "Etoile 2");
+      ResizeListViewColumns(listview);
+    }
+
+    private static void ResizeListViewColumns(ListView lv)
+    {
+      if (lv.Columns.Count == 0)
+      {
+        return;
+      }
+
+      for (int i = 0; i < lv.Columns.Count - 1; i++)
+      {
+        lv.AutoResizeColumn(i, GetLongestString(lv.Columns[i].Text, lv, i));
+      }
+    }
+
+    private void LoadHistoryDraws()
+    {
+      listViewHistory.Items.Clear();
+      ListView.ListViewItemCollection listViewItemCollection = new ListView.ListViewItemCollection(listViewHistory);
+      ListViewItem listViewItem = new ListViewItem("boule 1");
+      listViewItem.SubItems.Add("boule2");
+      listViewItem.SubItems.Add("boule3");
+      listViewItem.SubItems.Add("boule4");
+      listViewItem.SubItems.Add("boule5");
+      listViewItem.SubItems.Add("etoile1");
+      listViewItem.SubItems.Add("etoile2");
+
+      listViewHistory.Items.Add(listViewItem);
+      ResizeListViewColumns(listViewHistory);
+    }
+
+    private static ColumnHeaderAutoResizeStyle GetLongestString(string headerText, ListView lv, int columnNumber)
+    {
+      return headerText.Length > MaxString(lv.Items, columnNumber).Length ? ColumnHeaderAutoResizeStyle.HeaderSize : ColumnHeaderAutoResizeStyle.ColumnContent;
+    }
+
+    private static string MaxString(ListView.ListViewItemCollection items, int columnNumber)
+    {
+      string longest = string.Empty;
+      foreach (ListViewItem item in items) // items[columnNumber].SubItems
+      {
+        if (item.ToString().Length > longest.Length)
+        {
+          longest = item.Text;
+        }
+      }
+
+      return longest;
+    }
+
+    private static bool IsInlistView(ListView listView, ListViewItem lviItem, int columnNumber)
+    {
+      bool result = false;
+      foreach (ListViewItem item in listView.Items)
+      {
+        if (item.SubItems[columnNumber].Text == lviItem.SubItems[columnNumber].Text)
+        {
+          result = true;
+          break;
+        }
+      }
+
+      return result;
     }
 
     private void LoadConfigurationOptions()

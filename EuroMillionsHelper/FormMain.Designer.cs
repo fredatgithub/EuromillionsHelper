@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,8 +67,8 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageArchive = new System.Windows.Forms.TabPage();
+      this.listViewHistory = new System.Windows.Forms.ListView();
       this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.listView1 = new System.Windows.Forms.ListView();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
@@ -384,7 +383,7 @@
       // 
       // tabPageArchive
       // 
-      this.tabPageArchive.Controls.Add(this.listView1);
+      this.tabPageArchive.Controls.Add(this.listViewHistory);
       this.tabPageArchive.Location = new System.Drawing.Point(4, 22);
       this.tabPageArchive.Name = "tabPageArchive";
       this.tabPageArchive.Padding = new System.Windows.Forms.Padding(3);
@@ -393,25 +392,24 @@
       this.tabPageArchive.Text = "Archive";
       this.tabPageArchive.UseVisualStyleBackColor = true;
       // 
+      // listViewHistory
+      // 
+      this.listViewHistory.Location = new System.Drawing.Point(54, 54);
+      this.listViewHistory.Name = "listViewHistory";
+      this.listViewHistory.Size = new System.Drawing.Size(492, 311);
+      this.listViewHistory.TabIndex = 0;
+      this.listViewHistory.UseCompatibleStateImageBehavior = false;
+      this.listViewHistory.View = System.Windows.Forms.View.Details;
+      // 
       // tabPage2
       // 
       this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(192, 74);
+      this.tabPage2.Size = new System.Drawing.Size(675, 384);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
-      // 
-      // listView1
-      // 
-      this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-      this.listView1.Location = new System.Drawing.Point(54, 54);
-      this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(276, 250);
-      this.listView1.TabIndex = 0;
-      this.listView1.UseCompatibleStateImageBehavior = false;
       // 
       // FormMain
       // 
@@ -421,7 +419,7 @@
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
-      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "FormMain";
       this.ShowIcon = false;
       this.Text = "EuroMillions Helper";
@@ -478,6 +476,6 @@
     private System.Windows.Forms.TabControl tabControlMain;
     private System.Windows.Forms.TabPage tabPageArchive;
     private System.Windows.Forms.TabPage tabPage2;
-    private System.Windows.Forms.ListView listView1;
+    private System.Windows.Forms.ListView listViewHistory;
   }
 }
