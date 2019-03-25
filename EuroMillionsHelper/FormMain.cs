@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using EuroMillionsHelper.Model;
 using EuroMillionsHelper.Properties;
 
 namespace EuroMillionsHelper
@@ -92,16 +93,71 @@ namespace EuroMillionsHelper
     private void LoadHistoryDraws()
     {
       listViewHistory.Items.Clear();
-      ListViewItem listViewItem = new ListViewItem("boule 1");
-      listViewItem.SubItems.Add("boule2");
-      listViewItem.SubItems.Add("boule3");
-      listViewItem.SubItems.Add("boule4");
-      listViewItem.SubItems.Add("boule5");
-      listViewItem.SubItems.Add("etoile1");
-      listViewItem.SubItems.Add("etoile2");
-      listViewHistory.Items.Add(listViewItem);
+      //ListViewItem listViewItem = new ListViewItem("boule 1");
+      //listViewItem.SubItems.Add("boule2");
+      //listViewItem.SubItems.Add("boule3");
+      //listViewItem.SubItems.Add("boule4");
+      //listViewItem.SubItems.Add("boule5");
+      //listViewItem.SubItems.Add("etoile1");
+      //listViewItem.SubItems.Add("etoile2");
+      //listViewHistory.Items.Add(listViewItem);
+
+      // reading archive files
+      // foreach file in archives folder
+      // read file and add lines to listviewHistory
+      var testdebug = ReadCsvFile(".\\Archives\\euromillions.csv");
+      foreach (var line in testdebug)
+      {
+        ListViewItem listViewItem = new ListViewItem(line.Boule1.ToString());
+        listViewItem.SubItems.Add(line.Boule2.ToString());
+        listViewItem.SubItems.Add(line.Boule3.ToString());
+        listViewItem.SubItems.Add(line.Boule4.ToString());
+        listViewItem.SubItems.Add(line.Boule5.ToString());
+        listViewItem.SubItems.Add(line.Etoile1.ToString());
+        listViewItem.SubItems.Add(line.Etoile2.ToString());
+        listViewHistory.Items.Add(listViewItem);
+      }
 
       ResizeListViewColumns(listViewHistory);
+    }
+
+    private List<Tirage> ReadCsvFile(string fileName)
+    {
+      List<Tirage> result = new List<Tirage>();
+      string firstLine = string.Empty;
+      int numberOfLines = 0;
+      List<string> tmpLines = new List<string>();
+      try
+      {
+        using (StreamReader sr = new StreamReader(fileName))
+        {
+          while (!sr.EndOfStream)
+          {
+            tmpLines.Add(sr.ReadLine());
+          }
+        }
+      }
+      catch (Exception){}
+
+      firstLine = tmpLines[0];
+      numberOfLines = tmpLines.Count - 1;
+      Tirage unTirage = new Tirage();
+      for (int i = 1; i < numberOfLines; i++)
+      {
+        var tmp = tmpLines[i];
+        // if (i == 0) continue;
+        var tmpNumbers = tmp.Split(';');
+        unTirage.Boule1 = int.Parse(tmpNumbers[4]);
+        unTirage.Boule2 = int.Parse(tmpNumbers[5]);
+        unTirage.Boule3 = int.Parse(tmpNumbers[6]);
+        unTirage.Boule4 = int.Parse(tmpNumbers[7]);
+        unTirage.Boule5 = int.Parse(tmpNumbers[8]);
+        unTirage.Etoile1 = int.Parse(tmpNumbers[9]);
+        unTirage.Etoile2 = int.Parse(tmpNumbers[10]);
+        result.Add(unTirage);
+      }
+
+      return result;
     }
 
     private static ColumnHeaderAutoResizeStyle GetLongestString(string headerText, ListView lv, int columnNumber)
