@@ -92,7 +92,6 @@ namespace EuroMillionsHelper
     private void LoadHistoryDraws()
     {
       listViewHistory.Items.Clear();
-      ListView.ListViewItemCollection listViewItemCollection = new ListView.ListViewItemCollection(listViewHistory);
       ListViewItem listViewItem = new ListViewItem("boule 1");
       listViewItem.SubItems.Add("boule2");
       listViewItem.SubItems.Add("boule3");
@@ -100,8 +99,8 @@ namespace EuroMillionsHelper
       listViewItem.SubItems.Add("boule5");
       listViewItem.SubItems.Add("etoile1");
       listViewItem.SubItems.Add("etoile2");
-
       listViewHistory.Items.Add(listViewItem);
+
       ResizeListViewColumns(listViewHistory);
     }
 
