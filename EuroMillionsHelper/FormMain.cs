@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -60,7 +61,7 @@ namespace EuroMillionsHelper
 
     private static void InitializeHistoryListView(ListView listview)
     {
-      listview.BackColor = System.Drawing.SystemColors.Control;
+      listview.BackColor = SystemColors.Control;
       listview.Dock = DockStyle.Fill;
       listview.TabIndex = 0;
       listview.View = View.Details;
@@ -172,8 +173,36 @@ namespace EuroMillionsHelper
         Etoile2 = unTirage.Etoile2
       };
 
-      int[] tmpNumbers = new[] {unTirage.Boule1, unTirage.Boule2, unTirage.Boule3, unTirage.Boule4, unTirage.Boule5 };
-      
+      int[] tmpNumbers = {unTirage.Boule1, unTirage.Boule2, unTirage.Boule3, unTirage.Boule4, unTirage.Boule5 };
+      tmpNumbers = BubbleSort(tmpNumbers.ToList()).ToArray();
+      result.Boule1 = tmpNumbers[0];
+      result.Boule2 = tmpNumbers[1];
+      result.Boule3 = tmpNumbers[2];
+      result.Boule4 = tmpNumbers[3];
+      result.Boule5 = tmpNumbers[4];
+      return result;
+    }
+
+    public static List<int> BubbleSort(List<int> myList)
+    {
+      List<int> result = myList;
+      while (true)
+      {
+        bool swapped = false;
+        for (int i = 0; i < myList.Count - 1; ++i)
+        {
+          if (myList[i] > myList[i + 1])
+          {
+            int tmp = myList[i];
+            myList[i] = myList[i + 1];
+            myList[i + 1] = tmp;
+            swapped = true;
+          }
+        }
+
+        if (!swapped) { break; }
+      }
+
       return result;
     }
 
@@ -601,7 +630,7 @@ namespace EuroMillionsHelper
 
     private void cutToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { });
+      Control focusedControl = FindFocusedControl(new List<Control>());
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -611,7 +640,7 @@ namespace EuroMillionsHelper
 
     private void copyToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { });
+      Control focusedControl = FindFocusedControl(new List<Control>());
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -621,7 +650,7 @@ namespace EuroMillionsHelper
 
     private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { });
+      Control focusedControl = FindFocusedControl(new List<Control>());
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -631,7 +660,7 @@ namespace EuroMillionsHelper
 
     private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { });
+      Control focusedControl = FindFocusedControl(new List<Control>());
       TextBox control = focusedControl as TextBox;
       if (control != null) control.SelectAll();
     }
