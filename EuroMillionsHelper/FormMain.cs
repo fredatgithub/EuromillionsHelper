@@ -141,22 +141,39 @@ namespace EuroMillionsHelper
 
       firstLine = tmpLines[0];
       numberOfLines = tmpLines.Count - 1;
-      Tirage unTirage = new Tirage();
+      
       for (int i = 1; i < numberOfLines; i++)
       {
         var tmp = tmpLines[i];
         // if (i == 0) continue;
         var tmpNumbers = tmp.Split(';');
-        unTirage.Boule1 = int.Parse(tmpNumbers[4]);
-        unTirage.Boule2 = int.Parse(tmpNumbers[5]);
-        unTirage.Boule3 = int.Parse(tmpNumbers[6]);
-        unTirage.Boule4 = int.Parse(tmpNumbers[7]);
-        unTirage.Boule5 = int.Parse(tmpNumbers[8]);
-        unTirage.Etoile1 = int.Parse(tmpNumbers[9]);
-        unTirage.Etoile2 = int.Parse(tmpNumbers[10]);
-        result.Add(unTirage);
+        Tirage unTirage = new Tirage
+        {
+          Boule1 = int.Parse(tmpNumbers[4]),
+          Boule2 = int.Parse(tmpNumbers[5]),
+          Boule3 = int.Parse(tmpNumbers[6]),
+          Boule4 = int.Parse(tmpNumbers[7]),
+          Boule5 = int.Parse(tmpNumbers[8]),
+          Etoile1 = int.Parse(tmpNumbers[9]),
+          Etoile2 = int.Parse(tmpNumbers[10])
+        };
+
+        result.Add(OrderTirage(unTirage));
       }
 
+      return result;
+    }
+
+    public static Tirage OrderTirage(Tirage unTirage)
+    {
+      Tirage result = new Tirage
+      {
+        Etoile1 = unTirage.Etoile1,
+        Etoile2 = unTirage.Etoile2
+      };
+
+      int[] tmpNumbers = new[] {unTirage.Boule1, unTirage.Boule2, unTirage.Boule3, unTirage.Boule4, unTirage.Boule5 };
+      
       return result;
     }
 

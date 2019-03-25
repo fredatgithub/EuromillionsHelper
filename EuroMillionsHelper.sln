@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsHelper", "EuroMillionsHelper\EuroMillionsHelper.csproj", "{39C79AA9-704F-4657-8C39-AB92C93EAC73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestEuroMillions", "UnitTestEuroMillions\UnitTestEuroMillions.csproj", "{37A96B7C-C413-415E-B0F5-74619B6618FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{39C79AA9-704F-4657-8C39-AB92C93EAC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39C79AA9-704F-4657-8C39-AB92C93EAC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39C79AA9-704F-4657-8C39-AB92C93EAC73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A96B7C-C413-415E-B0F5-74619B6618FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A96B7C-C413-415E-B0F5-74619B6618FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A96B7C-C413-415E-B0F5-74619B6618FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A96B7C-C413-415E-B0F5-74619B6618FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
