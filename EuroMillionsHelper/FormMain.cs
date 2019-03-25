@@ -39,7 +39,7 @@ namespace EuroMillionsHelper
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-      Text += string.Format(" V{0}.{1}.{2}.{3}", fvi.FileMajorPart, fvi.FileMinorPart, fvi.FileBuildPart, fvi.FilePrivatePart);
+      Text += $" V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
     }
 
     private void FormMain_Load(object sender, EventArgs e)
@@ -267,6 +267,7 @@ namespace EuroMillionsHelper
         "</term>",
         "</terms>"
       };
+
       StreamWriter sw = new StreamWriter(Settings.Default.LanguageFileName);
       foreach (string item in minimumVersion)
       {
@@ -444,7 +445,7 @@ namespace EuroMillionsHelper
 
     private void cutToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -454,7 +455,7 @@ namespace EuroMillionsHelper
 
     private void copyToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -464,7 +465,7 @@ namespace EuroMillionsHelper
 
     private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -474,7 +475,7 @@ namespace EuroMillionsHelper
 
     private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       TextBox control = focusedControl as TextBox;
       if (control != null) control.SelectAll();
     }
