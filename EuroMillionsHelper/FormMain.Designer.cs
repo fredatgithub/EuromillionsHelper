@@ -72,6 +72,7 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
+      this.tabPageNumberOfStarDrawn = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
@@ -377,6 +378,7 @@
       // 
       this.tabControlMain.Controls.Add(this.tabPageArchive);
       this.tabControlMain.Controls.Add(this.tabPageNumberDrawn);
+      this.tabControlMain.Controls.Add(this.tabPageNumberOfStarDrawn);
       this.tabControlMain.Controls.Add(this.tabPageWeight);
       this.tabControlMain.Controls.Add(this.tabPageTwoInARow);
       this.tabControlMain.Controls.Add(this.tabPageThreeInARow);
@@ -418,7 +420,7 @@
       this.tabPageNumberDrawn.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.tabPageNumberDrawn.Size = new System.Drawing.Size(1016, 600);
       this.tabPageNumberDrawn.TabIndex = 1;
-      this.tabPageNumberDrawn.Text = "Nombre de sortie";
+      this.tabPageNumberDrawn.Text = "Nombre de sortie boules";
       this.tabPageNumberDrawn.UseVisualStyleBackColor = true;
       // 
       // tabPageWeight
@@ -447,6 +449,15 @@
       this.tabPageThreeInARow.TabIndex = 4;
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
+      // 
+      // tabPageNumberOfStarDrawn
+      // 
+      this.tabPageNumberOfStarDrawn.Location = new System.Drawing.Point(4, 29);
+      this.tabPageNumberOfStarDrawn.Name = "tabPageNumberOfStarDrawn";
+      this.tabPageNumberOfStarDrawn.Size = new System.Drawing.Size(1016, 600);
+      this.tabPageNumberOfStarDrawn.TabIndex = 5;
+      this.tabPageNumberOfStarDrawn.Text = "Nombre de sortie étoile";
+      this.tabPageNumberOfStarDrawn.UseVisualStyleBackColor = true;
       // 
       // FormMain
       // 
@@ -516,5 +527,6 @@
     private System.Windows.Forms.TabPage tabPageWeight;
     private System.Windows.Forms.TabPage tabPageTwoInARow;
     private System.Windows.Forms.TabPage tabPageThreeInARow;
+    private System.Windows.Forms.TabPage tabPageNumberOfStarDrawn;
   }
 }
