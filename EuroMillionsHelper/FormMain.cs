@@ -1,4 +1,6 @@
 ﻿#define DEBUG
+using EuroMillionsHelper.Model;
+using EuroMillionsHelper.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,8 +10,6 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using EuroMillionsHelper.Model;
-using EuroMillionsHelper.Properties;
 
 namespace EuroMillionsHelper
 {
@@ -94,29 +94,24 @@ namespace EuroMillionsHelper
     private void LoadHistoryDraws()
     {
       listViewHistory.Items.Clear();
-      //ListViewItem listViewItem = new ListViewItem("boule 1");
-      //listViewItem.SubItems.Add("boule2");
-      //listViewItem.SubItems.Add("boule3");
-      //listViewItem.SubItems.Add("boule4");
-      //listViewItem.SubItems.Add("boule5");
-      //listViewItem.SubItems.Add("etoile1");
-      //listViewItem.SubItems.Add("etoile2");
-      //listViewHistory.Items.Add(listViewItem);
 
       // reading archive files
       // foreach file in archives folder
       // read file and add lines to listviewHistory
-      var testdebug = ReadCsvFile(".\\Archives\\euromillions.csv");
-      foreach (var line in testdebug)
+      foreach (var fileName in Directory.GetFiles(@".\Archives\", "euromillions*.csv"))
       {
-        ListViewItem listViewItem = new ListViewItem(line.Boule1.ToString());
-        listViewItem.SubItems.Add(line.Boule2.ToString());
-        listViewItem.SubItems.Add(line.Boule3.ToString());
-        listViewItem.SubItems.Add(line.Boule4.ToString());
-        listViewItem.SubItems.Add(line.Boule5.ToString());
-        listViewItem.SubItems.Add(line.Etoile1.ToString());
-        listViewItem.SubItems.Add(line.Etoile2.ToString());
-        listViewHistory.Items.Add(listViewItem);
+        var file = ReadCsvFile(fileName);
+        foreach (var line in file)
+        {
+          ListViewItem listViewItem = new ListViewItem(line.Boule1.ToString());
+          listViewItem.SubItems.Add(line.Boule2.ToString());
+          listViewItem.SubItems.Add(line.Boule3.ToString());
+          listViewItem.SubItems.Add(line.Boule4.ToString());
+          listViewItem.SubItems.Add(line.Boule5.ToString());
+          listViewItem.SubItems.Add(line.Etoile1.ToString());
+          listViewItem.SubItems.Add(line.Etoile2.ToString());
+          listViewHistory.Items.Add(listViewItem);
+        }
       }
 
       ResizeListViewColumns(listViewHistory);
@@ -138,11 +133,15 @@ namespace EuroMillionsHelper
           }
         }
       }
-      catch (Exception){}
+      catch (Exception) { }
 
       firstLine = tmpLines[0];
       numberOfLines = tmpLines.Count - 1;
-      
+      int index = 4;
+      const string stringToSearch = "boule_1";
+      string[] indexArray = firstLine.Split(';');
+      index = GetPositionOfString(indexArray, stringToSearch);
+
       for (int i = 1; i < numberOfLines; i++)
       {
         var tmp = tmpLines[i];
@@ -150,16 +149,31 @@ namespace EuroMillionsHelper
         var tmpNumbers = tmp.Split(';');
         Tirage unTirage = new Tirage
         {
-          Boule1 = int.Parse(tmpNumbers[4]),
-          Boule2 = int.Parse(tmpNumbers[5]),
-          Boule3 = int.Parse(tmpNumbers[6]),
-          Boule4 = int.Parse(tmpNumbers[7]),
-          Boule5 = int.Parse(tmpNumbers[8]),
-          Etoile1 = int.Parse(tmpNumbers[9]),
-          Etoile2 = int.Parse(tmpNumbers[10])
+          Boule1 = int.Parse(tmpNumbers[index]),
+          Boule2 = int.Parse(tmpNumbers[index + 1]),
+          Boule3 = int.Parse(tmpNumbers[index + 2]),
+          Boule4 = int.Parse(tmpNumbers[index + 3]),
+          Boule5 = int.Parse(tmpNumbers[index + 4]),
+          Etoile1 = int.Parse(tmpNumbers[index + 5]),
+          Etoile2 = int.Parse(tmpNumbers[index + 6])
         };
 
         result.Add(OrderTirage(unTirage));
+      }
+
+      return result;
+    }
+
+    private int GetPositionOfString(string[] oneArray, string stringToSearch)
+    {
+      int result = 0;
+      for (int i = 0; i < oneArray.Length; i++)
+      {
+        if (oneArray[i] == stringToSearch)
+        {
+          result = i;
+          break;
+        }
       }
 
       return result;
@@ -173,7 +187,7 @@ namespace EuroMillionsHelper
         Etoile2 = unTirage.Etoile2
       };
 
-      int[] tmpNumbers = {unTirage.Boule1, unTirage.Boule2, unTirage.Boule3, unTirage.Boule4, unTirage.Boule5 };
+      int[] tmpNumbers = { unTirage.Boule1, unTirage.Boule2, unTirage.Boule3, unTirage.Boule4, unTirage.Boule5 };
       tmpNumbers = BubbleSort(tmpNumbers.ToList()).ToArray();
       result.Boule1 = tmpNumbers[0];
       result.Boule2 = tmpNumbers[1];
