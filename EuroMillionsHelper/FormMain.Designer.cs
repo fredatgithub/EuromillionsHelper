@@ -73,9 +73,12 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
+      this.dataGridViewNumberOfBallsDrawn = new System.Windows.Forms.DataGridView();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
+      this.tabPageNumberDrawn.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).BeginInit();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -413,10 +416,11 @@
       // 
       // tabPageNumberDrawn
       // 
+      this.tabPageNumberDrawn.Controls.Add(this.dataGridViewNumberOfBallsDrawn);
       this.tabPageNumberDrawn.Location = new System.Drawing.Point(4, 22);
       this.tabPageNumberDrawn.Name = "tabPageNumberDrawn";
       this.tabPageNumberDrawn.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-      this.tabPageNumberDrawn.Size = new System.Drawing.Size(675, 385);
+      this.tabPageNumberDrawn.Size = new System.Drawing.Size(675, 384);
       this.tabPageNumberDrawn.TabIndex = 1;
       this.tabPageNumberDrawn.Text = "Nombre de sortie boules";
       this.tabPageNumberDrawn.UseVisualStyleBackColor = true;
@@ -461,6 +465,17 @@
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
       // 
+      // dataGridViewNumberOfBallsDrawn
+      // 
+      this.dataGridViewNumberOfBallsDrawn.AllowUserToDeleteRows = false;
+      this.dataGridViewNumberOfBallsDrawn.AllowUserToOrderColumns = true;
+      this.dataGridViewNumberOfBallsDrawn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridViewNumberOfBallsDrawn.Location = new System.Drawing.Point(101, 122);
+      this.dataGridViewNumberOfBallsDrawn.Name = "dataGridViewNumberOfBallsDrawn";
+      this.dataGridViewNumberOfBallsDrawn.ReadOnly = true;
+      this.dataGridViewNumberOfBallsDrawn.Size = new System.Drawing.Size(514, 226);
+      this.dataGridViewNumberOfBallsDrawn.TabIndex = 0;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +494,8 @@
       this.menuStrip1.PerformLayout();
       this.tabControlMain.ResumeLayout(false);
       this.tabPageArchive.ResumeLayout(false);
+      this.tabPageNumberDrawn.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -531,5 +548,6 @@
     private System.Windows.Forms.TabPage tabPageTwoInARow;
     private System.Windows.Forms.TabPage tabPageThreeInARow;
     private System.Windows.Forms.TabPage tabPageNumberOfStarDrawn;
+    private System.Windows.Forms.DataGridView dataGridViewNumberOfBallsDrawn;
   }
 }

@@ -57,6 +57,18 @@ namespace EuroMillionsHelper
       SetLanguage(Settings.Default.LastLanguageUsed);
       InitializeHistoryListView(listViewHistory);
       LoadHistoryDraws();
+      InitializeDataGridView();
+      LoadNumberOfBallsDrawn();
+    }
+
+    private void LoadNumberOfBallsDrawn()
+    {
+      throw new NotImplementedException();
+    }
+
+    private void InitializeDataGridView()
+    {
+      throw new NotImplementedException();
     }
 
     private static void InitializeHistoryListView(ListView listview)
@@ -287,6 +299,7 @@ namespace EuroMillionsHelper
         CreateLanguageFile();
         return;
       }
+
       var result = from node in xDoc.Descendants("term")
                    where node.HasElements
                    let xElementName = node.Element("name")
