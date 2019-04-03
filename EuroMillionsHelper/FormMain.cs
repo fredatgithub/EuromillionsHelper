@@ -482,6 +482,7 @@ namespace EuroMillionsHelper
       Height = Settings.Default.WindowHeight;
       Top = Settings.Default.WindowTop < 0 ? 0 : Settings.Default.WindowTop;
       Left = Settings.Default.WindowLeft < 0 ? 0 : Settings.Default.WindowLeft;
+      tabControlMain.SelectedIndex = Settings.Default.LatestTabUsed;
       SetDisplayOption(Settings.Default.DisplayToolStripMenuItem);
       LoadConfigurationOptions();
     }
@@ -494,6 +495,7 @@ namespace EuroMillionsHelper
       Settings.Default.WindowTop = Top;
       Settings.Default.LastLanguageUsed = frenchToolStripMenuItem.Checked ? "French" : "English";
       Settings.Default.DisplayToolStripMenuItem = GetDisplayOption();
+      Settings.Default.LatestTabUsed = tabControlMain.SelectedIndex;
       SaveConfigurationOptions();
       Settings.Default.Save();
     }
