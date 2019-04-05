@@ -63,12 +63,18 @@ namespace EuroMillionsHelper
 
     private void LoadNumberOfBallsDrawn()
     {
-      throw new NotImplementedException();
+
     }
 
     private void InitializeDataGridView()
     {
-      throw new NotImplementedException();
+      dataGridViewNumberOfBallsDrawn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+      //dataGridViewNumberOfBallsDrawn.Dock = Datagridview
+      for (int i = 1; i <= 50; i++)
+      {
+        dataGridViewNumberOfBallsDrawn.Columns.Add($"number{i}", $"{i}");
+      }
+
     }
 
     private static void InitializeHistoryListView(ListView listview)
