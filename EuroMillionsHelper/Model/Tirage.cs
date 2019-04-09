@@ -47,23 +47,23 @@ namespace EuroMillionsHelper.Model
     public static int[] RepartitionDizaineTirage(Tirage tirage)
     {
       int[] result = new int[5] { 0, 0, 0, 0, 0 };
-      foreach (var n in new int[] { tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule4, tirage.Boule5 })
+      foreach (var number in new int[] { tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule4, tirage.Boule5 })
       {
-        switch (n)
+        switch (number)
         {
-          case int _ when n < 10:
+          case int _ when number < 10:
             result[0]++;
             break;
-          case int _ when n >= 10 && n <= 19:
+          case int _ when number >= 10 && number <= 19:
             result[1]++;
             break;
-          case int _ when n >= 20 && n <= 29:
+          case int _ when number >= 20 && number <= 29:
             result[2]++;
             break;
-          case int _ when n >= 30 && n <= 39:
+          case int _ when number >= 30 && number <= 39:
             result[3]++;
             break;
-          case int _ when n >= 40:
+          case int _ when number >= 40:
             result[4]++;
             break;
         }
