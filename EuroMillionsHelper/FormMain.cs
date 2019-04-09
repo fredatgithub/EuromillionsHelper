@@ -22,6 +22,7 @@ namespace EuroMillionsHelper
 
     public readonly Dictionary<string, string> _languageDicoEn = new Dictionary<string, string>();
     public readonly Dictionary<string, string> _languageDicoFr = new Dictionary<string, string>();
+    private readonly List<Tirage> listTirages = new List<Tirage>();
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
 
@@ -37,11 +38,11 @@ namespace EuroMillionsHelper
       aboutBoxApplication.ShowDialog();
     }
 
-    private void DisplayTitle()
+    private string DisplayTitle()
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-      Text += $" V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
+      return $"V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
     }
 
     private void FormMain_Load(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace EuroMillionsHelper
 
     private void LoadSettingsAtStartup()
     {
-      DisplayTitle();
+      Text = $" {DisplayTitle()}";
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
@@ -63,7 +64,25 @@ namespace EuroMillionsHelper
 
     private void LoadNumberOfBallsDrawn()
     {
+      dataGridViewNumberOfBallsDrawn.Rows.Clear();
+      int[] result = new int[52];
+      for (int i = 0; i < result.Length; i++)
+      {
+        result[i] = 0;
+      }
 
+      foreach (Tirage tirage in listTirages)
+      {
+        result[tirage.Boule1]++;
+        result[tirage.Boule2]++;
+        result[tirage.Boule3]++;
+        result[tirage.Boule4]++;
+        result[tirage.Boule5]++;
+        result[tirage.Etoile1]++;
+        result[tirage.Etoile2]++;
+      }
+
+      //dataGridViewNumberOfBallsDrawn.Rows.Add(tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule1, tirage.Boule1, tirage.Boule1, tirage.Boule1);
     }
 
     private void InitializeDataGridView()
@@ -128,6 +147,14 @@ namespace EuroMillionsHelper
           listViewItem.SubItems.Add(line.Boule5.ToString());
           listViewItem.SubItems.Add(line.Etoile1.ToString());
           listViewItem.SubItems.Add(line.Etoile2.ToString());
+          Tirage tmpTirage = new Tirage(line.Boule1,
+            line.Boule2,
+            line.Boule3,
+            line.Boule4,
+            line.Boule5,
+            line.Etoile1,
+            line.Etoile2);
+          listTirages.Add(tmpTirage);
           listViewHistory.Items.Add(listViewItem);
         }
       }
