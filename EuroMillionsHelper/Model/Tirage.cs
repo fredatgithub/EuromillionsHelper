@@ -44,41 +44,43 @@ namespace EuroMillionsHelper.Model
       return tirage.Etoile1 + tirage.Etoile2;
     }
 
-    public int[] RepartitionDizaineTirage(Tirage tirage)
+    public static int[] RepartitionDizaineTirage(Tirage tirage)
     {
       int[] result = new int[5] { 0, 0, 0, 0, 0 };
-      
-      int n = tirage.Boule1;
-      switch (n)
+      foreach (var n in new int[] { tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule4, tirage.Boule5 })
       {
-        case int nb when n < 10:
-          result[0]++;
-          break;
-        case int nb when n >= 10 && n <= 19:
-          result[1]++;
-          break;
-        case int nb when n >= 20 && n <= 29:
-          result[2]++;
-          break;
-        case int nb when n >= 30 && n <= 39:
-          result[3]++;
-          break;
-        case int nb when n >= 40:
-          result[4]++;
-          break;
+        switch (n)
+        {
+          case int _ when n < 10:
+            result[0]++;
+            break;
+          case int _ when n >= 10 && n <= 19:
+            result[1]++;
+            break;
+          case int _ when n >= 20 && n <= 29:
+            result[2]++;
+            break;
+          case int _ when n >= 30 && n <= 39:
+            result[3]++;
+            break;
+          case int _ when n >= 40:
+            result[4]++;
+            break;
+        }
       }
-      
-      result[1] = tirage.Boule2;
-      result[2] = tirage.Boule3;
-      result[3] = tirage.Boule4;
-      result[4] = tirage.Boule5;
+
       return result;
     }
 
     public static int Dizaine(int nombre)
     {
       int result = 0;
-      result = Math.Abs( nombre / 10);
+      result = Math.Abs(nombre / 10);
+      if (nombre == 50)
+      {
+        result = 4;
+      }
+
       return result;
     }
   }
