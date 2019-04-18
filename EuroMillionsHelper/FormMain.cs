@@ -37,11 +37,11 @@ namespace EuroMillionsHelper
       aboutBoxApplication.ShowDialog();
     }
 
-    private void DisplayTitle()
+    public static string GetVersion()
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-      Text += $" V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
+      return $"V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
     }
 
     private void FormMain_Load(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace EuroMillionsHelper
 
     private void LoadSettingsAtStartup()
     {
-      DisplayTitle();
+      Text = GetVersion();
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
