@@ -751,7 +751,7 @@ namespace EuroMillionsHelper
       tb.SelectedText = string.Empty;
     }
 
-    private void CopyToClipboard(TextBoxBase tb, string message = "nothing")
+    public void CopyToClipboard(TextBoxBase tb, string message = "nothing")
     {
       if (tb != ActiveControl) return;
       if (tb.Text == string.Empty)
@@ -779,7 +779,7 @@ namespace EuroMillionsHelper
       textBox.SelectionStart = selectionIndex + Clipboard.GetText().Length;
     }
 
-    private void DisplayMessage(string message, string title, MessageBoxButtons buttons)
+    public void DisplayMessage(string message, string title, MessageBoxButtons buttons)
     {
       MessageBox.Show(this, message, title, buttons);
     }
@@ -802,7 +802,7 @@ namespace EuroMillionsHelper
       return result;
     }
 
-    private static Control FindFocusedControl(Control container)
+    public static Control FindFocusedControl(Control container)
     {
       foreach (Control childControl in container.Controls.Cast<Control>().Where(childControl => childControl.Focused))
       {
@@ -813,22 +813,22 @@ namespace EuroMillionsHelper
               select FindFocusedControl(childControl)).FirstOrDefault(maybeFocusedControl => maybeFocusedControl != null);
     }
 
-    private static Control FindFocusedControl(List<Control> container)
+    public static Control FindFocusedControl(List<Control> container)
     {
       return container.FirstOrDefault(control => control.Focused);
     }
 
-    private static Control FindFocusedControl(params Control[] container)
+    public static Control FindFocusedControl(params Control[] container)
     {
       return container.FirstOrDefault(control => control.Focused);
     }
 
-    private static Control FindFocusedControl(IEnumerable<Control> container)
+    public static Control FindFocusedControl(IEnumerable<Control> container)
     {
       return container.FirstOrDefault(control => control.Focused);
     }
 
-    private static string PeekDirectory()
+    public static string PeekDirectory()
     {
       string result = string.Empty;
       FolderBrowserDialog fbd = new FolderBrowserDialog();
@@ -840,7 +840,7 @@ namespace EuroMillionsHelper
       return result;
     }
 
-    private string PeekFile()
+    public static string PeekFile()
     {
       string result = string.Empty;
       OpenFileDialog fd = new OpenFileDialog();
@@ -914,29 +914,29 @@ namespace EuroMillionsHelper
     private static void SetButtonEnabled(Button button, params Control[] controls)
     {
       bool result = true;
-      foreach (Control ctrl in controls)
+      foreach (Control control in controls)
       {
-        if (ctrl.GetType() == typeof(TextBox))
+        if (control.GetType() == typeof(TextBox))
         {
-          if (((TextBox)ctrl).Text == string.Empty)
+          if (((TextBox)control).Text == string.Empty)
           {
             result = false;
             break;
           }
         }
 
-        if (ctrl.GetType() == typeof(ListView))
+        if (control.GetType() == typeof(ListView))
         {
-          if (((ListView)ctrl).Items.Count == 0)
+          if (((ListView)control).Items.Count == 0)
           {
             result = false;
             break;
           }
         }
 
-        if (ctrl.GetType() == typeof(ComboBox))
+        if (control.GetType() == typeof(ComboBox))
         {
-          if (((ComboBox)ctrl).SelectedIndex == -1)
+          if (((ComboBox)control).SelectedIndex == -1)
           {
             result = false;
             break;
