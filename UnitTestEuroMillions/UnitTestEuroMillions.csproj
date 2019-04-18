@@ -50,6 +50,8 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestRepartitionDizaineTirage.cs" />
+    <Compile Include="UnitTestDizaine.cs" />
     <Compile Include="UnitTestOrderTirage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

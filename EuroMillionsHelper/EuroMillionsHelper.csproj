@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="Language.cs" />
     <Compile Include="Model\Tirage.cs" />
+    <Compile Include="Model\Tirages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Punctuation.cs" />
