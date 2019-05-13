@@ -18,6 +18,7 @@ namespace EuroMillionsHelper
     public FormMain()
     {
       InitializeComponent();
+      // Add any other initialisation variables
     }
 
     public readonly Dictionary<string, string> _languageDicoEn = new Dictionary<string, string>();
@@ -38,7 +39,7 @@ namespace EuroMillionsHelper
       aboutBoxApplication.ShowDialog();
     }
 
-    private string DisplayTitle()
+    public static string DisplayTitle()
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
@@ -65,22 +66,80 @@ namespace EuroMillionsHelper
     private void LoadNumberOfBallsDrawn()
     {
       dataGridViewNumberOfBallsDrawn.Rows.Clear();
-      int[] result = new int[52];
-      for (int i = 0; i < result.Length; i++)
+      int[] resultBoule = new int[51];
+      for (int i = 0; i < resultBoule.Length; i++)
       {
-        result[i] = 0;
+        resultBoule[i] = 0;
+      }
+
+      int[] resultEtoile = new int[13];
+      for (int i = 0; i < resultEtoile.Length; i++)
+      {
+        resultEtoile[i] = 0;
       }
 
       foreach (Tirage tirage in listTirages)
       {
-        result[tirage.Boule1]++;
-        result[tirage.Boule2]++;
-        result[tirage.Boule3]++;
-        result[tirage.Boule4]++;
-        result[tirage.Boule5]++;
-        result[tirage.Etoile1]++;
-        result[tirage.Etoile2]++;
+        resultBoule[tirage.Boule1]++;
+        resultBoule[tirage.Boule2]++;
+        resultBoule[tirage.Boule3]++;
+        resultBoule[tirage.Boule4]++;
+        resultBoule[tirage.Boule5]++;
+        resultEtoile[tirage.Etoile1]++;
+        resultEtoile[tirage.Etoile2]++;
       }
+      
+      dataGridViewNumberOfBallsDrawn.Rows.Add(resultBoule[1],
+        resultBoule[2],
+        resultBoule[3],
+        resultBoule[4],
+        resultBoule[5],
+        resultBoule[6],
+        resultBoule[7],
+        resultBoule[8],
+        resultBoule[9],
+        resultBoule[10],
+        resultBoule[11],
+        resultBoule[12],
+        resultBoule[13],
+        resultBoule[14],
+        resultBoule[15],
+        resultBoule[16],
+        resultBoule[17],
+        resultBoule[18],
+        resultBoule[19],
+        resultBoule[20],
+        resultBoule[21],
+        resultBoule[22],
+        resultBoule[23],
+        resultBoule[24],
+        resultBoule[25],
+        resultBoule[26],
+        resultBoule[27],
+        resultBoule[28],
+        resultBoule[29],
+        resultBoule[30],
+        resultBoule[31],
+        resultBoule[32],
+        resultBoule[33],
+        resultBoule[34],
+        resultBoule[35],
+        resultBoule[36],
+        resultBoule[37],
+        resultBoule[38],
+        resultBoule[39],
+        resultBoule[40],
+        resultBoule[41],
+        resultBoule[42],
+        resultBoule[43],
+        resultBoule[44],
+        resultBoule[45],
+        resultBoule[46],
+        resultBoule[47],
+        resultBoule[48],
+        resultBoule[49],
+        resultBoule[50]
+        );
 
       //dataGridViewNumberOfBallsDrawn.Rows.Add(tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule1, tirage.Boule1, tirage.Boule1, tirage.Boule1);
     }

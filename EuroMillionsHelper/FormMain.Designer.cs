@@ -74,11 +74,13 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
+      this.dataGridView1 = new System.Windows.Forms.DataGridView();
       this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
       this.tabPageNumberDrawn.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
       // menuStripMain
@@ -416,6 +418,7 @@
       // 
       // tabPageNumberDrawn
       // 
+      this.tabPageNumberDrawn.Controls.Add(this.dataGridView1);
       this.tabPageNumberDrawn.Controls.Add(this.dataGridViewNumberOfBallsDrawn);
       this.tabPageNumberDrawn.Location = new System.Drawing.Point(4, 22);
       this.tabPageNumberDrawn.Name = "tabPageNumberDrawn";
@@ -427,14 +430,14 @@
       // 
       // dataGridViewNumberOfBallsDrawn
       // 
+      this.dataGridViewNumberOfBallsDrawn.AllowUserToAddRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToDeleteRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToOrderColumns = true;
       this.dataGridViewNumberOfBallsDrawn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dataGridViewNumberOfBallsDrawn.Dock = System.Windows.Forms.DockStyle.Fill;
       this.dataGridViewNumberOfBallsDrawn.Location = new System.Drawing.Point(3, 3);
       this.dataGridViewNumberOfBallsDrawn.Name = "dataGridViewNumberOfBallsDrawn";
       this.dataGridViewNumberOfBallsDrawn.ReadOnly = true;
-      this.dataGridViewNumberOfBallsDrawn.Size = new System.Drawing.Size(1090, 378);
+      this.dataGridViewNumberOfBallsDrawn.Size = new System.Drawing.Size(1090, 100);
       this.dataGridViewNumberOfBallsDrawn.TabIndex = 0;
       // 
       // tabPageNumberOfStarDrawn
@@ -477,6 +480,18 @@
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
       // 
+      // dataGridView1
+      // 
+      this.dataGridView1.AllowUserToAddRows = false;
+      this.dataGridView1.AllowUserToDeleteRows = false;
+      this.dataGridView1.AllowUserToOrderColumns = true;
+      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridView1.Location = new System.Drawing.Point(3, 142);
+      this.dataGridView1.Name = "dataGridView1";
+      this.dataGridView1.ReadOnly = true;
+      this.dataGridView1.Size = new System.Drawing.Size(1090, 100);
+      this.dataGridView1.TabIndex = 1;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,6 +512,7 @@
       this.tabPageArchive.ResumeLayout(false);
       this.tabPageNumberDrawn.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -550,5 +566,6 @@
     private System.Windows.Forms.TabPage tabPageThreeInARow;
     private System.Windows.Forms.TabPage tabPageNumberOfStarDrawn;
     private System.Windows.Forms.DataGridView dataGridViewNumberOfBallsDrawn;
+    private System.Windows.Forms.DataGridView dataGridView1;
   }
 }
