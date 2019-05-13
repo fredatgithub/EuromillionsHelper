@@ -26,13 +26,13 @@ namespace EuroMillionsHelper
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
 
-    private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
+    private void QuitToolStripMenuItemClick(object sender, EventArgs e)
     {
       SaveWindowValue();
       Application.Exit();
     }
 
-    private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+    private void AboutToolStripMenuItemClick(object sender, EventArgs e)
     {
       AboutBoxApplication aboutBoxApplication = new AboutBoxApplication();
       aboutBoxApplication.ShowDialog();
@@ -45,14 +45,14 @@ namespace EuroMillionsHelper
       return $"V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
     }
 
-    private void FormMain_Load(object sender, EventArgs e)
+    private void FormMainLoad(object sender, EventArgs e)
     {
       LoadSettingsAtStartup();
     }
 
     private void LoadSettingsAtStartup()
     {
-      Text = $" {DisplayTitle()}";
+      Text += $" {DisplayTitle()}";
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
@@ -301,12 +301,14 @@ namespace EuroMillionsHelper
 
     private void LoadConfigurationOptions()
     {
+      // Add any other options here
       _configurationOptions.Option1Name = Settings.Default.Option1Name;
       _configurationOptions.Option2Name = Settings.Default.Option2Name;
     }
 
     private void SaveConfigurationOptions()
     {
+      // Add any other options here
       _configurationOptions.Option1Name = Settings.Default.Option1Name;
       _configurationOptions.Option2Name = Settings.Default.Option2Name;
     }
@@ -558,6 +560,7 @@ namespace EuroMillionsHelper
         return "Medium";
       }
 
+      // Add any other options here
       return LargeToolStripMenuItem.Checked ? "Large" : string.Empty;
     }
 
@@ -575,6 +578,7 @@ namespace EuroMillionsHelper
         case "large":
           LargeToolStripMenuItem.Checked = true;
           break;
+        // Add any other options here
         default:
           SmallToolStripMenuItem.Checked = true;
           break;
@@ -583,6 +587,7 @@ namespace EuroMillionsHelper
 
     private void UncheckAllOptions()
     {
+      // Add any other options here
       SmallToolStripMenuItem.Checked = false;
       MediumToolStripMenuItem.Checked = false;
       LargeToolStripMenuItem.Checked = false;
@@ -590,17 +595,18 @@ namespace EuroMillionsHelper
 
     private void FormMainFormClosing(object sender, FormClosingEventArgs e)
     {
+      // save all windows settings
       SaveWindowValue();
     }
 
-    private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+    private void FrenchToolStripMenuItem_Click(object sender, EventArgs e)
     {
       _currentLanguage = Language.French.ToString();
       SetLanguage(Language.French.ToString());
       AdjustAllControls();
     }
 
-    private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+    private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
     {
       _currentLanguage = Language.English.ToString();
       SetLanguage(Language.English.ToString());
@@ -609,6 +615,7 @@ namespace EuroMillionsHelper
 
     private void SetLanguage(string myLanguage)
     {
+      // Add any new language
       switch (myLanguage)
       {
         case "English":
@@ -644,8 +651,7 @@ namespace EuroMillionsHelper
           SmallToolStripMenuItem.Text = _languageDicoEn["Small"];
           MediumToolStripMenuItem.Text = _languageDicoEn["Medium"];
           LargeToolStripMenuItem.Text = _languageDicoEn["Large"];
-
-
+          
           _currentLanguage = "English";
           break;
         case "French":
@@ -690,7 +696,7 @@ namespace EuroMillionsHelper
       }
     }
 
-    private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+    private void CutToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control>());
       var tb = focusedControl as TextBox;
@@ -700,7 +706,7 @@ namespace EuroMillionsHelper
       }
     }
 
-    private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+    private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control>());
       var tb = focusedControl as TextBox;
@@ -710,7 +716,7 @@ namespace EuroMillionsHelper
       }
     }
 
-    private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+    private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control>());
       var tb = focusedControl as TextBox;
@@ -720,7 +726,7 @@ namespace EuroMillionsHelper
       }
     }
 
-    private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+    private void SelectAllToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control>());
       TextBox control = focusedControl as TextBox;
@@ -729,7 +735,11 @@ namespace EuroMillionsHelper
 
     private void CutToClipboard(TextBoxBase tb, string errorMessage = "nothing")
     {
-      if (tb != ActiveControl) return;
+      if (tb != ActiveControl)
+      {
+        return;
+      }
+
       if (tb.Text == string.Empty)
       {
         DisplayMessage(Translate("ThereIs") + Punctuation.OneSpace +
@@ -752,7 +762,11 @@ namespace EuroMillionsHelper
 
     private void CopyToClipboard(TextBoxBase tb, string message = "nothing")
     {
-      if (tb != ActiveControl) return;
+      if (tb != ActiveControl)
+      {
+        return;
+      }
+
       if (tb.Text == string.Empty)
       {
         DisplayMessage(Translate("ThereIsNothingToCopy") + Punctuation.OneSpace,
@@ -772,29 +786,33 @@ namespace EuroMillionsHelper
 
     private void PasteFromClipboard(TextBoxBase tb)
     {
-      if (tb != ActiveControl) return;
+      if (tb != ActiveControl)
+      {
+        return;
+      }
+
       var selectionIndex = tb.SelectionStart;
       tb.SelectedText = Clipboard.GetText();
       tb.SelectionStart = selectionIndex + Clipboard.GetText().Length;
     }
 
-    private void DisplayMessage(string message, string title, MessageBoxButtons buttons)
+    private void DisplayMessage(string message, string title, MessageBoxButtons buttons = MessageBoxButtons.OK)
     {
       MessageBox.Show(this, message, title, buttons);
     }
 
-    private string Translate(string index)
+    private string Translate(string word)
     {
       string result = string.Empty;
       switch (_currentLanguage.ToLower())
       {
         case "english":
-          result = _languageDicoEn.ContainsKey(index) ? _languageDicoEn[index] :
-           "the term: \"" + index + "\" has not been translated yet.\nPlease tell the developer to translate this term";
+          result = _languageDicoEn.ContainsKey(word) ? _languageDicoEn[word] :
+           "the term: \"" + word + "\" has not been translated yet.\nPlease tell the developer to translate this term";
           break;
         case "french":
-          result = _languageDicoFr.ContainsKey(index) ? _languageDicoFr[index] :
-            "the term: \"" + index + "\" has not been translated yet.\nPlease tell the developer to translate this term";
+          result = _languageDicoFr.ContainsKey(word) ? _languageDicoFr[word] :
+            "the term: \"" + word + "\" has not been translated yet.\nPlease tell the developer to translate this term";
           break;
       }
 
@@ -827,7 +845,7 @@ namespace EuroMillionsHelper
       return container.FirstOrDefault(control => control.Focused);
     }
 
-    private static string PeekDirectory()
+    public static string PeekDirectory()
     {
       string result = string.Empty;
       FolderBrowserDialog fbd = new FolderBrowserDialog();
@@ -839,7 +857,7 @@ namespace EuroMillionsHelper
       return result;
     }
 
-    private string PeekFile()
+    public static string PeekFile()
     {
       string result = string.Empty;
       OpenFileDialog fd = new OpenFileDialog();
@@ -851,35 +869,35 @@ namespace EuroMillionsHelper
       return result;
     }
 
-    private void SmallToolStripMenuItem_Click(object sender, EventArgs e)
+    private void SmallToolStripMenuItemClick(object sender, EventArgs e)
     {
       UncheckAllOptions();
       SmallToolStripMenuItem.Checked = true;
       AdjustAllControls();
     }
 
-    private void MediumToolStripMenuItem_Click(object sender, EventArgs e)
+    private void MediumToolStripMenuItemClick(object sender, EventArgs e)
     {
       UncheckAllOptions();
       MediumToolStripMenuItem.Checked = true;
       AdjustAllControls();
     }
 
-    private void LargeToolStripMenuItem_Click(object sender, EventArgs e)
+    private void LargeToolStripMenuItemClick(object sender, EventArgs e)
     {
       UncheckAllOptions();
       LargeToolStripMenuItem.Checked = true;
       AdjustAllControls();
     }
 
-    private static void AdjustControls(params Control[] listOfControls)
+    private static void AdjustControls(int initialPadding = 33, params Control[] listOfControls)
     {
       if (listOfControls.Length == 0)
       {
         return;
       }
 
-      int position = listOfControls[0].Width + 33; // 33 is the initial padding
+      int position = listOfControls[0].Width + initialPadding; // 33 is the initial padding
       bool isFirstControl = true;
       foreach (Control control in listOfControls)
       {
@@ -897,10 +915,11 @@ namespace EuroMillionsHelper
 
     private void AdjustAllControls()
     {
-      AdjustControls(); // insert here all labels, textboxes and buttons, one method per line of controls
+      // insert here all labels, textboxes and buttons, one method per line of controls
+      AdjustControls();
     }
 
-    private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+    private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
     {
       FormOptions frmOptions = new FormOptions(_configurationOptions);
 
@@ -946,7 +965,7 @@ namespace EuroMillionsHelper
       button.Enabled = result;
     }
 
-    private void textBoxName_KeyDown(object sender, KeyEventArgs e)
+    private void TextBoxName_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode == Keys.Enter)
       {
