@@ -16,15 +16,15 @@ namespace UnitTestEuroMillions
       Assert.IsTrue(AssertTirageAreEqual(result, expected));
     }
 
-    public static bool AssertTirageAreEqual(Tirage t1Tirage, Tirage t2Tirage)
+    public static bool AssertTirageAreEqual(Tirage tirage1, Tirage tirage2)
     {
-      return t1Tirage.Boule1 == t2Tirage.Boule1 &&
-             t1Tirage.Boule2 == t2Tirage.Boule2 &&
-             t1Tirage.Boule3 == t2Tirage.Boule3 &&
-             t1Tirage.Boule4 == t2Tirage.Boule4 &&
-             t1Tirage.Boule5 == t2Tirage.Boule5 &&
-             t1Tirage.Etoile1 == t2Tirage.Etoile1 &&
-             t1Tirage.Etoile2 == t2Tirage.Etoile2;
+      return tirage1.Boule1 == tirage2.Boule1 &&
+             tirage1.Boule2 == tirage2.Boule2 &&
+             tirage1.Boule3 == tirage2.Boule3 &&
+             tirage1.Boule4 == tirage2.Boule4 &&
+             tirage1.Boule5 == tirage2.Boule5 &&
+             tirage1.Etoile1 == tirage2.Etoile1 &&
+             tirage1.Etoile2 == tirage2.Etoile2;
     }
   }
 }
