@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+      this.menuStripMain = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,29 +74,31 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
-      this.menuStrip1.SuspendLayout();
+      this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
       this.tabPageNumberDrawn.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
-      // menuStrip1
+      // menuStripMain
       // 
-      this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-      this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.menuStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+      this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.languagetoolStripMenuItem,
             this.DisplayToolStripMenuItem,
             this.helpToolStripMenuItem});
-      this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-      this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-      this.menuStrip1.Size = new System.Drawing.Size(1104, 24);
-      this.menuStrip1.TabIndex = 1;
-      this.menuStrip1.Text = "menuStrip1";
+      this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+      this.menuStripMain.Name = "menuStripMain";
+      this.menuStripMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+      this.menuStripMain.Size = new System.Drawing.Size(1104, 24);
+      this.menuStripMain.TabIndex = 1;
+      this.menuStripMain.Text = "menuStrip1";
       // 
       // fileToolStripMenuItem
       // 
@@ -223,7 +225,7 @@
       this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
       this.cutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
       this.cutToolStripMenuItem.Text = "&Couper";
-      this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+      this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
       // 
       // copyToolStripMenuItem
       // 
@@ -397,7 +399,7 @@
       this.tabPageArchive.Controls.Add(this.listViewHistory);
       this.tabPageArchive.Location = new System.Drawing.Point(4, 22);
       this.tabPageArchive.Name = "tabPageArchive";
-      this.tabPageArchive.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageArchive.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageArchive.Size = new System.Drawing.Size(1096, 384);
       this.tabPageArchive.TabIndex = 0;
       this.tabPageArchive.Text = "Archive";
@@ -416,10 +418,11 @@
       // 
       // tabPageNumberDrawn
       // 
+      this.tabPageNumberDrawn.Controls.Add(this.dataGridView1);
       this.tabPageNumberDrawn.Controls.Add(this.dataGridViewNumberOfBallsDrawn);
       this.tabPageNumberDrawn.Location = new System.Drawing.Point(4, 22);
       this.tabPageNumberDrawn.Name = "tabPageNumberDrawn";
-      this.tabPageNumberDrawn.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageNumberDrawn.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageNumberDrawn.Size = new System.Drawing.Size(1096, 384);
       this.tabPageNumberDrawn.TabIndex = 1;
       this.tabPageNumberDrawn.Text = "Nombre de sortie boules";
@@ -427,22 +430,22 @@
       // 
       // dataGridViewNumberOfBallsDrawn
       // 
+      this.dataGridViewNumberOfBallsDrawn.AllowUserToAddRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToDeleteRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToOrderColumns = true;
       this.dataGridViewNumberOfBallsDrawn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dataGridViewNumberOfBallsDrawn.Dock = System.Windows.Forms.DockStyle.Fill;
       this.dataGridViewNumberOfBallsDrawn.Location = new System.Drawing.Point(3, 3);
       this.dataGridViewNumberOfBallsDrawn.Name = "dataGridViewNumberOfBallsDrawn";
       this.dataGridViewNumberOfBallsDrawn.ReadOnly = true;
-      this.dataGridViewNumberOfBallsDrawn.Size = new System.Drawing.Size(1090, 378);
+      this.dataGridViewNumberOfBallsDrawn.Size = new System.Drawing.Size(1090, 100);
       this.dataGridViewNumberOfBallsDrawn.TabIndex = 0;
       // 
       // tabPageNumberOfStarDrawn
       // 
       this.tabPageNumberOfStarDrawn.Location = new System.Drawing.Point(4, 22);
-      this.tabPageNumberOfStarDrawn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabPageNumberOfStarDrawn.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageNumberOfStarDrawn.Name = "tabPageNumberOfStarDrawn";
-      this.tabPageNumberOfStarDrawn.Size = new System.Drawing.Size(1096, 385);
+      this.tabPageNumberOfStarDrawn.Size = new System.Drawing.Size(1096, 384);
       this.tabPageNumberOfStarDrawn.TabIndex = 5;
       this.tabPageNumberOfStarDrawn.Text = "Nombre de sortie étoile";
       this.tabPageNumberOfStarDrawn.UseVisualStyleBackColor = true;
@@ -450,9 +453,9 @@
       // tabPageWeight
       // 
       this.tabPageWeight.Location = new System.Drawing.Point(4, 22);
-      this.tabPageWeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabPageWeight.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageWeight.Name = "tabPageWeight";
-      this.tabPageWeight.Size = new System.Drawing.Size(1096, 385);
+      this.tabPageWeight.Size = new System.Drawing.Size(1096, 384);
       this.tabPageWeight.TabIndex = 2;
       this.tabPageWeight.Text = "Poids";
       this.tabPageWeight.UseVisualStyleBackColor = true;
@@ -460,9 +463,9 @@
       // tabPageTwoInARow
       // 
       this.tabPageTwoInARow.Location = new System.Drawing.Point(4, 22);
-      this.tabPageTwoInARow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabPageTwoInARow.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageTwoInARow.Name = "tabPageTwoInARow";
-      this.tabPageTwoInARow.Size = new System.Drawing.Size(1096, 385);
+      this.tabPageTwoInARow.Size = new System.Drawing.Size(1096, 384);
       this.tabPageTwoInARow.TabIndex = 3;
       this.tabPageTwoInARow.Text = "Suite de 2";
       this.tabPageTwoInARow.UseVisualStyleBackColor = true;
@@ -470,12 +473,24 @@
       // tabPageThreeInARow
       // 
       this.tabPageThreeInARow.Location = new System.Drawing.Point(4, 22);
-      this.tabPageThreeInARow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabPageThreeInARow.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageThreeInARow.Name = "tabPageThreeInARow";
-      this.tabPageThreeInARow.Size = new System.Drawing.Size(1096, 385);
+      this.tabPageThreeInARow.Size = new System.Drawing.Size(1096, 384);
       this.tabPageThreeInARow.TabIndex = 4;
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
+      // 
+      // dataGridView1
+      // 
+      this.dataGridView1.AllowUserToAddRows = false;
+      this.dataGridView1.AllowUserToDeleteRows = false;
+      this.dataGridView1.AllowUserToOrderColumns = true;
+      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridView1.Location = new System.Drawing.Point(3, 142);
+      this.dataGridView1.Name = "dataGridView1";
+      this.dataGridView1.ReadOnly = true;
+      this.dataGridView1.Size = new System.Drawing.Size(1090, 100);
+      this.dataGridView1.TabIndex = 1;
       // 
       // FormMain
       // 
@@ -483,20 +498,21 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1104, 434);
       this.Controls.Add(this.tabControlMain);
-      this.Controls.Add(this.menuStrip1);
-      this.MainMenuStrip = this.menuStrip1;
-      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.Controls.Add(this.menuStripMain);
+      this.MainMenuStrip = this.menuStripMain;
+      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "FormMain";
       this.ShowIcon = false;
       this.Text = "EuroMillions Helper";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainFormClosing);
       this.Load += new System.EventHandler(this.FormMainLoad);
-      this.menuStrip1.ResumeLayout(false);
-      this.menuStrip1.PerformLayout();
+      this.menuStripMain.ResumeLayout(false);
+      this.menuStripMain.PerformLayout();
       this.tabControlMain.ResumeLayout(false);
       this.tabPageArchive.ResumeLayout(false);
       this.tabPageNumberDrawn.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -504,7 +520,7 @@
 
     #endregion
 
-    private System.Windows.Forms.MenuStrip menuStrip1;
+    private System.Windows.Forms.MenuStrip menuStripMain;
     private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -550,5 +566,6 @@
     private System.Windows.Forms.TabPage tabPageThreeInARow;
     private System.Windows.Forms.TabPage tabPageNumberOfStarDrawn;
     private System.Windows.Forms.DataGridView dataGridViewNumberOfBallsDrawn;
+    private System.Windows.Forms.DataGridView dataGridView1;
   }
 }

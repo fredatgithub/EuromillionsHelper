@@ -18,6 +18,7 @@ namespace EuroMillionsHelper
     public FormMain()
     {
       InitializeComponent();
+      // Add any other initialisation variables
     }
 
     public readonly Dictionary<string, string> _languageDicoEn = new Dictionary<string, string>();
@@ -65,22 +66,80 @@ namespace EuroMillionsHelper
     private void LoadNumberOfBallsDrawn()
     {
       dataGridViewNumberOfBallsDrawn.Rows.Clear();
-      int[] result = new int[52];
-      for (int i = 0; i < result.Length; i++)
+      int[] resultBoule = new int[51];
+      for (int i = 0; i < resultBoule.Length; i++)
       {
-        result[i] = 0;
+        resultBoule[i] = 0;
+      }
+
+      int[] resultEtoile = new int[13];
+      for (int i = 0; i < resultEtoile.Length; i++)
+      {
+        resultEtoile[i] = 0;
       }
 
       foreach (Tirage tirage in listTirages)
       {
-        result[tirage.Boule1]++;
-        result[tirage.Boule2]++;
-        result[tirage.Boule3]++;
-        result[tirage.Boule4]++;
-        result[tirage.Boule5]++;
-        result[tirage.Etoile1]++;
-        result[tirage.Etoile2]++;
+        resultBoule[tirage.Boule1]++;
+        resultBoule[tirage.Boule2]++;
+        resultBoule[tirage.Boule3]++;
+        resultBoule[tirage.Boule4]++;
+        resultBoule[tirage.Boule5]++;
+        resultEtoile[tirage.Etoile1]++;
+        resultEtoile[tirage.Etoile2]++;
       }
+      
+      dataGridViewNumberOfBallsDrawn.Rows.Add(resultBoule[1],
+        resultBoule[2],
+        resultBoule[3],
+        resultBoule[4],
+        resultBoule[5],
+        resultBoule[6],
+        resultBoule[7],
+        resultBoule[8],
+        resultBoule[9],
+        resultBoule[10],
+        resultBoule[11],
+        resultBoule[12],
+        resultBoule[13],
+        resultBoule[14],
+        resultBoule[15],
+        resultBoule[16],
+        resultBoule[17],
+        resultBoule[18],
+        resultBoule[19],
+        resultBoule[20],
+        resultBoule[21],
+        resultBoule[22],
+        resultBoule[23],
+        resultBoule[24],
+        resultBoule[25],
+        resultBoule[26],
+        resultBoule[27],
+        resultBoule[28],
+        resultBoule[29],
+        resultBoule[30],
+        resultBoule[31],
+        resultBoule[32],
+        resultBoule[33],
+        resultBoule[34],
+        resultBoule[35],
+        resultBoule[36],
+        resultBoule[37],
+        resultBoule[38],
+        resultBoule[39],
+        resultBoule[40],
+        resultBoule[41],
+        resultBoule[42],
+        resultBoule[43],
+        resultBoule[44],
+        resultBoule[45],
+        resultBoule[46],
+        resultBoule[47],
+        resultBoule[48],
+        resultBoule[49],
+        resultBoule[50]
+        );
 
       //dataGridViewNumberOfBallsDrawn.Rows.Add(tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule1, tirage.Boule1, tirage.Boule1, tirage.Boule1);
     }
@@ -93,6 +152,7 @@ namespace EuroMillionsHelper
       {
         dataGridViewNumberOfBallsDrawn.Columns.Add($"number{i}", $"{i}");
       }
+
     }
 
     private static void InitializeHistoryListView(ListView listview)
@@ -300,14 +360,14 @@ namespace EuroMillionsHelper
 
     private void LoadConfigurationOptions()
     {
-      // Change code accordingly if needed
+      // Add any other options here
       _configurationOptions.Option1Name = Settings.Default.Option1Name;
       _configurationOptions.Option2Name = Settings.Default.Option2Name;
     }
 
     private void SaveConfigurationOptions()
     {
-      // Change code accordingly if needed
+      // Add any other options here
       _configurationOptions.Option1Name = Settings.Default.Option1Name;
       _configurationOptions.Option2Name = Settings.Default.Option2Name;
     }
@@ -559,13 +619,14 @@ namespace EuroMillionsHelper
         return "Medium";
       }
 
+      // Add any other options here
       return LargeToolStripMenuItem.Checked ? "Large" : string.Empty;
     }
 
-    private void SetDisplayOption(string displaySize)
+    private void SetDisplayOption(string option)
     {
       UncheckAllOptions();
-      switch (displaySize.ToLower())
+      switch (option.ToLower())
       {
         case "small":
           SmallToolStripMenuItem.Checked = true;
@@ -576,6 +637,7 @@ namespace EuroMillionsHelper
         case "large":
           LargeToolStripMenuItem.Checked = true;
           break;
+        // Add any other options here
         default:
           SmallToolStripMenuItem.Checked = true;
           break;
@@ -584,6 +646,7 @@ namespace EuroMillionsHelper
 
     private void UncheckAllOptions()
     {
+      // Add any other options here
       SmallToolStripMenuItem.Checked = false;
       MediumToolStripMenuItem.Checked = false;
       LargeToolStripMenuItem.Checked = false;
@@ -591,6 +654,7 @@ namespace EuroMillionsHelper
 
     private void FormMainFormClosing(object sender, FormClosingEventArgs e)
     {
+      // save all windows settings
       SaveWindowValue();
     }
 
@@ -608,9 +672,10 @@ namespace EuroMillionsHelper
       AdjustAllControls();
     }
 
-    private void SetLanguage(string userLanguage)
+    private void SetLanguage(string myLanguage)
     {
-      switch (userLanguage)
+      // Add any new language
+      switch (myLanguage)
       {
         case "English":
           frenchToolStripMenuItem.Checked = false;
@@ -645,8 +710,7 @@ namespace EuroMillionsHelper
           SmallToolStripMenuItem.Text = _languageDicoEn["Small"];
           MediumToolStripMenuItem.Text = _languageDicoEn["Medium"];
           LargeToolStripMenuItem.Text = _languageDicoEn["Large"];
-
-
+          
           _currentLanguage = "English";
           break;
         case "French":
@@ -691,7 +755,7 @@ namespace EuroMillionsHelper
       }
     }
 
-    private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+    private void CutToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control>());
       var tb = focusedControl as TextBox;
@@ -730,7 +794,11 @@ namespace EuroMillionsHelper
 
     private void CutToClipboard(TextBoxBase tb, string errorMessage = "nothing")
     {
-      if (tb != ActiveControl) return;
+      if (tb != ActiveControl)
+      {
+        return;
+      }
+
       if (tb.Text == string.Empty)
       {
         DisplayMessage(Translate("ThereIs") + Punctuation.OneSpace +
@@ -751,9 +819,13 @@ namespace EuroMillionsHelper
       tb.SelectedText = string.Empty;
     }
 
-    public void CopyToClipboard(TextBoxBase tb, string message = "nothing")
+    private void CopyToClipboard(TextBoxBase tb, string message = "nothing")
     {
-      if (tb != ActiveControl) return;
+      if (tb != ActiveControl)
+      {
+        return;
+      }
+
       if (tb.Text == string.Empty)
       {
         DisplayMessage(Translate("ThereIsNothingToCopy") + Punctuation.OneSpace,
@@ -771,38 +843,42 @@ namespace EuroMillionsHelper
       Clipboard.SetText(tb.SelectedText);
     }
 
-    private void PasteFromClipboard(TextBoxBase textBox)
+    private void PasteFromClipboard(TextBoxBase tb)
     {
-      if (textBox != ActiveControl) return;
-      var selectionIndex = textBox.SelectionStart;
-      textBox.SelectedText = Clipboard.GetText();
-      textBox.SelectionStart = selectionIndex + Clipboard.GetText().Length;
+      if (tb != ActiveControl)
+      {
+        return;
+      }
+
+      var selectionIndex = tb.SelectionStart;
+      tb.SelectedText = Clipboard.GetText();
+      tb.SelectionStart = selectionIndex + Clipboard.GetText().Length;
     }
 
-    public void DisplayMessage(string message, string title, MessageBoxButtons buttons)
+    private void DisplayMessage(string message, string title, MessageBoxButtons buttons = MessageBoxButtons.OK)
     {
       MessageBox.Show(this, message, title, buttons);
     }
 
-    private string Translate(string words)
+    private string Translate(string word)
     {
       string result = string.Empty;
       switch (_currentLanguage.ToLower())
       {
         case "english":
-          result = _languageDicoEn.ContainsKey(words) ? _languageDicoEn[words] :
-           "the term: \"" + words + "\" has not been translated yet.\nPlease tell the developer to translate this term";
+          result = _languageDicoEn.ContainsKey(word) ? _languageDicoEn[word] :
+           "the term: \"" + word + "\" has not been translated yet.\nPlease tell the developer to translate this term";
           break;
         case "french":
-          result = _languageDicoFr.ContainsKey(words) ? _languageDicoFr[words] :
-            "the term: \"" + words + "\" has not been translated yet.\nPlease tell the developer to translate this term";
+          result = _languageDicoFr.ContainsKey(word) ? _languageDicoFr[word] :
+            "the term: \"" + word + "\" has not been translated yet.\nPlease tell the developer to translate this term";
           break;
       }
 
       return result;
     }
 
-    public static Control FindFocusedControl(Control container)
+    private static Control FindFocusedControl(Control container)
     {
       foreach (Control childControl in container.Controls.Cast<Control>().Where(childControl => childControl.Focused))
       {
@@ -813,17 +889,17 @@ namespace EuroMillionsHelper
               select FindFocusedControl(childControl)).FirstOrDefault(maybeFocusedControl => maybeFocusedControl != null);
     }
 
-    public static Control FindFocusedControl(List<Control> container)
+    private static Control FindFocusedControl(List<Control> container)
     {
       return container.FirstOrDefault(control => control.Focused);
     }
 
-    public static Control FindFocusedControl(params Control[] container)
+    private static Control FindFocusedControl(params Control[] container)
     {
       return container.FirstOrDefault(control => control.Focused);
     }
 
-    public static Control FindFocusedControl(IEnumerable<Control> container)
+    private static Control FindFocusedControl(IEnumerable<Control> container)
     {
       return container.FirstOrDefault(control => control.Focused);
     }
@@ -873,14 +949,14 @@ namespace EuroMillionsHelper
       AdjustAllControls();
     }
 
-    private static void AdjustControls(params Control[] listOfControls)
+    private static void AdjustControls(int initialPadding = 33, params Control[] listOfControls)
     {
       if (listOfControls.Length == 0)
       {
         return;
       }
 
-      int position = listOfControls[0].Width + 33; // 33 is the initial padding
+      int position = listOfControls[0].Width + initialPadding; // 33 is the initial padding
       bool isFirstControl = true;
       foreach (Control control in listOfControls)
       {
@@ -898,7 +974,8 @@ namespace EuroMillionsHelper
 
     private void AdjustAllControls()
     {
-      AdjustControls(); // insert here all labels, textboxes and buttons, one method per line of controls
+      // insert here all labels, textboxes and buttons, one method per line of controls
+      AdjustControls();
     }
 
     private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -914,29 +991,29 @@ namespace EuroMillionsHelper
     private static void SetButtonEnabled(Button button, params Control[] controls)
     {
       bool result = true;
-      foreach (Control control in controls)
+      foreach (Control ctrl in controls)
       {
-        if (control.GetType() == typeof(TextBox))
+        if (ctrl.GetType() == typeof(TextBox))
         {
-          if (((TextBox)control).Text == string.Empty)
+          if (((TextBox)ctrl).Text == string.Empty)
           {
             result = false;
             break;
           }
         }
 
-        if (control.GetType() == typeof(ListView))
+        if (ctrl.GetType() == typeof(ListView))
         {
-          if (((ListView)control).Items.Count == 0)
+          if (((ListView)ctrl).Items.Count == 0)
           {
             result = false;
             break;
           }
         }
 
-        if (control.GetType() == typeof(ComboBox))
+        if (ctrl.GetType() == typeof(ComboBox))
         {
-          if (((ComboBox)control).SelectedIndex == -1)
+          if (((ComboBox)ctrl).SelectedIndex == -1)
           {
             result = false;
             break;
