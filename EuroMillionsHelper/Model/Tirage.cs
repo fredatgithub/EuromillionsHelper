@@ -11,6 +11,19 @@ namespace EuroMillionsHelper.Model
     public int Boule5 { get; set; }
     public int Etoile1 { get; set; }
     public int Etoile2 { get; set; }
+    public DateTime DateTirage { get; set; }
+
+    public Tirage(int boule1, int boule2, int boule3, int boule4, int boule5, int etoile1, int etoile2, DateTime dateTirage)
+    {
+      Boule1 = boule1;
+      Boule2 = boule2;
+      Boule3 = boule3;
+      Boule4 = boule4;
+      Boule5 = boule5;
+      Etoile1 = etoile1;
+      Etoile2 = etoile2;
+      DateTirage = dateTirage;
+    }
 
     public Tirage(int boule1, int boule2, int boule3, int boule4, int boule5, int etoile1, int etoile2)
     {
@@ -21,6 +34,7 @@ namespace EuroMillionsHelper.Model
       Boule5 = boule5;
       Etoile1 = etoile1;
       Etoile2 = etoile2;
+      DateTirage = new DateTime(1, 1, 1);
     }
 
     public Tirage()
@@ -32,6 +46,7 @@ namespace EuroMillionsHelper.Model
       Boule5 = 0;
       Etoile1 = 0;
       Etoile2 = 0;
+      DateTirage = new DateTime(1, 1, 1);
     }
 
     public int PoidsBoulesTirage(Tirage tirage)

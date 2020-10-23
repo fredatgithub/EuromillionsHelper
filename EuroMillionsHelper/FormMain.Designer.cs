@@ -77,6 +77,8 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
+      this.labelPasSortieDepuis = new System.Windows.Forms.Label();
+      this.listBoxPasSortieDepuis = new System.Windows.Forms.ListBox();
       this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
@@ -420,6 +422,8 @@
       // 
       // tabPageNumberDrawn
       // 
+      this.tabPageNumberDrawn.Controls.Add(this.labelPasSortieDepuis);
+      this.tabPageNumberDrawn.Controls.Add(this.listBoxPasSortieDepuis);
       this.tabPageNumberDrawn.Controls.Add(this.labelLesPlusSortiesNumeroSortie);
       this.tabPageNumberDrawn.Controls.Add(this.labelLesPlusSortie);
       this.tabPageNumberDrawn.Controls.Add(this.listBoxLesPlusSortie);
@@ -513,6 +517,24 @@
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
       // 
+      // labelPasSortieDepuis
+      // 
+      this.labelPasSortieDepuis.AutoSize = true;
+      this.labelPasSortieDepuis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelPasSortieDepuis.Location = new System.Drawing.Point(194, 160);
+      this.labelPasSortieDepuis.Name = "labelPasSortieDepuis";
+      this.labelPasSortieDepuis.Size = new System.Drawing.Size(133, 13);
+      this.labelPasSortieDepuis.TabIndex = 5;
+      this.labelPasSortieDepuis.Text = "Pas sortie depuis (en jours)";
+      // 
+      // listBoxPasSortieDepuis
+      // 
+      this.listBoxPasSortieDepuis.FormattingEnabled = true;
+      this.listBoxPasSortieDepuis.Location = new System.Drawing.Point(194, 190);
+      this.listBoxPasSortieDepuis.Name = "listBoxPasSortieDepuis";
+      this.listBoxPasSortieDepuis.Size = new System.Drawing.Size(207, 446);
+      this.listBoxPasSortieDepuis.TabIndex = 4;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,5 +612,7 @@
     private System.Windows.Forms.Label labelLesPlusSortie;
     private System.Windows.Forms.ListBox listBoxLesPlusSortie;
     private System.Windows.Forms.Label labelLesPlusSortiesNumeroSortie;
+    private System.Windows.Forms.Label labelPasSortieDepuis;
+    private System.Windows.Forms.ListBox listBoxPasSortieDepuis;
   }
 }

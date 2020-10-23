@@ -28,6 +28,8 @@ namespace EuroMillionsHelper
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
     public Dictionary<int, int> nombreDeSortieBoules = new Dictionary<int, int>();
     public Dictionary<int, int> nombreDeSortieEtoiles = new Dictionary<int, int>();
+    public Dictionary<int, DateTime> bouleSortieDepuisXJour = new Dictionary<int, DateTime>();
+    public Dictionary<int, DateTime> etoileSortieDepuisXJour = new Dictionary<int, DateTime>();
 
     private void QuitToolStripMenuItemClick(object sender, EventArgs e)
     {
@@ -68,7 +70,18 @@ namespace EuroMillionsHelper
 
         nombreDeSortieEtoiles[tirage.Etoile1]++;
         nombreDeSortieEtoiles[tirage.Etoile2]++;
+
+        bouleSortieDepuisXJour[tirage.Boule1] = tirage.DateTirage;
+        bouleSortieDepuisXJour[tirage.Boule2] = tirage.DateTirage;
+        bouleSortieDepuisXJour[tirage.Boule3] = tirage.DateTirage;
+        bouleSortieDepuisXJour[tirage.Boule4] = tirage.DateTirage;
+        bouleSortieDepuisXJour[tirage.Boule5] = tirage.DateTirage;
       }
+    }
+
+    private void AssignDate(int number, DateTime theDate)
+    {
+      bouleSortieDepuisXJour[number] = theDate;
     }
 
     public static Dictionary<int, int> SortDicoAscending(Dictionary<int, int> dico)
@@ -93,6 +106,12 @@ namespace EuroMillionsHelper
       for (int i = 1; i < 13; i++)
       {
         nombreDeSortieEtoiles.Add(i, 0);
+      }
+
+      bouleSortieDepuisXJour = new Dictionary<int, DateTime>();
+      for (int i = 1; i < 51; i++)
+      {
+        bouleSortieDepuisXJour.Add(i, new DateTime(1, 1, 1));
       }
     }
 
@@ -185,11 +204,18 @@ namespace EuroMillionsHelper
         resultBoule[50]
         );
 
-      //int[] nombreDeSortieBoules = resultBoule;
       foreach (var pair in SortDicoDescending(nombreDeSortieBoules))
       {
         string zeroPadded = pair.Key < 10 ? "0" : "";
         listBoxLesPlusSortie.Items.Add($"{zeroPadded}{pair.Key} - {pair.Value}");
+      }
+
+      foreach (var pair in bouleSortieDepuisXJour)
+      {
+        string zeroPadded = pair.Key < 10 ? "0" : "";
+        var days = (DateTime.Now - pair.Value).TotalDays;
+        int numberOfDays = (int)Math.Floor(days);
+        listBoxPasSortieDepuis.Items.Add($"{zeroPadded}{pair.Key} - {numberOfDays}");
       }
     }
 
@@ -244,23 +270,17 @@ namespace EuroMillionsHelper
       foreach (var fileName in Directory.GetFiles(@".\Archives\", "euromillions*.csv"))
       {
         var file = ReadCsvFile(fileName);
-        foreach (var line in file)
+        foreach (Tirage unTirage in file)
         {
-          ListViewItem listViewItem = new ListViewItem(line.Boule1.ToString());
-          listViewItem.SubItems.Add(line.Boule2.ToString());
-          listViewItem.SubItems.Add(line.Boule3.ToString());
-          listViewItem.SubItems.Add(line.Boule4.ToString());
-          listViewItem.SubItems.Add(line.Boule5.ToString());
-          listViewItem.SubItems.Add(line.Etoile1.ToString());
-          listViewItem.SubItems.Add(line.Etoile2.ToString());
-          Tirage tmpTirage = new Tirage(line.Boule1,
-            line.Boule2,
-            line.Boule3,
-            line.Boule4,
-            line.Boule5,
-            line.Etoile1,
-            line.Etoile2);
-          listTirages.Add(tmpTirage);
+          ListViewItem listViewItem = new ListViewItem(unTirage.Boule1.ToString());
+          listViewItem.SubItems.Add(unTirage.Boule2.ToString());
+          listViewItem.SubItems.Add(unTirage.Boule3.ToString());
+          listViewItem.SubItems.Add(unTirage.Boule4.ToString());
+          listViewItem.SubItems.Add(unTirage.Boule5.ToString());
+          listViewItem.SubItems.Add(unTirage.Etoile1.ToString());
+          listViewItem.SubItems.Add(unTirage.Etoile2.ToString());
+
+          listTirages.Add(unTirage);
           listViewHistory.Items.Add(listViewItem);
         }
       }
@@ -298,6 +318,26 @@ namespace EuroMillionsHelper
         var tmp = tmpLines[i];
         // if (i == 0) continue;
         var tmpNumbers = tmp.Split(';');
+        //20201024   euromillions.csv
+        //01234567
+        //31/01/2014 euromillions2.csv
+        //0123456789
+        int annee = 1;
+        int mois = 1;
+        int jour = 1;
+        if (tmpNumbers[2].Length == 6)
+        {
+          annee = int.Parse(tmpNumbers[2].Substring(0, 4));
+          mois = int.Parse(tmpNumbers[2].Substring(4, 2));
+          jour = int.Parse(tmpNumbers[2].Substring(6, 2));
+        }
+        else if (tmpNumbers[2].Length == 10)
+        {
+          annee = int.Parse(tmpNumbers[2].Substring(6, 4));
+          mois = int.Parse(tmpNumbers[2].Substring(3, 2));
+          jour = int.Parse(tmpNumbers[2].Substring(0, 2));
+        }
+
         Tirage unTirage = new Tirage
         {
           Boule1 = int.Parse(tmpNumbers[index]),
@@ -306,7 +346,8 @@ namespace EuroMillionsHelper
           Boule4 = int.Parse(tmpNumbers[index + 3]),
           Boule5 = int.Parse(tmpNumbers[index + 4]),
           Etoile1 = int.Parse(tmpNumbers[index + 5]),
-          Etoile2 = int.Parse(tmpNumbers[index + 6])
+          Etoile2 = int.Parse(tmpNumbers[index + 6]),
+          DateTirage = new DateTime(annee, mois, jour)
         };
 
         result.Add(OrderTirage(unTirage));
@@ -335,7 +376,8 @@ namespace EuroMillionsHelper
       Tirage result = new Tirage
       {
         Etoile1 = unTirage.Etoile1,
-        Etoile2 = unTirage.Etoile2
+        Etoile2 = unTirage.Etoile2,
+        DateTirage = unTirage.DateTirage
       };
 
       int[] tmpNumbers = { unTirage.Boule1, unTirage.Boule2, unTirage.Boule3, unTirage.Boule4, unTirage.Boule5 };
