@@ -68,8 +68,17 @@ namespace EuroMillionsHelper
 
         nombreDeSortieEtoiles[tirage.Etoile1]++;
         nombreDeSortieEtoiles[tirage.Etoile2]++;
-
       }
+    }
+
+    public static Dictionary<int, int> SortDicoAscending(Dictionary<int, int> dico)
+    {
+      return dico.OrderBy(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+    }
+
+    public static Dictionary<int, int> SortDicoDescending(Dictionary<int, int> dico)
+    {
+      return dico.OrderByDescending(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
     }
 
     private void InitializeDictionaries()
@@ -176,29 +185,21 @@ namespace EuroMillionsHelper
         resultBoule[50]
         );
 
-      //dataGridViewNumberOfBallsDrawn.Rows.Add(tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule1, tirage.Boule1, tirage.Boule1, tirage.Boule1);
-      int[] nombreDeSortieBoules = resultBoule;
-      Array.Sort(nombreDeSortieBoules);
-      //for (int i = 1; i < resultBoule.Length; i++)
-      //{
-      //  listBoxLesPlusSortie.Items.Add($"{i} - {resultBoule[i]}");
-      //}
-
-      for (int i = 1; i < nombreDeSortieBoules.Length; i++)
+      //int[] nombreDeSortieBoules = resultBoule;
+      foreach (var pair in SortDicoDescending(nombreDeSortieBoules))
       {
-        listBoxLesPlusSortie.Items.Add($"{i} - {resultBoule[i]}");
+        string zeroPadded = pair.Key < 10 ? "0" : "";
+        listBoxLesPlusSortie.Items.Add($"{zeroPadded}{pair.Key} - {pair.Value}");
       }
     }
 
     private void InitializeDataGridView()
     {
       dataGridViewNumberOfBallsDrawn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-      //dataGridViewNumberOfBallsDrawn.Dock = Datagridview
       for (int i = 1; i <= 50; i++)
       {
         dataGridViewNumberOfBallsDrawn.Columns.Add($"number{i}", $"{i}");
       }
-
     }
 
     private static void InitializeHistoryListView(ListView listview)
