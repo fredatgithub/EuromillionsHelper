@@ -74,13 +74,14 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
-      this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.listBoxLesPlusSortie = new System.Windows.Forms.ListBox();
+      this.labelLesPlusSortie = new System.Windows.Forms.Label();
+      this.labelLesPlusSortiesNumeroSortie = new System.Windows.Forms.Label();
       this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
       this.tabPageNumberDrawn.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
       // menuStripMain
@@ -391,7 +392,7 @@
       this.tabControlMain.Location = new System.Drawing.Point(0, 24);
       this.tabControlMain.Name = "tabControlMain";
       this.tabControlMain.SelectedIndex = 0;
-      this.tabControlMain.Size = new System.Drawing.Size(1104, 410);
+      this.tabControlMain.Size = new System.Drawing.Size(1104, 696);
       this.tabControlMain.TabIndex = 2;
       // 
       // tabPageArchive
@@ -409,6 +410,7 @@
       // 
       this.listViewHistory.FullRowSelect = true;
       this.listViewHistory.GridLines = true;
+      this.listViewHistory.HideSelection = false;
       this.listViewHistory.Location = new System.Drawing.Point(54, 54);
       this.listViewHistory.Name = "listViewHistory";
       this.listViewHistory.Size = new System.Drawing.Size(492, 311);
@@ -418,12 +420,14 @@
       // 
       // tabPageNumberDrawn
       // 
-      this.tabPageNumberDrawn.Controls.Add(this.dataGridView1);
+      this.tabPageNumberDrawn.Controls.Add(this.labelLesPlusSortiesNumeroSortie);
+      this.tabPageNumberDrawn.Controls.Add(this.labelLesPlusSortie);
+      this.tabPageNumberDrawn.Controls.Add(this.listBoxLesPlusSortie);
       this.tabPageNumberDrawn.Controls.Add(this.dataGridViewNumberOfBallsDrawn);
       this.tabPageNumberDrawn.Location = new System.Drawing.Point(4, 22);
       this.tabPageNumberDrawn.Name = "tabPageNumberDrawn";
       this.tabPageNumberDrawn.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageNumberDrawn.Size = new System.Drawing.Size(1096, 384);
+      this.tabPageNumberDrawn.Size = new System.Drawing.Size(1096, 670);
       this.tabPageNumberDrawn.TabIndex = 1;
       this.tabPageNumberDrawn.Text = "Nombre de sortie boules";
       this.tabPageNumberDrawn.UseVisualStyleBackColor = true;
@@ -434,6 +438,7 @@
       this.dataGridViewNumberOfBallsDrawn.AllowUserToDeleteRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToOrderColumns = true;
       this.dataGridViewNumberOfBallsDrawn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridViewNumberOfBallsDrawn.Dock = System.Windows.Forms.DockStyle.Top;
       this.dataGridViewNumberOfBallsDrawn.Location = new System.Drawing.Point(3, 3);
       this.dataGridViewNumberOfBallsDrawn.Name = "dataGridViewNumberOfBallsDrawn";
       this.dataGridViewNumberOfBallsDrawn.ReadOnly = true;
@@ -480,23 +485,39 @@
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
       // 
-      // dataGridView1
+      // listBoxLesPlusSortie
       // 
-      this.dataGridView1.AllowUserToAddRows = false;
-      this.dataGridView1.AllowUserToDeleteRows = false;
-      this.dataGridView1.AllowUserToOrderColumns = true;
-      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dataGridView1.Location = new System.Drawing.Point(3, 142);
-      this.dataGridView1.Name = "dataGridView1";
-      this.dataGridView1.ReadOnly = true;
-      this.dataGridView1.Size = new System.Drawing.Size(1090, 100);
-      this.dataGridView1.TabIndex = 1;
+      this.listBoxLesPlusSortie.FormattingEnabled = true;
+      this.listBoxLesPlusSortie.Location = new System.Drawing.Point(26, 190);
+      this.listBoxLesPlusSortie.Name = "listBoxLesPlusSortie";
+      this.listBoxLesPlusSortie.Size = new System.Drawing.Size(120, 446);
+      this.listBoxLesPlusSortie.TabIndex = 1;
+      // 
+      // labelLesPlusSortie
+      // 
+      this.labelLesPlusSortie.AutoSize = true;
+      this.labelLesPlusSortie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLesPlusSortie.Location = new System.Drawing.Point(26, 130);
+      this.labelLesPlusSortie.Name = "labelLesPlusSortie";
+      this.labelLesPlusSortie.Size = new System.Drawing.Size(107, 17);
+      this.labelLesPlusSortie.TabIndex = 2;
+      this.labelLesPlusSortie.Text = "Les plus sorties";
+      // 
+      // labelLesPlusSortiesNumeroSortie
+      // 
+      this.labelLesPlusSortiesNumeroSortie.AutoSize = true;
+      this.labelLesPlusSortiesNumeroSortie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLesPlusSortiesNumeroSortie.Location = new System.Drawing.Point(26, 160);
+      this.labelLesPlusSortiesNumeroSortie.Name = "labelLesPlusSortiesNumeroSortie";
+      this.labelLesPlusSortiesNumeroSortie.Size = new System.Drawing.Size(133, 13);
+      this.labelLesPlusSortiesNumeroSortie.TabIndex = 3;
+      this.labelLesPlusSortiesNumeroSortie.Text = "Numéro - Nombre de sortie";
       // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1104, 434);
+      this.ClientSize = new System.Drawing.Size(1104, 720);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStripMain);
       this.MainMenuStrip = this.menuStripMain;
@@ -511,8 +532,8 @@
       this.tabControlMain.ResumeLayout(false);
       this.tabPageArchive.ResumeLayout(false);
       this.tabPageNumberDrawn.ResumeLayout(false);
+      this.tabPageNumberDrawn.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -566,6 +587,8 @@
     private System.Windows.Forms.TabPage tabPageThreeInARow;
     private System.Windows.Forms.TabPage tabPageNumberOfStarDrawn;
     private System.Windows.Forms.DataGridView dataGridViewNumberOfBallsDrawn;
-    private System.Windows.Forms.DataGridView dataGridView1;
+    private System.Windows.Forms.Label labelLesPlusSortie;
+    private System.Windows.Forms.ListBox listBoxLesPlusSortie;
+    private System.Windows.Forms.Label labelLesPlusSortiesNumeroSortie;
   }
 }

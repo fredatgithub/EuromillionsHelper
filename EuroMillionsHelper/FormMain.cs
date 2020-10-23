@@ -26,6 +26,8 @@ namespace EuroMillionsHelper
     private readonly List<Tirage> listTirages = new List<Tirage>();
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
+    public Dictionary<int, int> nombreDeSortieBoules = new Dictionary<int, int>();
+    public Dictionary<int, int> nombreDeSortieEtoiles = new Dictionary<int, int>();
 
     private void QuitToolStripMenuItemClick(object sender, EventArgs e)
     {
@@ -49,6 +51,40 @@ namespace EuroMillionsHelper
     private void FormMainLoad(object sender, EventArgs e)
     {
       LoadSettingsAtStartup();
+      InitializeDictionaries();
+      LoadDictionaries();
+      LoadNumberOfBallsDrawn();
+    }
+
+    private void LoadDictionaries()
+    {
+      foreach (Tirage tirage in listTirages)
+      {
+        nombreDeSortieBoules[tirage.Boule1]++;
+        nombreDeSortieBoules[tirage.Boule2]++;
+        nombreDeSortieBoules[tirage.Boule3]++;
+        nombreDeSortieBoules[tirage.Boule4]++;
+        nombreDeSortieBoules[tirage.Boule5]++;
+
+        nombreDeSortieEtoiles[tirage.Etoile1]++;
+        nombreDeSortieEtoiles[tirage.Etoile2]++;
+
+      }
+    }
+
+    private void InitializeDictionaries()
+    {
+      nombreDeSortieBoules = new Dictionary<int, int>();
+      for (int i = 1; i < 51; i++)
+      {
+        nombreDeSortieBoules.Add(i, 0);
+      }
+
+      nombreDeSortieEtoiles = new Dictionary<int, int>();
+      for (int i = 1; i < 13; i++)
+      {
+        nombreDeSortieEtoiles.Add(i, 0);
+      }
     }
 
     private void LoadSettingsAtStartup()
@@ -60,7 +96,6 @@ namespace EuroMillionsHelper
       InitializeHistoryListView(listViewHistory);
       LoadHistoryDraws();
       InitializeDataGridView();
-      LoadNumberOfBallsDrawn();
     }
 
     private void LoadNumberOfBallsDrawn()
@@ -88,7 +123,7 @@ namespace EuroMillionsHelper
         resultEtoile[tirage.Etoile1]++;
         resultEtoile[tirage.Etoile2]++;
       }
-      
+
       dataGridViewNumberOfBallsDrawn.Rows.Add(resultBoule[1],
         resultBoule[2],
         resultBoule[3],
@@ -142,6 +177,17 @@ namespace EuroMillionsHelper
         );
 
       //dataGridViewNumberOfBallsDrawn.Rows.Add(tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule1, tirage.Boule1, tirage.Boule1, tirage.Boule1);
+      int[] nombreDeSortieBoules = resultBoule;
+      Array.Sort(nombreDeSortieBoules);
+      //for (int i = 1; i < resultBoule.Length; i++)
+      //{
+      //  listBoxLesPlusSortie.Items.Add($"{i} - {resultBoule[i]}");
+      //}
+
+      for (int i = 1; i < nombreDeSortieBoules.Length; i++)
+      {
+        listBoxLesPlusSortie.Items.Add($"{i} - {resultBoule[i]}");
+      }
     }
 
     private void InitializeDataGridView()
@@ -710,7 +756,7 @@ namespace EuroMillionsHelper
           SmallToolStripMenuItem.Text = _languageDicoEn["Small"];
           MediumToolStripMenuItem.Text = _languageDicoEn["Medium"];
           LargeToolStripMenuItem.Text = _languageDicoEn["Large"];
-          
+
           _currentLanguage = "English";
           break;
         case "French":
