@@ -94,6 +94,17 @@ namespace EuroMillionsHelper
       return dico.OrderByDescending(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
     }
 
+    public static Dictionary<int, DateTime> SortDicoDescending(Dictionary<int, DateTime> dico)
+    {
+      return dico.OrderByDescending(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+    }
+
+    public static Dictionary<int, DateTime> SortDicoAscending(Dictionary<int, DateTime> dico)
+    {
+      return dico.OrderBy(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+    }
+
+
     private void InitializeDictionaries()
     {
       nombreDeSortieBoules = new Dictionary<int, int>();
@@ -217,6 +228,24 @@ namespace EuroMillionsHelper
         int numberOfDays = (int)Math.Floor(days);
         listBoxPasSortieDepuis.Items.Add($"{zeroPadded}{pair.Key} - {numberOfDays}");
       }
+
+      foreach (var pair in SortDicoDescending(bouleSortieDepuisXJour))
+      {
+        string zeroPadded = pair.Key < 10 ? "0" : "";
+        var days = (DateTime.Now - pair.Value).TotalDays;
+        int numberOfDays = (int)Math.Floor(days);
+        listBoxLesPlusRecents.Items.Add($"{zeroPadded}{pair.Key} - {numberOfDays}");
+      }
+
+      foreach (var pair in SortDicoAscending(bouleSortieDepuisXJour))
+      {
+        string zeroPadded = pair.Key < 10 ? "0" : "";
+        var days = (DateTime.Now - pair.Value).TotalDays;
+        int numberOfDays = (int)Math.Floor(days);
+        listBoxLesPlusAnciens.Items.Add($"{zeroPadded}{pair.Key} - {numberOfDays}");
+      }
+
+
     }
 
     private void InitializeDataGridView()

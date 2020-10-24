@@ -456,7 +456,7 @@
       // 
       this.labelPasSortieDepuis.AutoSize = true;
       this.labelPasSortieDepuis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelPasSortieDepuis.Location = new System.Drawing.Point(194, 160);
+      this.labelPasSortieDepuis.Location = new System.Drawing.Point(116, 160);
       this.labelPasSortieDepuis.Name = "labelPasSortieDepuis";
       this.labelPasSortieDepuis.Size = new System.Drawing.Size(87, 13);
       this.labelPasSortieDepuis.TabIndex = 5;
@@ -465,7 +465,7 @@
       // listBoxPasSortieDepuis
       // 
       this.listBoxPasSortieDepuis.FormattingEnabled = true;
-      this.listBoxPasSortieDepuis.Location = new System.Drawing.Point(194, 190);
+      this.listBoxPasSortieDepuis.Location = new System.Drawing.Point(116, 190);
       this.listBoxPasSortieDepuis.Name = "listBoxPasSortieDepuis";
       this.listBoxPasSortieDepuis.Size = new System.Drawing.Size(58, 654);
       this.listBoxPasSortieDepuis.TabIndex = 4;
@@ -565,7 +565,7 @@
       // 
       this.label2PasSortieDepuis.AutoSize = true;
       this.label2PasSortieDepuis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2PasSortieDepuis.Location = new System.Drawing.Point(194, 174);
+      this.label2PasSortieDepuis.Location = new System.Drawing.Point(116, 174);
       this.label2PasSortieDepuis.Name = "label2PasSortieDepuis";
       this.label2PasSortieDepuis.Size = new System.Drawing.Size(44, 13);
       this.label2PasSortieDepuis.TabIndex = 7;
@@ -575,7 +575,7 @@
       // 
       this.label2LesPlusRecents.AutoSize = true;
       this.label2LesPlusRecents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2LesPlusRecents.Location = new System.Drawing.Point(291, 174);
+      this.label2LesPlusRecents.Location = new System.Drawing.Point(213, 174);
       this.label2LesPlusRecents.Name = "label2LesPlusRecents";
       this.label2LesPlusRecents.Size = new System.Drawing.Size(44, 13);
       this.label2LesPlusRecents.TabIndex = 10;
@@ -585,7 +585,7 @@
       // 
       this.labelLesPlusRecents.AutoSize = true;
       this.labelLesPlusRecents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelLesPlusRecents.Location = new System.Drawing.Point(291, 160);
+      this.labelLesPlusRecents.Location = new System.Drawing.Point(213, 160);
       this.labelLesPlusRecents.Name = "labelLesPlusRecents";
       this.labelLesPlusRecents.Size = new System.Drawing.Size(84, 13);
       this.labelLesPlusRecents.TabIndex = 9;
@@ -594,7 +594,7 @@
       // listBoxLesPlusRecents
       // 
       this.listBoxLesPlusRecents.FormattingEnabled = true;
-      this.listBoxLesPlusRecents.Location = new System.Drawing.Point(291, 190);
+      this.listBoxLesPlusRecents.Location = new System.Drawing.Point(213, 190);
       this.listBoxLesPlusRecents.Name = "listBoxLesPlusRecents";
       this.listBoxLesPlusRecents.Size = new System.Drawing.Size(58, 654);
       this.listBoxLesPlusRecents.TabIndex = 8;
@@ -603,7 +603,7 @@
       // 
       this.label2LesPlusAnciens.AutoSize = true;
       this.label2LesPlusAnciens.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2LesPlusAnciens.Location = new System.Drawing.Point(382, 174);
+      this.label2LesPlusAnciens.Location = new System.Drawing.Point(304, 174);
       this.label2LesPlusAnciens.Name = "label2LesPlusAnciens";
       this.label2LesPlusAnciens.Size = new System.Drawing.Size(44, 13);
       this.label2LesPlusAnciens.TabIndex = 13;
@@ -613,7 +613,7 @@
       // 
       this.labelLesPlusAnciens.AutoSize = true;
       this.labelLesPlusAnciens.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelLesPlusAnciens.Location = new System.Drawing.Point(382, 160);
+      this.labelLesPlusAnciens.Location = new System.Drawing.Point(304, 160);
       this.labelLesPlusAnciens.Name = "labelLesPlusAnciens";
       this.labelLesPlusAnciens.Size = new System.Drawing.Size(86, 13);
       this.labelLesPlusAnciens.TabIndex = 12;
@@ -622,7 +622,7 @@
       // listBoxLesPlusAnciens
       // 
       this.listBoxLesPlusAnciens.FormattingEnabled = true;
-      this.listBoxLesPlusAnciens.Location = new System.Drawing.Point(382, 190);
+      this.listBoxLesPlusAnciens.Location = new System.Drawing.Point(304, 190);
       this.listBoxLesPlusAnciens.Name = "listBoxLesPlusAnciens";
       this.listBoxLesPlusAnciens.Size = new System.Drawing.Size(58, 654);
       this.listBoxLesPlusAnciens.TabIndex = 11;
