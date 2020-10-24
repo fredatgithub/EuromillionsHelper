@@ -296,6 +296,7 @@ namespace EuroMillionsHelper
       // reading archive files
       // foreach file in archives folder
       // read file and add lines to listviewHistory
+      var test = Directory.GetFiles(@".\Archives\", "euromillions*.csv");
       foreach (var fileName in Directory.GetFiles(@".\Archives\", "euromillions*.csv"))
       {
         var file = ReadCsvFile(fileName);
@@ -364,16 +365,16 @@ namespace EuroMillionsHelper
         int jour = 1;
         if (fileName.Contains("dateUS") && fileName.Contains("NoSlash"))
         {
-          annee = int.Parse(tmpNumbers[2].Substring(0, 4));
-          mois = int.Parse(tmpNumbers[2].Substring(4, 2));
-          jour = int.Parse(tmpNumbers[2].Substring(6, 2));
+          annee = int.Parse(tmpNumbers[indexDate].Substring(0, 4));
+          mois = int.Parse(tmpNumbers[indexDate].Substring(4, 2));
+          jour = int.Parse(tmpNumbers[indexDate].Substring(6, 2));
         }
 
         if (fileName.Contains("dateFR") && fileName.Contains("slashed"))
         {
-          annee = int.Parse(tmpNumbers[2].Substring(6, 4));
-          mois = int.Parse(tmpNumbers[2].Substring(3, 2));
-          jour = int.Parse(tmpNumbers[2].Substring(0, 2));
+          annee = int.Parse(tmpNumbers[indexDate].Substring(6, 4));
+          mois = int.Parse(tmpNumbers[indexDate].Substring(3, 2));
+          jour = int.Parse(tmpNumbers[indexDate].Substring(0, 2));
         }
 
         Tirage unTirage = new Tirage
