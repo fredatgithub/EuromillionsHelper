@@ -364,30 +364,30 @@
       // summaryToolStripMenuItem
       // 
       this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
-      this.summaryToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.summaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.summaryToolStripMenuItem.Text = "&Sommaire";
       // 
       // indexToolStripMenuItem
       // 
       this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-      this.indexToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.indexToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.indexToolStripMenuItem.Text = "&Index";
       // 
       // searchToolStripMenuItem
       // 
       this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-      this.searchToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.searchToolStripMenuItem.Text = "&Rechercher";
       // 
       // toolStripSeparator5
       // 
       this.toolStripSeparator5.Name = "toolStripSeparator5";
-      this.toolStripSeparator5.Size = new System.Drawing.Size(144, 6);
+      this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
       // 
       // aboutToolStripMenuItem
       // 
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.aboutToolStripMenuItem.Text = "À &propos de...";
       this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
       // 
@@ -425,7 +425,7 @@
       this.listViewHistory.HideSelection = false;
       this.listViewHistory.Location = new System.Drawing.Point(54, 54);
       this.listViewHistory.Name = "listViewHistory";
-      this.listViewHistory.Size = new System.Drawing.Size(492, 311);
+      this.listViewHistory.Size = new System.Drawing.Size(994, 614);
       this.listViewHistory.TabIndex = 0;
       this.listViewHistory.UseCompatibleStateImageBehavior = false;
       this.listViewHistory.View = System.Windows.Forms.View.Details;
