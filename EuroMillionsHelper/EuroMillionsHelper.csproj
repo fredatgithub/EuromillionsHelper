@@ -108,6 +108,7 @@
     <None Include="Archives\euromillions_4.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Archives\euromillions_5_dateFR_slashed_2020.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
