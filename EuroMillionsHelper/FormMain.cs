@@ -338,7 +338,14 @@ namespace EuroMillionsHelper
       firstLine = tmpLines[0];
       numberOfLines = tmpLines.Count - 1;
       int index = 4;
-      const string stringToSearch = "boule_1";
+      string stringToSearch = "boule_1";
+      int indexDate = 2;
+      if (fileName.Contains("2020"))
+      {
+        stringToSearch = "N1";
+        indexDate = 1;
+      }
+
       string[] indexArray = firstLine.Split(';');
       index = GetPositionOfString(indexArray, stringToSearch);
 
@@ -354,13 +361,13 @@ namespace EuroMillionsHelper
         int annee = 1;
         int mois = 1;
         int jour = 1;
-        if (tmpNumbers[2].Length == 6)
+        if (tmpNumbers[indexDate].Length == 6)
         {
           annee = int.Parse(tmpNumbers[2].Substring(0, 4));
           mois = int.Parse(tmpNumbers[2].Substring(4, 2));
           jour = int.Parse(tmpNumbers[2].Substring(6, 2));
         }
-        else if (tmpNumbers[2].Length == 10)
+        else if (tmpNumbers[indexDate].Length == 10)
         {
           annee = int.Parse(tmpNumbers[2].Substring(6, 4));
           mois = int.Parse(tmpNumbers[2].Substring(3, 2));
