@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.menuStripMain = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -580,6 +581,8 @@
       this.dataGridViewNumberOfBallsDrawn.AllowUserToAddRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToDeleteRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToOrderColumns = true;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.dataGridViewNumberOfBallsDrawn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
       this.dataGridViewNumberOfBallsDrawn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.dataGridViewNumberOfBallsDrawn.Dock = System.Windows.Forms.DockStyle.Top;
       this.dataGridViewNumberOfBallsDrawn.Location = new System.Drawing.Point(3, 3);
