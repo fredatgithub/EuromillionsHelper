@@ -358,16 +358,18 @@ namespace EuroMillionsHelper
         //01234567
         //31/01/2014 euromillions2.csv
         //0123456789
+        // default values
         int annee = 1;
         int mois = 1;
         int jour = 1;
-        if (tmpNumbers[indexDate].Length == 6)
+        if (fileName.Contains("dateUS") && fileName.Contains("NoSlash"))
         {
           annee = int.Parse(tmpNumbers[2].Substring(0, 4));
           mois = int.Parse(tmpNumbers[2].Substring(4, 2));
           jour = int.Parse(tmpNumbers[2].Substring(6, 2));
         }
-        else if (tmpNumbers[indexDate].Length == 10)
+
+        if (fileName.Contains("dateFR") && fileName.Contains("slashed"))
         {
           annee = int.Parse(tmpNumbers[2].Substring(6, 4));
           mois = int.Parse(tmpNumbers[2].Substring(3, 2));
