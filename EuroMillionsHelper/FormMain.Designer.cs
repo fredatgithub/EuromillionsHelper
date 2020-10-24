@@ -69,6 +69,8 @@
       this.tabPageArchive = new System.Windows.Forms.TabPage();
       this.listViewHistory = new System.Windows.Forms.ListView();
       this.tabPageNumberDrawn = new System.Windows.Forms.TabPage();
+      this.labelPasSortieDepuis = new System.Windows.Forms.Label();
+      this.listBoxPasSortieDepuis = new System.Windows.Forms.ListBox();
       this.labelLesPlusSortiesNumeroSortie = new System.Windows.Forms.Label();
       this.labelLesPlusSortie = new System.Windows.Forms.Label();
       this.listBoxLesPlusSortie = new System.Windows.Forms.ListBox();
@@ -77,8 +79,14 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
-      this.labelPasSortieDepuis = new System.Windows.Forms.Label();
-      this.listBoxPasSortieDepuis = new System.Windows.Forms.ListBox();
+      this.label2LesPlusSortiesNumeroSortie = new System.Windows.Forms.Label();
+      this.label2PasSortieDepuis = new System.Windows.Forms.Label();
+      this.label2LesPlusRecents = new System.Windows.Forms.Label();
+      this.labelLesPlusRecents = new System.Windows.Forms.Label();
+      this.listBoxLesPlusRecents = new System.Windows.Forms.ListBox();
+      this.label2LesPlusAnciens = new System.Windows.Forms.Label();
+      this.labelLesPlusAnciens = new System.Windows.Forms.Label();
+      this.listBoxLesPlusAnciens = new System.Windows.Forms.ListBox();
       this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
@@ -394,7 +402,7 @@
       this.tabControlMain.Location = new System.Drawing.Point(0, 24);
       this.tabControlMain.Name = "tabControlMain";
       this.tabControlMain.SelectedIndex = 0;
-      this.tabControlMain.Size = new System.Drawing.Size(1104, 696);
+      this.tabControlMain.Size = new System.Drawing.Size(1104, 856);
       this.tabControlMain.TabIndex = 2;
       // 
       // tabPageArchive
@@ -422,6 +430,15 @@
       // 
       // tabPageNumberDrawn
       // 
+      this.tabPageNumberDrawn.BackColor = System.Drawing.Color.LightSeaGreen;
+      this.tabPageNumberDrawn.Controls.Add(this.label2LesPlusAnciens);
+      this.tabPageNumberDrawn.Controls.Add(this.labelLesPlusAnciens);
+      this.tabPageNumberDrawn.Controls.Add(this.listBoxLesPlusAnciens);
+      this.tabPageNumberDrawn.Controls.Add(this.label2LesPlusRecents);
+      this.tabPageNumberDrawn.Controls.Add(this.labelLesPlusRecents);
+      this.tabPageNumberDrawn.Controls.Add(this.listBoxLesPlusRecents);
+      this.tabPageNumberDrawn.Controls.Add(this.label2PasSortieDepuis);
+      this.tabPageNumberDrawn.Controls.Add(this.label2LesPlusSortiesNumeroSortie);
       this.tabPageNumberDrawn.Controls.Add(this.labelPasSortieDepuis);
       this.tabPageNumberDrawn.Controls.Add(this.listBoxPasSortieDepuis);
       this.tabPageNumberDrawn.Controls.Add(this.labelLesPlusSortiesNumeroSortie);
@@ -431,20 +448,37 @@
       this.tabPageNumberDrawn.Location = new System.Drawing.Point(4, 22);
       this.tabPageNumberDrawn.Name = "tabPageNumberDrawn";
       this.tabPageNumberDrawn.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageNumberDrawn.Size = new System.Drawing.Size(1096, 670);
+      this.tabPageNumberDrawn.Size = new System.Drawing.Size(1096, 830);
       this.tabPageNumberDrawn.TabIndex = 1;
       this.tabPageNumberDrawn.Text = "Nombre de sortie boules";
-      this.tabPageNumberDrawn.UseVisualStyleBackColor = true;
+      // 
+      // labelPasSortieDepuis
+      // 
+      this.labelPasSortieDepuis.AutoSize = true;
+      this.labelPasSortieDepuis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelPasSortieDepuis.Location = new System.Drawing.Point(194, 160);
+      this.labelPasSortieDepuis.Name = "labelPasSortieDepuis";
+      this.labelPasSortieDepuis.Size = new System.Drawing.Size(87, 13);
+      this.labelPasSortieDepuis.TabIndex = 5;
+      this.labelPasSortieDepuis.Text = "Pas sortie depuis";
+      // 
+      // listBoxPasSortieDepuis
+      // 
+      this.listBoxPasSortieDepuis.FormattingEnabled = true;
+      this.listBoxPasSortieDepuis.Location = new System.Drawing.Point(194, 190);
+      this.listBoxPasSortieDepuis.Name = "listBoxPasSortieDepuis";
+      this.listBoxPasSortieDepuis.Size = new System.Drawing.Size(58, 654);
+      this.listBoxPasSortieDepuis.TabIndex = 4;
       // 
       // labelLesPlusSortiesNumeroSortie
       // 
       this.labelLesPlusSortiesNumeroSortie.AutoSize = true;
       this.labelLesPlusSortiesNumeroSortie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelLesPlusSortiesNumeroSortie.Location = new System.Drawing.Point(26, 160);
+      this.labelLesPlusSortiesNumeroSortie.Location = new System.Drawing.Point(26, 158);
       this.labelLesPlusSortiesNumeroSortie.Name = "labelLesPlusSortiesNumeroSortie";
-      this.labelLesPlusSortiesNumeroSortie.Size = new System.Drawing.Size(133, 13);
+      this.labelLesPlusSortiesNumeroSortie.Size = new System.Drawing.Size(50, 13);
       this.labelLesPlusSortiesNumeroSortie.TabIndex = 3;
-      this.labelLesPlusSortiesNumeroSortie.Text = "Numéro - Nombre de sortie";
+      this.labelLesPlusSortiesNumeroSortie.Text = "Numéro -";
       // 
       // labelLesPlusSortie
       // 
@@ -461,7 +495,7 @@
       this.listBoxLesPlusSortie.FormattingEnabled = true;
       this.listBoxLesPlusSortie.Location = new System.Drawing.Point(26, 190);
       this.listBoxLesPlusSortie.Name = "listBoxLesPlusSortie";
-      this.listBoxLesPlusSortie.Size = new System.Drawing.Size(107, 446);
+      this.listBoxLesPlusSortie.Size = new System.Drawing.Size(58, 654);
       this.listBoxLesPlusSortie.TabIndex = 1;
       // 
       // dataGridViewNumberOfBallsDrawn
@@ -517,29 +551,87 @@
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
       // 
-      // labelPasSortieDepuis
+      // label2LesPlusSortiesNumeroSortie
       // 
-      this.labelPasSortieDepuis.AutoSize = true;
-      this.labelPasSortieDepuis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelPasSortieDepuis.Location = new System.Drawing.Point(194, 160);
-      this.labelPasSortieDepuis.Name = "labelPasSortieDepuis";
-      this.labelPasSortieDepuis.Size = new System.Drawing.Size(133, 13);
-      this.labelPasSortieDepuis.TabIndex = 5;
-      this.labelPasSortieDepuis.Text = "Pas sortie depuis (en jours)";
+      this.label2LesPlusSortiesNumeroSortie.AutoSize = true;
+      this.label2LesPlusSortiesNumeroSortie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2LesPlusSortiesNumeroSortie.Location = new System.Drawing.Point(26, 174);
+      this.label2LesPlusSortiesNumeroSortie.Name = "label2LesPlusSortiesNumeroSortie";
+      this.label2LesPlusSortiesNumeroSortie.Size = new System.Drawing.Size(87, 13);
+      this.label2LesPlusSortiesNumeroSortie.TabIndex = 6;
+      this.label2LesPlusSortiesNumeroSortie.Text = "Nombre de sortie";
       // 
-      // listBoxPasSortieDepuis
+      // label2PasSortieDepuis
       // 
-      this.listBoxPasSortieDepuis.FormattingEnabled = true;
-      this.listBoxPasSortieDepuis.Location = new System.Drawing.Point(194, 190);
-      this.listBoxPasSortieDepuis.Name = "listBoxPasSortieDepuis";
-      this.listBoxPasSortieDepuis.Size = new System.Drawing.Size(207, 446);
-      this.listBoxPasSortieDepuis.TabIndex = 4;
+      this.label2PasSortieDepuis.AutoSize = true;
+      this.label2PasSortieDepuis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2PasSortieDepuis.Location = new System.Drawing.Point(194, 174);
+      this.label2PasSortieDepuis.Name = "label2PasSortieDepuis";
+      this.label2PasSortieDepuis.Size = new System.Drawing.Size(44, 13);
+      this.label2PasSortieDepuis.TabIndex = 7;
+      this.label2PasSortieDepuis.Text = "en jours";
+      // 
+      // label2LesPlusRecents
+      // 
+      this.label2LesPlusRecents.AutoSize = true;
+      this.label2LesPlusRecents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2LesPlusRecents.Location = new System.Drawing.Point(291, 174);
+      this.label2LesPlusRecents.Name = "label2LesPlusRecents";
+      this.label2LesPlusRecents.Size = new System.Drawing.Size(44, 13);
+      this.label2LesPlusRecents.TabIndex = 10;
+      this.label2LesPlusRecents.Text = "en jours";
+      // 
+      // labelLesPlusRecents
+      // 
+      this.labelLesPlusRecents.AutoSize = true;
+      this.labelLesPlusRecents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLesPlusRecents.Location = new System.Drawing.Point(291, 160);
+      this.labelLesPlusRecents.Name = "labelLesPlusRecents";
+      this.labelLesPlusRecents.Size = new System.Drawing.Size(84, 13);
+      this.labelLesPlusRecents.TabIndex = 9;
+      this.labelLesPlusRecents.Text = "Les plus récents";
+      // 
+      // listBoxLesPlusRecents
+      // 
+      this.listBoxLesPlusRecents.FormattingEnabled = true;
+      this.listBoxLesPlusRecents.Location = new System.Drawing.Point(291, 190);
+      this.listBoxLesPlusRecents.Name = "listBoxLesPlusRecents";
+      this.listBoxLesPlusRecents.Size = new System.Drawing.Size(58, 654);
+      this.listBoxLesPlusRecents.TabIndex = 8;
+      // 
+      // label2LesPlusAnciens
+      // 
+      this.label2LesPlusAnciens.AutoSize = true;
+      this.label2LesPlusAnciens.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2LesPlusAnciens.Location = new System.Drawing.Point(382, 174);
+      this.label2LesPlusAnciens.Name = "label2LesPlusAnciens";
+      this.label2LesPlusAnciens.Size = new System.Drawing.Size(44, 13);
+      this.label2LesPlusAnciens.TabIndex = 13;
+      this.label2LesPlusAnciens.Text = "en jours";
+      // 
+      // labelLesPlusAnciens
+      // 
+      this.labelLesPlusAnciens.AutoSize = true;
+      this.labelLesPlusAnciens.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLesPlusAnciens.Location = new System.Drawing.Point(382, 160);
+      this.labelLesPlusAnciens.Name = "labelLesPlusAnciens";
+      this.labelLesPlusAnciens.Size = new System.Drawing.Size(86, 13);
+      this.labelLesPlusAnciens.TabIndex = 12;
+      this.labelLesPlusAnciens.Text = "Les plus anciens";
+      // 
+      // listBoxLesPlusAnciens
+      // 
+      this.listBoxLesPlusAnciens.FormattingEnabled = true;
+      this.listBoxLesPlusAnciens.Location = new System.Drawing.Point(382, 190);
+      this.listBoxLesPlusAnciens.Name = "listBoxLesPlusAnciens";
+      this.listBoxLesPlusAnciens.Size = new System.Drawing.Size(58, 654);
+      this.listBoxLesPlusAnciens.TabIndex = 11;
       // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1104, 720);
+      this.ClientSize = new System.Drawing.Size(1104, 880);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStripMain);
       this.MainMenuStrip = this.menuStripMain;
@@ -614,5 +706,13 @@
     private System.Windows.Forms.Label labelLesPlusSortiesNumeroSortie;
     private System.Windows.Forms.Label labelPasSortieDepuis;
     private System.Windows.Forms.ListBox listBoxPasSortieDepuis;
+    private System.Windows.Forms.Label label2PasSortieDepuis;
+    private System.Windows.Forms.Label label2LesPlusSortiesNumeroSortie;
+    private System.Windows.Forms.Label label2LesPlusAnciens;
+    private System.Windows.Forms.Label labelLesPlusAnciens;
+    private System.Windows.Forms.ListBox listBoxLesPlusAnciens;
+    private System.Windows.Forms.Label label2LesPlusRecents;
+    private System.Windows.Forms.Label labelLesPlusRecents;
+    private System.Windows.Forms.ListBox listBoxLesPlusRecents;
   }
 }
