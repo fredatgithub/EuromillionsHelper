@@ -71,11 +71,30 @@ namespace EuroMillionsHelper
         nombreDeSortieEtoiles[tirage.Etoile1]++;
         nombreDeSortieEtoiles[tirage.Etoile2]++;
 
-        bouleSortieDepuisXJour[tirage.Boule1] = tirage.DateTirage;
-        bouleSortieDepuisXJour[tirage.Boule2] = tirage.DateTirage;
-        bouleSortieDepuisXJour[tirage.Boule3] = tirage.DateTirage;
-        bouleSortieDepuisXJour[tirage.Boule4] = tirage.DateTirage;
-        bouleSortieDepuisXJour[tirage.Boule5] = tirage.DateTirage;
+        if (bouleSortieDepuisXJour[tirage.Boule1] < tirage.DateTirage)
+        {
+          bouleSortieDepuisXJour[tirage.Boule1] = tirage.DateTirage;
+        }
+
+        if (bouleSortieDepuisXJour[tirage.Boule2] < tirage.DateTirage)
+        {
+          bouleSortieDepuisXJour[tirage.Boule2] = tirage.DateTirage;
+        }
+
+        if (bouleSortieDepuisXJour[tirage.Boule3] < tirage.DateTirage)
+        {
+          bouleSortieDepuisXJour[tirage.Boule3] = tirage.DateTirage;
+        }
+
+        if (bouleSortieDepuisXJour[tirage.Boule4] < tirage.DateTirage)
+        {
+          bouleSortieDepuisXJour[tirage.Boule4] = tirage.DateTirage;
+        }
+
+        if (bouleSortieDepuisXJour[tirage.Boule5] < tirage.DateTirage)
+        {
+          bouleSortieDepuisXJour[tirage.Boule5] = tirage.DateTirage;
+        }
       }
     }
 
