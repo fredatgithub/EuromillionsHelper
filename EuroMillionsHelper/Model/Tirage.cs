@@ -98,5 +98,47 @@ namespace EuroMillionsHelper.Model
 
       return result;
     }
+
+    public int NombreDeBoulesQuiSeSuivent()
+    {
+      int result = 0;
+      if (Boule1 == Boule2 + 1)
+      {
+        result++;
+      }
+
+      if (Boule2 == Boule3 + 1)
+      {
+        result++;
+      }
+
+      if (Boule3 == Boule4 + 1)
+      {
+        result++;
+      }
+
+      if (Boule4 == Boule5 + 1)
+      {
+        result++;
+      }
+
+      return result;
+    }
+
+    public int NombreDEtoilesQuiSeSuivent()
+    {
+      return Etoile1 == Etoile2 + 1 ? 1 : 0;
+    }
+
+    public int PoidsDesEtoiles()
+    {
+      return Etoile1 + Etoile2;
+    }
+
+    public int PoidsDesBoules()
+    {
+      return Boule1 + Boule2 + Boule3 + Boule4 + Boule5;
+    }
+
   }
 }

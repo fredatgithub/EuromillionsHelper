@@ -88,6 +88,7 @@
       this.tabPageWeight = new System.Windows.Forms.TabPage();
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
+      this.tabPageFourInARow = new System.Windows.Forms.TabPage();
       this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
@@ -364,30 +365,30 @@
       // summaryToolStripMenuItem
       // 
       this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
-      this.summaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.summaryToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.summaryToolStripMenuItem.Text = "&Sommaire";
       // 
       // indexToolStripMenuItem
       // 
       this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-      this.indexToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.indexToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.indexToolStripMenuItem.Text = "&Index";
       // 
       // searchToolStripMenuItem
       // 
       this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-      this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.searchToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.searchToolStripMenuItem.Text = "&Rechercher";
       // 
       // toolStripSeparator5
       // 
       this.toolStripSeparator5.Name = "toolStripSeparator5";
-      this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
+      this.toolStripSeparator5.Size = new System.Drawing.Size(144, 6);
       // 
       // aboutToolStripMenuItem
       // 
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.aboutToolStripMenuItem.Text = "À &propos de...";
       this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
       // 
@@ -399,6 +400,7 @@
       this.tabControlMain.Controls.Add(this.tabPageWeight);
       this.tabControlMain.Controls.Add(this.tabPageTwoInARow);
       this.tabControlMain.Controls.Add(this.tabPageThreeInARow);
+      this.tabControlMain.Controls.Add(this.tabPageFourInARow);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControlMain.Location = new System.Drawing.Point(0, 24);
       this.tabControlMain.Name = "tabControlMain";
@@ -631,6 +633,15 @@
       this.tabPageThreeInARow.Text = "Suite de 3";
       this.tabPageThreeInARow.UseVisualStyleBackColor = true;
       // 
+      // tabPageFourInARow
+      // 
+      this.tabPageFourInARow.Location = new System.Drawing.Point(4, 22);
+      this.tabPageFourInARow.Name = "tabPageFourInARow";
+      this.tabPageFourInARow.Size = new System.Drawing.Size(1096, 830);
+      this.tabPageFourInARow.TabIndex = 6;
+      this.tabPageFourInARow.Text = "Suite de 4";
+      this.tabPageFourInARow.UseVisualStyleBackColor = true;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -718,5 +729,6 @@
     private System.Windows.Forms.Label label2LesPlusRecents;
     private System.Windows.Forms.Label labelLesPlusRecents;
     private System.Windows.Forms.ListBox listBoxLesPlusRecents;
+    private System.Windows.Forms.TabPage tabPageFourInARow;
   }
 }
