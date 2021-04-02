@@ -37,12 +37,14 @@ namespace EuroMillionsHelper.HelperMethods
         return result;
       }
 
-      for (int i = 0; i < numberOfNumbers; i++)
+      int counter = 0;
+      while (counter < numberOfNumbers)
       {
         int tmpNumber = GenerateRndNumberUsingCrypto(min, max);
         if (!result.Contains(tmpNumber))
         {
           result.Add(tmpNumber);
+          counter++;
         }
       }
 

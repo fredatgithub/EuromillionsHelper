@@ -1193,6 +1193,554 @@ namespace EuroMillionsHelper
       var etoiles = HelperClasses.GenerateSeveralRandomNumbers(1, 12, 2);
       unTirage.AssigneEtoiles(etoiles);
 
+      // clear all balls and stars
+      ClearAllBalls();
+      ClearAllStars();
+
+      // Highlight selected balls
+      foreach (int number in numbers)
+      {
+        HighlightBall(number);
+      }
+    }
+
+    private void HighlightBall(int number)
+    {
+      switch (number)
+      {
+        case 1:
+          buttonFlashBoule1.BackColor = Color.OrangeRed;
+          break;
+        case 2:
+          buttonFlashBoule2.BackColor = Color.OrangeRed;
+          break;
+        case 3:
+          buttonFlashBoule3.BackColor = Color.OrangeRed;
+          break;
+        case 4:
+          buttonFlashBoule4.BackColor = Color.OrangeRed;
+          break;
+        case 5:
+          buttonFlashBoule5.BackColor = Color.OrangeRed;
+          break;
+        case 6:
+          buttonFlashBoule6.BackColor = Color.OrangeRed;
+          break;
+        case 7:
+          buttonFlashBoule7.BackColor = Color.OrangeRed;
+          break;
+        case 8:
+          buttonFlashBoule8.BackColor = Color.OrangeRed;
+          break;
+        case 9:
+          buttonFlashBoule9.BackColor = Color.OrangeRed;
+          break;
+        case 10:
+          buttonFlashBoule10.BackColor = Color.OrangeRed;
+          break;
+        case 11:
+          buttonFlashBoule11.BackColor = Color.OrangeRed;
+          break;
+        case 12:
+          buttonFlashBoule12.BackColor = Color.OrangeRed;
+          break;
+        case 13:
+          buttonFlashBoule13.BackColor = Color.OrangeRed;
+          break;
+        case 14:
+          buttonFlashBoule14.BackColor = Color.OrangeRed;
+          break;
+        case 15:
+          buttonFlashBoule15.BackColor = Color.OrangeRed;
+          break;
+        case 16:
+          buttonFlashBoule16.BackColor = Color.OrangeRed;
+          break;
+        case 17:
+          buttonFlashBoule17.BackColor = Color.OrangeRed;
+          break;
+        case 18:
+          buttonFlashBoule18.BackColor = Color.OrangeRed;
+          break;
+        case 19:
+          buttonFlashBoule19.BackColor = Color.OrangeRed;
+          break;
+        case 20:
+          buttonFlashBoule20.BackColor = Color.OrangeRed;
+          break;
+        case 21:
+          buttonFlashBoule21.BackColor = Color.OrangeRed;
+          break;
+        case 22:
+          buttonFlashBoule22.BackColor = Color.OrangeRed;
+          break;
+        case 23:
+          buttonFlashBoule23.BackColor = Color.OrangeRed;
+          break;
+        case 24:
+          buttonFlashBoule24.BackColor = Color.OrangeRed;
+          break;
+        case 25:
+          buttonFlashBoule25.BackColor = Color.OrangeRed;
+          break;
+        case 26:
+          buttonFlashBoule26.BackColor = Color.OrangeRed;
+          break;
+        case 27:
+          buttonFlashBoule27.BackColor = Color.OrangeRed;
+          break;
+        case 28:
+          buttonFlashBoule28.BackColor = Color.OrangeRed;
+          break;
+        case 29:
+          buttonFlashBoule29.BackColor = Color.OrangeRed;
+          break;
+        case 30:
+          buttonFlashBoule30.BackColor = Color.OrangeRed;
+          break;
+        case 31:
+          buttonFlashBoule31.BackColor = Color.OrangeRed;
+          break;
+        case 32:
+          buttonFlashBoule32.BackColor = Color.OrangeRed;
+          break;
+        case 33:
+          buttonFlashBoule33.BackColor = Color.OrangeRed;
+          break;
+        case 34:
+          buttonFlashBoule34.BackColor = Color.OrangeRed;
+          break;
+        case 35:
+          buttonFlashBoule35.BackColor = Color.OrangeRed;
+          break;
+        case 36:
+          buttonFlashBoule36.BackColor = Color.OrangeRed;
+          break;
+        case 37:
+          buttonFlashBoule37.BackColor = Color.OrangeRed;
+          break;
+        case 38:
+          buttonFlashBoule38.BackColor = Color.OrangeRed;
+          break;
+        case 39:
+          buttonFlashBoule39.BackColor = Color.OrangeRed;
+          break;
+        case 40:
+          buttonFlashBoule40.BackColor = Color.OrangeRed;
+          break;
+        case 41:
+          buttonFlashBoule41.BackColor = Color.OrangeRed;
+          break;
+        case 42:
+          buttonFlashBoule42.BackColor = Color.OrangeRed;
+          break;
+        case 43:
+          buttonFlashBoule43.BackColor = Color.OrangeRed;
+          break;
+        case 44:
+          buttonFlashBoule44.BackColor = Color.OrangeRed;
+          break;
+        case 45:
+          buttonFlashBoule45.BackColor = Color.OrangeRed;
+          break;
+        case 46:
+          buttonFlashBoule46.BackColor = Color.OrangeRed;
+          break;
+        case 47:
+          buttonFlashBoule47.BackColor = Color.OrangeRed;
+          break;
+        case 48:
+          buttonFlashBoule48.BackColor = Color.OrangeRed;
+          break;
+        case 49:
+          buttonFlashBoule49.BackColor = Color.OrangeRed;
+          break;
+        case 50:
+          buttonFlashBoule50.BackColor = Color.OrangeRed;
+          break;
+        default:
+          break;
+      }
+    }
+
+    private void ClearAllStars()
+    {
+      buttonFlashEtoile1.BackColor = Color.Transparent;
+      buttonFlashEtoile2.BackColor = Color.Transparent;
+      buttonFlashEtoile3.BackColor = Color.Transparent;
+      buttonFlashEtoile4.BackColor = Color.Transparent;
+      buttonFlashEtoile5.BackColor = Color.Transparent;
+      buttonFlashEtoile6.BackColor = Color.Transparent;
+      buttonFlashEtoile7.BackColor = Color.Transparent;
+      buttonFlashEtoile8.BackColor = Color.Transparent;
+      buttonFlashEtoile9.BackColor = Color.Transparent;
+      buttonFlashEtoile10.BackColor = Color.Transparent;
+      buttonFlashEtoile11.BackColor = Color.Transparent;
+      buttonFlashEtoile12.BackColor = Color.Transparent;
+    }
+
+    private void ClearAllBalls()
+    {
+      buttonFlashBoule1.BackColor = Color.Transparent;
+      buttonFlashBoule2.BackColor = Color.Transparent;
+      buttonFlashBoule3.BackColor = Color.Transparent;
+      buttonFlashBoule4.BackColor = Color.Transparent;
+      buttonFlashBoule5.BackColor = Color.Transparent;
+      buttonFlashBoule6.BackColor = Color.Transparent;
+      buttonFlashBoule7.BackColor = Color.Transparent;
+      buttonFlashBoule8.BackColor = Color.Transparent;
+      buttonFlashBoule9.BackColor = Color.Transparent;
+      buttonFlashBoule10.BackColor = Color.Transparent;
+      buttonFlashBoule11.BackColor = Color.Transparent;
+      buttonFlashBoule12.BackColor = Color.Transparent;
+      buttonFlashBoule13.BackColor = Color.Transparent;
+      buttonFlashBoule14.BackColor = Color.Transparent;
+      buttonFlashBoule15.BackColor = Color.Transparent;
+      buttonFlashBoule16.BackColor = Color.Transparent;
+      buttonFlashBoule17.BackColor = Color.Transparent;
+      buttonFlashBoule18.BackColor = Color.Transparent;
+      buttonFlashBoule19.BackColor = Color.Transparent;
+      buttonFlashBoule20.BackColor = Color.Transparent;
+      buttonFlashBoule21.BackColor = Color.Transparent;
+      buttonFlashBoule22.BackColor = Color.Transparent;
+      buttonFlashBoule23.BackColor = Color.Transparent;
+      buttonFlashBoule24.BackColor = Color.Transparent;
+      buttonFlashBoule25.BackColor = Color.Transparent;
+      buttonFlashBoule26.BackColor = Color.Transparent;
+      buttonFlashBoule27.BackColor = Color.Transparent;
+      buttonFlashBoule28.BackColor = Color.Transparent;
+      buttonFlashBoule29.BackColor = Color.Transparent;
+      buttonFlashBoule30.BackColor = Color.Transparent;
+      buttonFlashBoule31.BackColor = Color.Transparent;
+      buttonFlashBoule32.BackColor = Color.Transparent;
+      buttonFlashBoule33.BackColor = Color.Transparent;
+      buttonFlashBoule34.BackColor = Color.Transparent;
+      buttonFlashBoule35.BackColor = Color.Transparent;
+      buttonFlashBoule36.BackColor = Color.Transparent;
+      buttonFlashBoule37.BackColor = Color.Transparent;
+      buttonFlashBoule38.BackColor = Color.Transparent;
+      buttonFlashBoule39.BackColor = Color.Transparent;
+      buttonFlashBoule40.BackColor = Color.Transparent;
+      buttonFlashBoule41.BackColor = Color.Transparent;
+      buttonFlashBoule42.BackColor = Color.Transparent;
+      buttonFlashBoule43.BackColor = Color.Transparent;
+      buttonFlashBoule44.BackColor = Color.Transparent;
+      buttonFlashBoule45.BackColor = Color.Transparent;
+      buttonFlashBoule46.BackColor = Color.Transparent;
+      buttonFlashBoule47.BackColor = Color.Transparent;
+      buttonFlashBoule48.BackColor = Color.Transparent;
+      buttonFlashBoule49.BackColor = Color.Transparent;
+      buttonFlashBoule50.BackColor = Color.Transparent;
+    }
+
+    private void ButtonFlashBoule1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashBoule2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule3_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule4_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule5_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule6_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule7_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule8_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule9_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule10_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule11_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule39_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule29_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule19_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule50_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule48_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule47_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule46_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule45_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule44_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule43_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule42_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule41_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule40_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule38_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule37_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule36_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule35_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule34_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule33_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule32_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule31_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule30_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule28_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule27_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule26_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule25_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule24_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule23_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule22_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule21_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule20_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule18_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule17_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule16_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule15_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule14_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashBoule13_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashBoule12_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashBoule49_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile9_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile8_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile7_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile6_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile5_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile4_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonFlashEtoile3_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashEtoile2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashEtoile10_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashEtoile11_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonFlashEtoile12_Click(object sender, EventArgs e)
+    {
+
     }
   }
 }
