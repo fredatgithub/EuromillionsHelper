@@ -24,13 +24,18 @@ namespace EuroMillionsHelper.Model
       ListOfTirages.Add(tirage);
     }
 
-    public int Weigh(Tirage tirage)
+    public int PoidsBoules(Tirage tirage)
     {
       return tirage.Boule1 +
         tirage.Boule2 +
         tirage.Boule3 +
         tirage.Boule4 +
         tirage.Boule5;
+    }
+
+    public int PoidsEtoiles(Tirage tirage)
+    {
+      return tirage.Etoile1 + tirage.Etoile2;
     }
   }
 }

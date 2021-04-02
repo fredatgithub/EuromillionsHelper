@@ -89,11 +89,14 @@
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
       this.tabPageFourInARow = new System.Windows.Forms.TabPage();
+      this.tabPageFlash = new System.Windows.Forms.TabPage();
+      this.buttonFlashGenerer = new System.Windows.Forms.Button();
       this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
       this.tabPageNumberDrawn.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).BeginInit();
+      this.tabPageFlash.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStripMain
@@ -395,6 +398,7 @@
       // tabControlMain
       // 
       this.tabControlMain.Controls.Add(this.tabPageArchive);
+      this.tabControlMain.Controls.Add(this.tabPageFlash);
       this.tabControlMain.Controls.Add(this.tabPageNumberDrawn);
       this.tabControlMain.Controls.Add(this.tabPageNumberOfStarDrawn);
       this.tabControlMain.Controls.Add(this.tabPageWeight);
@@ -642,6 +646,26 @@
       this.tabPageFourInARow.Text = "Suite de 4";
       this.tabPageFourInARow.UseVisualStyleBackColor = true;
       // 
+      // tabPageFlash
+      // 
+      this.tabPageFlash.Controls.Add(this.buttonFlashGenerer);
+      this.tabPageFlash.Location = new System.Drawing.Point(4, 22);
+      this.tabPageFlash.Name = "tabPageFlash";
+      this.tabPageFlash.Size = new System.Drawing.Size(1096, 830);
+      this.tabPageFlash.TabIndex = 7;
+      this.tabPageFlash.Text = "FLASH";
+      this.tabPageFlash.UseVisualStyleBackColor = true;
+      // 
+      // buttonFlashGenerer
+      // 
+      this.buttonFlashGenerer.Location = new System.Drawing.Point(81, 76);
+      this.buttonFlashGenerer.Name = "buttonFlashGenerer";
+      this.buttonFlashGenerer.Size = new System.Drawing.Size(75, 23);
+      this.buttonFlashGenerer.TabIndex = 0;
+      this.buttonFlashGenerer.Text = "Générer";
+      this.buttonFlashGenerer.UseVisualStyleBackColor = true;
+      this.buttonFlashGenerer.Click += new System.EventHandler(this.ButtonFlashGenerer_Click);
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,6 +687,7 @@
       this.tabPageNumberDrawn.ResumeLayout(false);
       this.tabPageNumberDrawn.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumberOfBallsDrawn)).EndInit();
+      this.tabPageFlash.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -730,5 +755,7 @@
     private System.Windows.Forms.Label labelLesPlusRecents;
     private System.Windows.Forms.ListBox listBoxLesPlusRecents;
     private System.Windows.Forms.TabPage tabPageFourInARow;
+    private System.Windows.Forms.TabPage tabPageFlash;
+    private System.Windows.Forms.Button buttonFlashGenerer;
   }
 }

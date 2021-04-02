@@ -1,4 +1,5 @@
 ﻿#define DEBUG
+using EuroMillionsHelper.HelperMethods;
 using EuroMillionsHelper.Model;
 using EuroMillionsHelper.Properties;
 using System;
@@ -1177,6 +1178,21 @@ namespace EuroMillionsHelper
       {
         // do something
       }
+    }
+
+    private void ButtonFlashGenerer_Click(object sender, EventArgs e)
+    {
+      // clear grid
+      var unTirage = new Tirage();
+
+      // generate 5 new balls
+      var numbers = HelperClasses.GenerateSeveralRandomNumbers(1, 50, 5);
+      unTirage.AssigneBoules(numbers);
+
+      // generate 2 new stars
+      var etoiles = HelperClasses.GenerateSeveralRandomNumbers(1, 12, 2);
+      unTirage.AssigneEtoiles(etoiles);
+
     }
   }
 }

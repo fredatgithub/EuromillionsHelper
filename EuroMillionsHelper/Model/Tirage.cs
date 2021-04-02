@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EuroMillionsHelper.Model
 {
@@ -140,5 +141,19 @@ namespace EuroMillionsHelper.Model
       return Boule1 + Boule2 + Boule3 + Boule4 + Boule5;
     }
 
+    public void AssigneBoules(List<int> listDeNumeros)
+    {
+      Boule1 = listDeNumeros[0];
+      Boule2 = listDeNumeros[1];
+      Boule3 = listDeNumeros[2];
+      Boule4 = listDeNumeros[3];
+      Boule5 = listDeNumeros[4];
+    }
+
+    public void AssigneEtoiles(List<int> listDeNumeros)
+    {
+      Etoile1 = listDeNumeros[0];
+      Etoile2 = listDeNumeros[1];
+    }
   }
 }
