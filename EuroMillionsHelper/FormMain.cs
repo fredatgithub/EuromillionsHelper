@@ -57,6 +57,7 @@ namespace EuroMillionsHelper
       InitializeDictionaries();
       LoadDictionaries();
       LoadNumberOfBallsDrawn();
+      ClearAllBalls();
     }
 
     private void LoadDictionaries()
@@ -1202,6 +1203,62 @@ namespace EuroMillionsHelper
       {
         HighlightBall(number);
       }
+
+      // Highlight selected stars
+      foreach (int star in etoiles)
+      {
+        HighlightStar(star);
+      }
+
+      labelFlashPoidsBoule.Text = "Poids des boules : " + unTirage.PoidsDesBoules();
+      labelFlashPoidsDesEtoiles.Text = "Poids des étoiles : " + unTirage.PoidsDesEtoiles();
+      labelFlashNombreParLigne.Text = "Nombre par ligne : " + Tirage.NombreParLigne(Tirage.RepartitionDizaineTirage(unTirage));
+      labelFlashNombreParColonne.Text = "Nombre par colonne : " + Tirage.NombreParColonne(Tirage.RepartitionParColonne(unTirage));
+    }
+
+    private void HighlightStar(int number)
+    {
+      switch (number)
+      {
+        case 1:
+          buttonFlashEtoile1.BackColor = Color.OrangeRed;
+          break;
+        case 2:
+          buttonFlashEtoile2.BackColor = Color.OrangeRed;
+          break;
+        case 3:
+          buttonFlashEtoile3.BackColor = Color.OrangeRed;
+          break;
+        case 4:
+          buttonFlashEtoile4.BackColor = Color.OrangeRed;
+          break;
+        case 5:
+          buttonFlashEtoile5.BackColor = Color.OrangeRed;
+          break;
+        case 6:
+          buttonFlashEtoile6.BackColor = Color.OrangeRed;
+          break;
+        case 7:
+          buttonFlashEtoile7.BackColor = Color.OrangeRed;
+          break;
+        case 8:
+          buttonFlashEtoile8.BackColor = Color.OrangeRed;
+          break;
+        case 9:
+          buttonFlashEtoile9.BackColor = Color.OrangeRed;
+          break;
+        case 10:
+          buttonFlashEtoile10.BackColor = Color.OrangeRed;
+          break;
+        case 11:
+          buttonFlashEtoile11.BackColor = Color.OrangeRed;
+          break;
+        case 12:
+          buttonFlashEtoile12.BackColor = Color.OrangeRed;
+          break;
+        default:
+          break;
+      }
     }
 
     private void HighlightBall(int number)
@@ -1733,14 +1790,58 @@ namespace EuroMillionsHelper
 
     }
 
-    private void buttonFlashEtoile11_Click(object sender, EventArgs e)
+    private void ButtonFlashEtoile11_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashEtoile12_Click(object sender, EventArgs e)
+    private void ButtonFlashEtoile12_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void ButtonFlashGenerateOptimized_Click(object sender, EventArgs e)
+    {
+      // clear grid
+      var unTirage = new Tirage();
+
+      // generate 5 new balls
+      var numbers = HelperClasses.GenerateSeveralRandomNumbers(1, 50, 5);
+      unTirage.AssigneBoules(numbers);
+      while (!IsOptimum(unTirage))
+      {
+        numbers = HelperClasses.GenerateSeveralRandomNumbers(1, 50, 5);
+        unTirage.AssigneBoules(numbers);
+      }
+
+      // generate 2 new stars
+      var etoiles = HelperClasses.GenerateSeveralRandomNumbers(1, 12, 2);
+      unTirage.AssigneEtoiles(etoiles);
+
+      // clear all balls and stars
+      ClearAllBalls();
+      ClearAllStars();
+
+      // Highlight selected balls
+      foreach (int number in numbers)
+      {
+        HighlightBall(number);
+      }
+
+      // Highlight selected stars
+      foreach (int star in etoiles)
+      {
+        HighlightStar(star);
+      }
+    }
+
+    private bool IsOptimum(Tirage tirage)
+    {
+      bool result = true;
+      // rules
+      int poids = tirage.PoidsDesBoules();
+
+      return result;
     }
   }
 }

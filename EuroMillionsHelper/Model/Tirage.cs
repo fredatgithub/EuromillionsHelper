@@ -67,25 +67,90 @@ namespace EuroMillionsHelper.Model
       {
         switch (number)
         {
-          case int _ when number < 10:
+          case int _ when number <= 10:
             result[0]++;
             break;
-          case int _ when number >= 10 && number <= 19:
+          case int _ when number > 10 && number <= 20:
             result[1]++;
             break;
-          case int _ when number >= 20 && number <= 29:
+          case int _ when number > 20 && number <= 30:
             result[2]++;
             break;
-          case int _ when number >= 30 && number <= 39:
+          case int _ when number > 30 && number <= 40:
             result[3]++;
             break;
-          case int _ when number >= 40:
+          case int _ when number > 40:
             result[4]++;
             break;
         }
       }
 
       return result;
+    }
+
+    public static string NombreParLigne(int[] tableau)
+    {
+      string result = string.Empty;
+      for (int i = 0; i < tableau.Length; i++)
+      {
+        result += tableau[i] + " + ";
+      }
+
+      return result.TrimEnd().TrimEnd('+').TrimEnd();
+    }
+
+    public static int[] RepartitionParColonne(Tirage tirage)
+    {
+      int[] result = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+      foreach (var number in new int[] { tirage.Boule1, tirage.Boule2, tirage.Boule3, tirage.Boule4, tirage.Boule5 })
+      {
+        switch (number)
+        {
+          case int _ when number.ToString().EndsWith("1"):
+            result[0]++;
+            break;
+          case int _ when number.ToString().EndsWith("2"):
+            result[1]++;
+            break;
+          case int _ when number.ToString().EndsWith("3"):
+            result[2]++;
+            break;
+          case int _ when number.ToString().EndsWith("4"):
+            result[3]++;
+            break;
+          case int _ when number.ToString().EndsWith("5"):
+            result[4]++;
+            break;
+          case int _ when number.ToString().EndsWith("6"):
+            result[5]++;
+            break;
+          case int _ when number.ToString().EndsWith("7"):
+            result[6]++;
+            break;
+          case int _ when number.ToString().EndsWith("8"):
+            result[7]++;
+            break;
+          case int _ when number.ToString().EndsWith("9"):
+            result[8]++;
+            break;
+          case int _ when number.ToString().EndsWith("0"):
+            result[9]++;
+            break;
+        }
+      }
+
+      return result;
+    }
+
+    public static string NombreParColonne(int[] tableau)
+    {
+      string result = string.Empty;
+      for (int i = 0; i < tableau.Length; i++)
+      {
+        result += tableau[i] + " + ";
+      }
+
+      return result.TrimEnd().TrimEnd('+').TrimEnd();
     }
 
     public static int Dizaine(int nombre)
