@@ -220,5 +220,64 @@ namespace EuroMillionsHelper.Model
       Etoile1 = listDeNumeros[0];
       Etoile2 = listDeNumeros[1];
     }
+
+    public override string ToString()
+    {
+      int[] boules = new int[] { Boule1, Boule2, Boule3, Boule4, Boule5 };
+      Array.Sort(boules);
+
+      return $"{boules[0]}-{boules[1]}-{boules[2]}-{boules[3]}-{boules[4]}";
+    }
+
+    internal string FirstFourToString()
+    {
+      int[] boules = new int[] { Boule1, Boule2, Boule3, Boule4, Boule5 };
+      Array.Sort(boules);
+
+      return $"{boules[0]}-{boules[1]}-{boules[2]}-{boules[3]}";
+    }
+
+    internal string LastFourToString()
+    {
+      int[] boules = new int[] { Boule1, Boule2, Boule3, Boule4, Boule5 };
+      Array.Sort(boules);
+
+      return $"{boules[1]}-{boules[2]}-{boules[3]}-{boules[4]}";
+    }
+
+    public string[] NumberOfBallsFound(Tirage tirageRecherche)
+    {
+      string[] result = new string[6];
+      int nombreDeBoulesTrouves = 0;
+      int curseur = 1;
+      if (tirageRecherche.Boule1 == Boule1)
+      {
+        nombreDeBoulesTrouves++;
+        result[curseur] = Boule1.ToString();
+        curseur++;
+      }
+      else if (tirageRecherche.Boule1 == Boule2)
+      {
+        nombreDeBoulesTrouves++;
+        result[curseur] = Boule2.ToString();
+        curseur++;
+      }
+      else if (tirageRecherche.Boule1 == Boule3)
+      {
+        nombreDeBoulesTrouves++;
+        result[curseur] = Boule3.ToString();
+        curseur++;
+      }
+      else if (tirageRecherche.Boule1 == Boule4)
+      {
+        nombreDeBoulesTrouves++;
+        result[curseur] = Boule4.ToString();
+        curseur++;
+      }
+
+
+      result[0] = nombreDeBoulesTrouves.ToString();
+      return result;
+    }
   }
 }

@@ -1183,6 +1183,8 @@ namespace EuroMillionsHelper
 
     private void ButtonFlashGenerer_Click(object sender, EventArgs e)
     {
+      buttonFlashGenerer.Enabled = false;
+      Application.DoEvents();
       // clear grid
       var unTirage = new Tirage();
 
@@ -1211,9 +1213,119 @@ namespace EuroMillionsHelper
       }
 
       labelFlashPoidsBoule.Text = "Poids des boules : " + unTirage.PoidsDesBoules();
+      labelFlashBallsShouldBeBetween.Text = "Poids entre 15 et 240. Moyenne = 112. Mediant = X";
       labelFlashPoidsDesEtoiles.Text = "Poids des étoiles : " + unTirage.PoidsDesEtoiles();
+      labelFlashPoidsEtoilesEntre.Text = "Poids entre 3 et 23. Moyenne = 10. Mediant = X";
       labelFlashNombreParLigne.Text = "Nombre par ligne : " + Tirage.NombreParLigne(Tirage.RepartitionDizaineTirage(unTirage));
       labelFlashNombreParColonne.Text = "Nombre par colonne : " + Tirage.NombreParColonne(Tirage.RepartitionParColonne(unTirage));
+      // 5 boules déjà sortis
+      labelFlash5BoulesdejaSortis.Text = "5 boules déjà sortis : " + unTirage.ToString();
+      bool FiveBallsAlreadyDrawn = AlreadyDrawn5Balls(unTirage);
+      labelFlash5BoulesDejaSortisResult.Text = StringifyYesNo(FiveBallsAlreadyDrawn);
+      labelFlash5BoulesDejaSortisResult.BackColor = ColorizeYesNo(FiveBallsAlreadyDrawn);
+
+      // 4 boules déjà sortis
+      labelFlash4BoulesDejaSortis.Text = "4 boules déjà sortis : ";
+      var result4Balls = AlreadyDrawn4Balls(unTirage);
+      if (result4Balls[0] == "Oui")
+      {
+        labelFlash4BoulesDejaSortis.Text += result4Balls[1];
+        labelFlash4BoulesDejaSortisResult.Text = "Oui";
+        labelFlash4BoulesDejaSortisResult.BackColor = Color.OrangeRed;
+      }
+      else
+      {
+        labelFlash4BoulesDejaSortisResult.Text = "Non";
+        labelFlash4BoulesDejaSortisResult.BackColor = Color.LightGreen;
+      }
+
+      var test = listTirages;
+      buttonFlashGenerer.Enabled = true;
+    }
+
+    private Color ColorizeYesNo(bool booleanValue)
+    {
+      return booleanValue ? Color.OrangeRed : Color.LightGreen;
+    }
+
+    private string[] AlreadyDrawn4Balls(Tirage tirageRecherche)
+    {
+      bool resultFound = false;
+      string[] finalResult = new string[2];
+      finalResult[0] = "Non";
+      finalResult[1] = "";
+
+      foreach (Tirage tirage in listTirages)
+      {
+        if (tirageRecherche.FirstFourToString() == tirage.FirstFourToString())
+        {
+          // out 5
+          resultFound = true;
+          finalResult[1] = tirage.FirstFourToString();
+          break;
+        }
+        else if (tirageRecherche.LastFourToString() == tirage.LastFourToString())
+        {
+          // out 1
+          resultFound = true;
+          finalResult[1] = tirage.LastFourToString();
+          break;
+        }
+        else if (tirageRecherche.Boule1 == tirage.Boule1 &&
+          tirageRecherche.Boule2 == tirage.Boule2 &&
+          tirageRecherche.Boule3 == tirage.Boule3 &&
+          tirageRecherche.Boule5 == tirage.Boule5)
+        {
+          // out 4
+          resultFound = true;
+          finalResult[1] = $"{tirage.Boule1}-{tirage.Boule2}-{tirage.Boule3}-{tirage.Boule5}";
+          break;
+        }
+        else if (tirageRecherche.Boule1 == tirage.Boule1 &&
+          tirageRecherche.Boule3 == tirage.Boule3 &&
+          tirageRecherche.Boule4 == tirage.Boule4 &&
+          tirageRecherche.Boule5 == tirage.Boule5)
+        {
+          // out 2
+          resultFound = true;
+          finalResult[1] = $"{tirage.Boule1}-{tirage.Boule3}-{tirage.Boule4}-{tirage.Boule5}";
+          break;
+        }
+        else if (tirageRecherche.Boule1 == tirage.Boule1 &&
+          tirageRecherche.Boule2 == tirage.Boule2 &&
+          tirageRecherche.Boule4 == tirage.Boule4 &&
+          tirageRecherche.Boule5 == tirage.Boule5)
+        {
+          // out 3
+          resultFound = true;
+          finalResult[1] = $"{tirage.Boule1}-{tirage.Boule2}-{tirage.Boule4}-{tirage.Boule5}";
+          break;
+        }
+      }
+
+      finalResult[0] = StringifyYesNo(resultFound);
+      return finalResult;
+    }
+
+    private bool AlreadyDrawn5Balls(Tirage tirageRecherche)
+    {
+      bool resultFound = false;
+
+      foreach (Tirage tirage in listTirages)
+      {
+        if (tirageRecherche.ToString() == tirage.ToString())
+        {
+          resultFound = true;
+          break;
+        }
+      }
+
+      return resultFound;
+    }
+
+    private static string StringifyYesNo(bool booleanValue)
+    {
+      return booleanValue ? "Oui" : "Non";
     }
 
     private void HighlightStar(int number)

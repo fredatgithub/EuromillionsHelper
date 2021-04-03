@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.menuStripMain = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +70,12 @@
       this.tabPageArchive = new System.Windows.Forms.TabPage();
       this.listViewHistory = new System.Windows.Forms.ListView();
       this.tabPageFlash = new System.Windows.Forms.TabPage();
+      this.labelFlashNombreParColonneResult = new System.Windows.Forms.Label();
+      this.labelFlashNombreParLigneResult = new System.Windows.Forms.Label();
+      this.labelFlashNombreParColonne = new System.Windows.Forms.Label();
+      this.labelFlashNombreParLigne = new System.Windows.Forms.Label();
+      this.labelFlashPoidsEtoilesEntre = new System.Windows.Forms.Label();
+      this.labelFlashBallsShouldBeBetween = new System.Windows.Forms.Label();
       this.labelFlashPoidsDesEtoiles = new System.Windows.Forms.Label();
       this.labelFlashPoidsBoule = new System.Windows.Forms.Label();
       this.buttonFlashGenerateOptimized = new System.Windows.Forms.Button();
@@ -160,12 +166,12 @@
       this.tabPageTwoInARow = new System.Windows.Forms.TabPage();
       this.tabPageThreeInARow = new System.Windows.Forms.TabPage();
       this.tabPageFourInARow = new System.Windows.Forms.TabPage();
-      this.labelFlashBallsShouldBeBetween = new System.Windows.Forms.Label();
-      this.labelFlashPoidsEtoilesEntre = new System.Windows.Forms.Label();
-      this.labelFlashNombreParLigne = new System.Windows.Forms.Label();
-      this.labelFlashNombreParColonne = new System.Windows.Forms.Label();
-      this.labelFlashNombreParLigneResult = new System.Windows.Forms.Label();
-      this.labelFlashNombreParColonneResult = new System.Windows.Forms.Label();
+      this.labelFlash5BoulesdejaSortis = new System.Windows.Forms.Label();
+      this.labelFlash5BoulesDejaSortisResult = new System.Windows.Forms.Label();
+      this.labelFlash4BoulesDejaSortisResult = new System.Windows.Forms.Label();
+      this.labelFlash4BoulesDejaSortis = new System.Windows.Forms.Label();
+      this.labelFlash3BoulesDejaSortisResult = new System.Windows.Forms.Label();
+      this.labelFlash3BoulesDejaSortis = new System.Windows.Forms.Label();
       this.menuStripMain.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageArchive.SuspendLayout();
@@ -514,6 +520,12 @@
       // tabPageFlash
       // 
       this.tabPageFlash.BackColor = System.Drawing.Color.PeachPuff;
+      this.tabPageFlash.Controls.Add(this.labelFlash3BoulesDejaSortisResult);
+      this.tabPageFlash.Controls.Add(this.labelFlash3BoulesDejaSortis);
+      this.tabPageFlash.Controls.Add(this.labelFlash4BoulesDejaSortisResult);
+      this.tabPageFlash.Controls.Add(this.labelFlash4BoulesDejaSortis);
+      this.tabPageFlash.Controls.Add(this.labelFlash5BoulesDejaSortisResult);
+      this.tabPageFlash.Controls.Add(this.labelFlash5BoulesdejaSortis);
       this.tabPageFlash.Controls.Add(this.labelFlashNombreParColonneResult);
       this.tabPageFlash.Controls.Add(this.labelFlashNombreParLigneResult);
       this.tabPageFlash.Controls.Add(this.labelFlashNombreParColonne);
@@ -596,11 +608,75 @@
       this.tabPageFlash.TabIndex = 7;
       this.tabPageFlash.Text = "FLASH";
       // 
+      // labelFlashNombreParColonneResult
+      // 
+      this.labelFlashNombreParColonneResult.AutoSize = true;
+      this.labelFlashNombreParColonneResult.BackColor = System.Drawing.Color.LightGreen;
+      this.labelFlashNombreParColonneResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlashNombreParColonneResult.Location = new System.Drawing.Point(432, 379);
+      this.labelFlashNombreParColonneResult.Name = "labelFlashNombreParColonneResult";
+      this.labelFlashNombreParColonneResult.Size = new System.Drawing.Size(165, 13);
+      this.labelFlashNombreParColonneResult.TabIndex = 75;
+      this.labelFlashNombreParColonneResult.Text = "Nombre par colonne correct";
+      // 
+      // labelFlashNombreParLigneResult
+      // 
+      this.labelFlashNombreParLigneResult.AutoSize = true;
+      this.labelFlashNombreParLigneResult.BackColor = System.Drawing.Color.LightGreen;
+      this.labelFlashNombreParLigneResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlashNombreParLigneResult.Location = new System.Drawing.Point(432, 355);
+      this.labelFlashNombreParLigneResult.Name = "labelFlashNombreParLigneResult";
+      this.labelFlashNombreParLigneResult.Size = new System.Drawing.Size(147, 13);
+      this.labelFlashNombreParLigneResult.TabIndex = 74;
+      this.labelFlashNombreParLigneResult.Text = "Nombre par ligne correct";
+      // 
+      // labelFlashNombreParColonne
+      // 
+      this.labelFlashNombreParColonne.AutoSize = true;
+      this.labelFlashNombreParColonne.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlashNombreParColonne.Location = new System.Drawing.Point(52, 379);
+      this.labelFlashNombreParColonne.Name = "labelFlashNombreParColonne";
+      this.labelFlashNombreParColonne.Size = new System.Drawing.Size(338, 13);
+      this.labelFlashNombreParColonne.TabIndex = 73;
+      this.labelFlashNombreParColonne.Text = "Nombre par colonne : 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0";
+      // 
+      // labelFlashNombreParLigne
+      // 
+      this.labelFlashNombreParLigne.AutoSize = true;
+      this.labelFlashNombreParLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlashNombreParLigne.Location = new System.Drawing.Point(52, 355);
+      this.labelFlashNombreParLigne.Name = "labelFlashNombreParLigne";
+      this.labelFlashNombreParLigne.Size = new System.Drawing.Size(210, 13);
+      this.labelFlashNombreParLigne.TabIndex = 72;
+      this.labelFlashNombreParLigne.Text = "Nombre par ligne : 0 + 0 + 0 + 0 + 0";
+      // 
+      // labelFlashPoidsEtoilesEntre
+      // 
+      this.labelFlashPoidsEtoilesEntre.AutoSize = true;
+      this.labelFlashPoidsEtoilesEntre.BackColor = System.Drawing.Color.LightGreen;
+      this.labelFlashPoidsEtoilesEntre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlashPoidsEtoilesEntre.Location = new System.Drawing.Point(432, 330);
+      this.labelFlashPoidsEtoilesEntre.Name = "labelFlashPoidsEtoilesEntre";
+      this.labelFlashPoidsEtoilesEntre.Size = new System.Drawing.Size(115, 13);
+      this.labelFlashPoidsEtoilesEntre.TabIndex = 71;
+      this.labelFlashPoidsEtoilesEntre.Text = "Poids entre 3 et 23";
+      // 
+      // labelFlashBallsShouldBeBetween
+      // 
+      this.labelFlashBallsShouldBeBetween.AutoSize = true;
+      this.labelFlashBallsShouldBeBetween.BackColor = System.Drawing.Color.LightGreen;
+      this.labelFlashBallsShouldBeBetween.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlashBallsShouldBeBetween.Location = new System.Drawing.Point(432, 307);
+      this.labelFlashBallsShouldBeBetween.Name = "labelFlashBallsShouldBeBetween";
+      this.labelFlashBallsShouldBeBetween.Size = new System.Drawing.Size(129, 13);
+      this.labelFlashBallsShouldBeBetween.TabIndex = 70;
+      this.labelFlashBallsShouldBeBetween.Text = "Poids entre 15 et 240";
+      // 
       // labelFlashPoidsDesEtoiles
       // 
       this.labelFlashPoidsDesEtoiles.AutoSize = true;
       this.labelFlashPoidsDesEtoiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFlashPoidsDesEtoiles.Location = new System.Drawing.Point(52, 337);
+      this.labelFlashPoidsDesEtoiles.Location = new System.Drawing.Point(52, 330);
       this.labelFlashPoidsDesEtoiles.Name = "labelFlashPoidsDesEtoiles";
       this.labelFlashPoidsDesEtoiles.Size = new System.Drawing.Size(122, 13);
       this.labelFlashPoidsDesEtoiles.TabIndex = 69;
@@ -1512,8 +1588,8 @@
       this.dataGridViewNumberOfBallsDrawn.AllowUserToAddRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToDeleteRows = false;
       this.dataGridViewNumberOfBallsDrawn.AllowUserToOrderColumns = true;
-      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.dataGridViewNumberOfBallsDrawn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.dataGridViewNumberOfBallsDrawn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
       this.dataGridViewNumberOfBallsDrawn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.dataGridViewNumberOfBallsDrawn.Dock = System.Windows.Forms.DockStyle.Top;
       this.dataGridViewNumberOfBallsDrawn.Location = new System.Drawing.Point(3, 3);
@@ -1571,69 +1647,68 @@
       this.tabPageFourInARow.Text = "Suite de 4";
       this.tabPageFourInARow.UseVisualStyleBackColor = true;
       // 
-      // labelFlashBallsShouldBeBetween
+      // labelFlash5BoulesdejaSortis
       // 
-      this.labelFlashBallsShouldBeBetween.AutoSize = true;
-      this.labelFlashBallsShouldBeBetween.BackColor = System.Drawing.Color.LightGreen;
-      this.labelFlashBallsShouldBeBetween.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFlashBallsShouldBeBetween.Location = new System.Drawing.Point(432, 307);
-      this.labelFlashBallsShouldBeBetween.Name = "labelFlashBallsShouldBeBetween";
-      this.labelFlashBallsShouldBeBetween.Size = new System.Drawing.Size(129, 13);
-      this.labelFlashBallsShouldBeBetween.TabIndex = 70;
-      this.labelFlashBallsShouldBeBetween.Text = "Poids entre 15 et 240";
+      this.labelFlash5BoulesdejaSortis.AutoSize = true;
+      this.labelFlash5BoulesdejaSortis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlash5BoulesdejaSortis.Location = new System.Drawing.Point(52, 400);
+      this.labelFlash5BoulesdejaSortis.Name = "labelFlash5BoulesdejaSortis";
+      this.labelFlash5BoulesdejaSortis.Size = new System.Drawing.Size(125, 13);
+      this.labelFlash5BoulesdejaSortis.TabIndex = 76;
+      this.labelFlash5BoulesdejaSortis.Text = "5 boules déjà sortis :";
       // 
-      // labelFlashPoidsEtoilesEntre
+      // labelFlash5BoulesDejaSortisResult
       // 
-      this.labelFlashPoidsEtoilesEntre.AutoSize = true;
-      this.labelFlashPoidsEtoilesEntre.BackColor = System.Drawing.Color.LightGreen;
-      this.labelFlashPoidsEtoilesEntre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFlashPoidsEtoilesEntre.Location = new System.Drawing.Point(432, 337);
-      this.labelFlashPoidsEtoilesEntre.Name = "labelFlashPoidsEtoilesEntre";
-      this.labelFlashPoidsEtoilesEntre.Size = new System.Drawing.Size(115, 13);
-      this.labelFlashPoidsEtoilesEntre.TabIndex = 71;
-      this.labelFlashPoidsEtoilesEntre.Text = "Poids entre 3 et 23";
+      this.labelFlash5BoulesDejaSortisResult.AutoSize = true;
+      this.labelFlash5BoulesDejaSortisResult.BackColor = System.Drawing.Color.LightGreen;
+      this.labelFlash5BoulesDejaSortisResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlash5BoulesDejaSortisResult.Location = new System.Drawing.Point(432, 400);
+      this.labelFlash5BoulesDejaSortisResult.Name = "labelFlash5BoulesDejaSortisResult";
+      this.labelFlash5BoulesDejaSortisResult.Size = new System.Drawing.Size(30, 13);
+      this.labelFlash5BoulesDejaSortisResult.TabIndex = 77;
+      this.labelFlash5BoulesDejaSortisResult.Text = "Non";
       // 
-      // labelFlashNombreParLigne
+      // labelFlash4BoulesDejaSortisResult
       // 
-      this.labelFlashNombreParLigne.AutoSize = true;
-      this.labelFlashNombreParLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFlashNombreParLigne.Location = new System.Drawing.Point(52, 361);
-      this.labelFlashNombreParLigne.Name = "labelFlashNombreParLigne";
-      this.labelFlashNombreParLigne.Size = new System.Drawing.Size(210, 13);
-      this.labelFlashNombreParLigne.TabIndex = 72;
-      this.labelFlashNombreParLigne.Text = "Nombre par ligne : 0 + 0 + 0 + 0 + 0";
+      this.labelFlash4BoulesDejaSortisResult.AutoSize = true;
+      this.labelFlash4BoulesDejaSortisResult.BackColor = System.Drawing.Color.LightGreen;
+      this.labelFlash4BoulesDejaSortisResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlash4BoulesDejaSortisResult.Location = new System.Drawing.Point(432, 422);
+      this.labelFlash4BoulesDejaSortisResult.Name = "labelFlash4BoulesDejaSortisResult";
+      this.labelFlash4BoulesDejaSortisResult.Size = new System.Drawing.Size(30, 13);
+      this.labelFlash4BoulesDejaSortisResult.TabIndex = 79;
+      this.labelFlash4BoulesDejaSortisResult.Text = "Non";
       // 
-      // labelFlashNombreParColonne
+      // labelFlash4BoulesDejaSortis
       // 
-      this.labelFlashNombreParColonne.AutoSize = true;
-      this.labelFlashNombreParColonne.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFlashNombreParColonne.Location = new System.Drawing.Point(52, 387);
-      this.labelFlashNombreParColonne.Name = "labelFlashNombreParColonne";
-      this.labelFlashNombreParColonne.Size = new System.Drawing.Size(338, 13);
-      this.labelFlashNombreParColonne.TabIndex = 73;
-      this.labelFlashNombreParColonne.Text = "Nombre par colonne : 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0";
+      this.labelFlash4BoulesDejaSortis.AutoSize = true;
+      this.labelFlash4BoulesDejaSortis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlash4BoulesDejaSortis.Location = new System.Drawing.Point(52, 422);
+      this.labelFlash4BoulesDejaSortis.Name = "labelFlash4BoulesDejaSortis";
+      this.labelFlash4BoulesDejaSortis.Size = new System.Drawing.Size(125, 13);
+      this.labelFlash4BoulesDejaSortis.TabIndex = 78;
+      this.labelFlash4BoulesDejaSortis.Text = "4 boules déjà sortis :";
       // 
-      // labelFlashNombreParLigneResult
+      // labelFlash3BoulesDejaSortisResult
       // 
-      this.labelFlashNombreParLigneResult.AutoSize = true;
-      this.labelFlashNombreParLigneResult.BackColor = System.Drawing.Color.LightGreen;
-      this.labelFlashNombreParLigneResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFlashNombreParLigneResult.Location = new System.Drawing.Point(432, 361);
-      this.labelFlashNombreParLigneResult.Name = "labelFlashNombreParLigneResult";
-      this.labelFlashNombreParLigneResult.Size = new System.Drawing.Size(147, 13);
-      this.labelFlashNombreParLigneResult.TabIndex = 74;
-      this.labelFlashNombreParLigneResult.Text = "Nombre par ligne correct";
+      this.labelFlash3BoulesDejaSortisResult.AutoSize = true;
+      this.labelFlash3BoulesDejaSortisResult.BackColor = System.Drawing.Color.LightGreen;
+      this.labelFlash3BoulesDejaSortisResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlash3BoulesDejaSortisResult.Location = new System.Drawing.Point(432, 442);
+      this.labelFlash3BoulesDejaSortisResult.Name = "labelFlash3BoulesDejaSortisResult";
+      this.labelFlash3BoulesDejaSortisResult.Size = new System.Drawing.Size(30, 13);
+      this.labelFlash3BoulesDejaSortisResult.TabIndex = 81;
+      this.labelFlash3BoulesDejaSortisResult.Text = "Non";
       // 
-      // labelFlashNombreParColonneResult
+      // labelFlash3BoulesDejaSortis
       // 
-      this.labelFlashNombreParColonneResult.AutoSize = true;
-      this.labelFlashNombreParColonneResult.BackColor = System.Drawing.Color.LightGreen;
-      this.labelFlashNombreParColonneResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFlashNombreParColonneResult.Location = new System.Drawing.Point(432, 387);
-      this.labelFlashNombreParColonneResult.Name = "labelFlashNombreParColonneResult";
-      this.labelFlashNombreParColonneResult.Size = new System.Drawing.Size(165, 13);
-      this.labelFlashNombreParColonneResult.TabIndex = 75;
-      this.labelFlashNombreParColonneResult.Text = "Nombre par colonne correct";
+      this.labelFlash3BoulesDejaSortis.AutoSize = true;
+      this.labelFlash3BoulesDejaSortis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFlash3BoulesDejaSortis.Location = new System.Drawing.Point(52, 442);
+      this.labelFlash3BoulesDejaSortis.Name = "labelFlash3BoulesDejaSortis";
+      this.labelFlash3BoulesDejaSortis.Size = new System.Drawing.Size(125, 13);
+      this.labelFlash3BoulesDejaSortis.TabIndex = 80;
+      this.labelFlash3BoulesDejaSortis.Text = "3 boules déjà sortis :";
       // 
       // FormMain
       // 
@@ -1802,5 +1877,11 @@
     private System.Windows.Forms.Label labelFlashNombreParLigneResult;
     private System.Windows.Forms.Label labelFlashNombreParColonne;
     private System.Windows.Forms.Label labelFlashNombreParLigne;
+    private System.Windows.Forms.Label labelFlash4BoulesDejaSortisResult;
+    private System.Windows.Forms.Label labelFlash4BoulesDejaSortis;
+    private System.Windows.Forms.Label labelFlash5BoulesDejaSortisResult;
+    private System.Windows.Forms.Label labelFlash5BoulesdejaSortis;
+    private System.Windows.Forms.Label labelFlash3BoulesDejaSortisResult;
+    private System.Windows.Forms.Label labelFlash3BoulesDejaSortis;
   }
 }
