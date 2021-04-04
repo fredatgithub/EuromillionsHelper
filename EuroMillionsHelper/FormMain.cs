@@ -24,7 +24,7 @@ namespace EuroMillionsHelper
 
     public readonly Dictionary<string, string> _languageDicoEn = new Dictionary<string, string>();
     public readonly Dictionary<string, string> _languageDicoFr = new Dictionary<string, string>();
-    private readonly List<Tirage> listTirages = new List<Tirage>();
+    private readonly Tirages listTirages = new Tirages();
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
     public Dictionary<int, int> nombreDeSortieBoules = new Dictionary<int, int>();
@@ -62,7 +62,7 @@ namespace EuroMillionsHelper
 
     private void LoadDictionaries()
     {
-      foreach (Tirage tirage in listTirages)
+      foreach (Tirage tirage in listTirages.ListOfTirages)
       {
         nombreDeSortieBoules[tirage.Boule1]++;
         nombreDeSortieBoules[tirage.Boule2]++;
@@ -173,7 +173,7 @@ namespace EuroMillionsHelper
         resultEtoile[i] = 0;
       }
 
-      foreach (Tirage tirage in listTirages)
+      foreach (Tirage tirage in listTirages.ListOfTirages)
       {
         resultBoule[tirage.Boule1]++;
         resultBoule[tirage.Boule2]++;
@@ -1213,9 +1213,9 @@ namespace EuroMillionsHelper
       }
 
       labelFlashPoidsBoule.Text = "Poids des boules : " + unTirage.PoidsDesBoules();
-      labelFlashBallsShouldBeBetween.Text = "Poids entre 15 et 240. Moyenne = 112. Mediant = X";
+      labelFlashBallsShouldBeBetween.Text = $"Poids entre 15 et 240. Moyenne théorique = 112. Moyenne réelle = {listTirages.MediumWeigh()}. Median = {listTirages.MedianWeigh()}";
       labelFlashPoidsDesEtoiles.Text = "Poids des étoiles : " + unTirage.PoidsDesEtoiles();
-      labelFlashPoidsEtoilesEntre.Text = "Poids entre 3 et 23. Moyenne = 10. Mediant = X";
+      labelFlashPoidsEtoilesEntre.Text = "Poids entre 3 et 23. Moyenne = 10. Median = X";
       labelFlashNombreParLigne.Text = "Nombre par ligne : " + Tirage.NombreParLigne(Tirage.RepartitionDizaineTirage(unTirage));
       labelFlashNombreParColonne.Text = "Nombre par colonne : " + Tirage.NombreParColonne(Tirage.RepartitionParColonne(unTirage));
       // 5 boules déjà sortis
@@ -1255,7 +1255,7 @@ namespace EuroMillionsHelper
       finalResult[0] = "Non";
       finalResult[1] = "";
 
-      foreach (Tirage tirage in listTirages)
+      foreach (Tirage tirage in listTirages.ListOfTirages)
       {
         if (tirageRecherche.FirstFourToString() == tirage.FirstFourToString())
         {
@@ -1311,7 +1311,7 @@ namespace EuroMillionsHelper
     {
       bool resultFound = false;
 
-      foreach (Tirage tirage in listTirages)
+      foreach (Tirage tirage in listTirages.ListOfTirages)
       {
         if (tirageRecherche.ToString() == tirage.ToString())
         {

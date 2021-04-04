@@ -279,5 +279,15 @@ namespace EuroMillionsHelper.Model
       result[0] = nombreDeBoulesTrouves.ToString();
       return result;
     }
+
+    public int PoidsBoules()
+    {
+      return Boule1 + Boule2 + Boule3 + Boule4 + Boule5;
+    }
+
+    public int PoidsEtoiles()
+    {
+      return Etoile1 + Etoile2;
+    }
   }
 }

@@ -24,18 +24,64 @@ namespace EuroMillionsHelper.Model
       ListOfTirages.Add(tirage);
     }
 
-    public int PoidsBoules(Tirage tirage)
+    public int SmallestWeigh()
     {
-      return tirage.Boule1 +
-        tirage.Boule2 +
-        tirage.Boule3 +
-        tirage.Boule4 +
-        tirage.Boule5;
+      int result = 240; // highest weigh
+      foreach (Tirage tirage in ListOfTirages)
+      {
+        if (tirage.PoidsBoules() < result)
+        {
+          result = tirage.PoidsBoules();
+        }
+      }
+
+      return result;
     }
 
-    public int PoidsEtoiles(Tirage tirage)
+    public int HighestWeigh()
     {
-      return tirage.Etoile1 + tirage.Etoile2;
+      int result = 15; // lowest weigh
+      foreach (Tirage tirage in ListOfTirages)
+      {
+        if (tirage.PoidsBoules() > result)
+        {
+          result = tirage.PoidsBoules();
+        }
+      }
+
+      return result;
+    }
+
+    public int MediumWeigh()
+    {
+      int allWeigh = 0;
+      foreach (Tirage tirage in ListOfTirages)
+      {
+        allWeigh += tirage.PoidsBoules();
+      }
+
+      return allWeigh / ListOfTirages.Count;
+    }
+
+    public int MedianWeigh()
+    {
+      int medianWeigh = 0;
+      List<int> listOfWeighs = new List<int>();
+      foreach (Tirage tirage in ListOfTirages)
+      {
+        listOfWeighs.Add(tirage.PoidsBoules());
+      }
+
+      if (listOfWeighs.Count % 2 == 0)
+      {
+        medianWeigh = listOfWeighs[listOfWeighs.Count / 2];
+      }
+      else
+      {
+        medianWeigh = listOfWeighs[listOfWeighs.Count / 2] + listOfWeighs[listOfWeighs.Count / 2] / 2;
+      }
+
+      return medianWeigh;
     }
   }
 }
