@@ -722,7 +722,7 @@
       this.buttonFlashBoule39.TabIndex = 65;
       this.buttonFlashBoule39.Text = "39";
       this.buttonFlashBoule39.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule39.Click += new System.EventHandler(this.buttonFlashBoule39_Click);
+      this.buttonFlashBoule39.Click += new System.EventHandler(this.ButtonFlashBoule39_Click);
       // 
       // buttonFlashBoule29
       // 
@@ -733,7 +733,7 @@
       this.buttonFlashBoule29.TabIndex = 64;
       this.buttonFlashBoule29.Text = "29";
       this.buttonFlashBoule29.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule29.Click += new System.EventHandler(this.buttonFlashBoule29_Click);
+      this.buttonFlashBoule29.Click += new System.EventHandler(this.ButtonFlashBoule29_Click);
       // 
       // buttonFlashBoule19
       // 
@@ -744,7 +744,7 @@
       this.buttonFlashBoule19.TabIndex = 63;
       this.buttonFlashBoule19.Text = "19";
       this.buttonFlashBoule19.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule19.Click += new System.EventHandler(this.buttonFlashBoule19_Click);
+      this.buttonFlashBoule19.Click += new System.EventHandler(this.ButtonFlashBoule19_Click);
       // 
       // buttonFlashBoule9
       // 
@@ -755,7 +755,7 @@
       this.buttonFlashBoule9.TabIndex = 62;
       this.buttonFlashBoule9.Text = "9";
       this.buttonFlashBoule9.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule9.Click += new System.EventHandler(this.buttonFlashBoule9_Click);
+      this.buttonFlashBoule9.Click += new System.EventHandler(this.ButtonFlashBoule9_Click);
       // 
       // buttonFlashEtoile12
       // 
@@ -788,7 +788,7 @@
       this.buttonFlashEtoile10.TabIndex = 59;
       this.buttonFlashEtoile10.Text = "10";
       this.buttonFlashEtoile10.UseVisualStyleBackColor = true;
-      this.buttonFlashEtoile10.Click += new System.EventHandler(this.buttonFlashEtoile10_Click);
+      this.buttonFlashEtoile10.Click += new System.EventHandler(this.ButtonFlashEtoile10_Click);
       // 
       // buttonFlashEtoile9
       // 
@@ -876,7 +876,7 @@
       this.buttonFlashEtoile2.TabIndex = 51;
       this.buttonFlashEtoile2.Text = "2";
       this.buttonFlashEtoile2.UseVisualStyleBackColor = true;
-      this.buttonFlashEtoile2.Click += new System.EventHandler(this.buttonFlashEtoile2_Click);
+      this.buttonFlashEtoile2.Click += new System.EventHandler(this.ButtonFlashEtoile2_Click);
       // 
       // buttonFlashEtoile1
       // 
@@ -918,7 +918,7 @@
       this.buttonFlashBoule50.TabIndex = 47;
       this.buttonFlashBoule50.Text = "50";
       this.buttonFlashBoule50.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule50.Click += new System.EventHandler(this.buttonFlashBoule50_Click);
+      this.buttonFlashBoule50.Click += new System.EventHandler(this.ButtonFlashBoule50_Click);
       // 
       // buttonFlashBoule48
       // 
@@ -929,7 +929,7 @@
       this.buttonFlashBoule48.TabIndex = 46;
       this.buttonFlashBoule48.Text = "48";
       this.buttonFlashBoule48.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule48.Click += new System.EventHandler(this.buttonFlashBoule48_Click);
+      this.buttonFlashBoule48.Click += new System.EventHandler(this.ButtonFlashBoule48_Click);
       // 
       // buttonFlashBoule47
       // 
@@ -940,7 +940,7 @@
       this.buttonFlashBoule47.TabIndex = 45;
       this.buttonFlashBoule47.Text = "47";
       this.buttonFlashBoule47.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule47.Click += new System.EventHandler(this.buttonFlashBoule47_Click);
+      this.buttonFlashBoule47.Click += new System.EventHandler(this.ButtonFlashBoule47_Click);
       // 
       // buttonFlashBoule46
       // 
@@ -951,7 +951,7 @@
       this.buttonFlashBoule46.TabIndex = 44;
       this.buttonFlashBoule46.Text = "46";
       this.buttonFlashBoule46.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule46.Click += new System.EventHandler(this.buttonFlashBoule46_Click);
+      this.buttonFlashBoule46.Click += new System.EventHandler(this.ButtonFlashBoule46_Click);
       // 
       // buttonFlashBoule45
       // 
@@ -962,7 +962,7 @@
       this.buttonFlashBoule45.TabIndex = 43;
       this.buttonFlashBoule45.Text = "45";
       this.buttonFlashBoule45.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule45.Click += new System.EventHandler(this.buttonFlashBoule45_Click);
+      this.buttonFlashBoule45.Click += new System.EventHandler(this.ButtonFlashBoule45_Click);
       // 
       // buttonFlashBoule44
       // 
@@ -973,7 +973,7 @@
       this.buttonFlashBoule44.TabIndex = 42;
       this.buttonFlashBoule44.Text = "44";
       this.buttonFlashBoule44.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule44.Click += new System.EventHandler(this.buttonFlashBoule44_Click);
+      this.buttonFlashBoule44.Click += new System.EventHandler(this.ButtonFlashBoule44_Click);
       // 
       // buttonFlashBoule43
       // 
@@ -984,7 +984,7 @@
       this.buttonFlashBoule43.TabIndex = 41;
       this.buttonFlashBoule43.Text = "43";
       this.buttonFlashBoule43.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule43.Click += new System.EventHandler(this.buttonFlashBoule43_Click);
+      this.buttonFlashBoule43.Click += new System.EventHandler(this.ButtonFlashBoule43_Click);
       // 
       // buttonFlashBoule42
       // 
@@ -995,7 +995,7 @@
       this.buttonFlashBoule42.TabIndex = 40;
       this.buttonFlashBoule42.Text = "42";
       this.buttonFlashBoule42.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule42.Click += new System.EventHandler(this.buttonFlashBoule42_Click);
+      this.buttonFlashBoule42.Click += new System.EventHandler(this.ButtonFlashBoule42_Click);
       // 
       // buttonFlashBoule41
       // 
@@ -1006,7 +1006,7 @@
       this.buttonFlashBoule41.TabIndex = 39;
       this.buttonFlashBoule41.Text = "41";
       this.buttonFlashBoule41.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule41.Click += new System.EventHandler(this.buttonFlashBoule41_Click);
+      this.buttonFlashBoule41.Click += new System.EventHandler(this.ButtonFlashBoule41_Click);
       // 
       // buttonFlashBoule40
       // 
@@ -1017,7 +1017,7 @@
       this.buttonFlashBoule40.TabIndex = 38;
       this.buttonFlashBoule40.Text = "40";
       this.buttonFlashBoule40.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule40.Click += new System.EventHandler(this.buttonFlashBoule40_Click);
+      this.buttonFlashBoule40.Click += new System.EventHandler(this.ButtonFlashBoule40_Click);
       // 
       // buttonFlashBoule38
       // 
@@ -1028,7 +1028,7 @@
       this.buttonFlashBoule38.TabIndex = 37;
       this.buttonFlashBoule38.Text = "38";
       this.buttonFlashBoule38.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule38.Click += new System.EventHandler(this.buttonFlashBoule38_Click);
+      this.buttonFlashBoule38.Click += new System.EventHandler(this.ButtonFlashBoule38_Click);
       // 
       // buttonFlashBoule37
       // 
@@ -1039,7 +1039,7 @@
       this.buttonFlashBoule37.TabIndex = 36;
       this.buttonFlashBoule37.Text = "37";
       this.buttonFlashBoule37.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule37.Click += new System.EventHandler(this.buttonFlashBoule37_Click);
+      this.buttonFlashBoule37.Click += new System.EventHandler(this.ButtonFlashBoule37_Click);
       // 
       // buttonFlashBoule36
       // 
@@ -1050,7 +1050,7 @@
       this.buttonFlashBoule36.TabIndex = 35;
       this.buttonFlashBoule36.Text = "36";
       this.buttonFlashBoule36.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule36.Click += new System.EventHandler(this.buttonFlashBoule36_Click);
+      this.buttonFlashBoule36.Click += new System.EventHandler(this.ButtonFlashBoule36_Click);
       // 
       // buttonFlashBoule35
       // 
@@ -1061,7 +1061,7 @@
       this.buttonFlashBoule35.TabIndex = 34;
       this.buttonFlashBoule35.Text = "35";
       this.buttonFlashBoule35.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule35.Click += new System.EventHandler(this.buttonFlashBoule35_Click);
+      this.buttonFlashBoule35.Click += new System.EventHandler(this.ButtonFlashBoule35_Click);
       // 
       // buttonFlashBoule34
       // 
@@ -1072,7 +1072,7 @@
       this.buttonFlashBoule34.TabIndex = 33;
       this.buttonFlashBoule34.Text = "34";
       this.buttonFlashBoule34.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule34.Click += new System.EventHandler(this.buttonFlashBoule34_Click);
+      this.buttonFlashBoule34.Click += new System.EventHandler(this.ButtonFlashBoule34_Click);
       // 
       // buttonFlashBoule33
       // 
@@ -1083,7 +1083,7 @@
       this.buttonFlashBoule33.TabIndex = 32;
       this.buttonFlashBoule33.Text = "33";
       this.buttonFlashBoule33.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule33.Click += new System.EventHandler(this.buttonFlashBoule33_Click);
+      this.buttonFlashBoule33.Click += new System.EventHandler(this.ButtonFlashBoule33_Click);
       // 
       // buttonFlashBoule32
       // 
@@ -1094,7 +1094,7 @@
       this.buttonFlashBoule32.TabIndex = 31;
       this.buttonFlashBoule32.Text = "32";
       this.buttonFlashBoule32.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule32.Click += new System.EventHandler(this.buttonFlashBoule32_Click);
+      this.buttonFlashBoule32.Click += new System.EventHandler(this.ButtonFlashBoule32_Click);
       // 
       // buttonFlashBoule31
       // 
@@ -1105,7 +1105,7 @@
       this.buttonFlashBoule31.TabIndex = 30;
       this.buttonFlashBoule31.Text = "31";
       this.buttonFlashBoule31.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule31.Click += new System.EventHandler(this.buttonFlashBoule31_Click);
+      this.buttonFlashBoule31.Click += new System.EventHandler(this.ButtonFlashBoule31_Click);
       // 
       // buttonFlashBoule30
       // 
@@ -1116,7 +1116,7 @@
       this.buttonFlashBoule30.TabIndex = 29;
       this.buttonFlashBoule30.Text = "30";
       this.buttonFlashBoule30.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule30.Click += new System.EventHandler(this.buttonFlashBoule30_Click);
+      this.buttonFlashBoule30.Click += new System.EventHandler(this.ButtonFlashBoule30_Click);
       // 
       // buttonFlashBoule28
       // 
@@ -1127,7 +1127,7 @@
       this.buttonFlashBoule28.TabIndex = 28;
       this.buttonFlashBoule28.Text = "28";
       this.buttonFlashBoule28.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule28.Click += new System.EventHandler(this.buttonFlashBoule28_Click);
+      this.buttonFlashBoule28.Click += new System.EventHandler(this.ButtonFlashBoule28_Click);
       // 
       // buttonFlashBoule27
       // 
@@ -1138,7 +1138,7 @@
       this.buttonFlashBoule27.TabIndex = 27;
       this.buttonFlashBoule27.Text = "27";
       this.buttonFlashBoule27.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule27.Click += new System.EventHandler(this.buttonFlashBoule27_Click);
+      this.buttonFlashBoule27.Click += new System.EventHandler(this.ButtonFlashBoule27_Click);
       // 
       // buttonFlashBoule26
       // 
@@ -1149,7 +1149,7 @@
       this.buttonFlashBoule26.TabIndex = 26;
       this.buttonFlashBoule26.Text = "26";
       this.buttonFlashBoule26.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule26.Click += new System.EventHandler(this.buttonFlashBoule26_Click);
+      this.buttonFlashBoule26.Click += new System.EventHandler(this.ButtonFlashBoule26_Click);
       // 
       // buttonFlashBoule25
       // 
@@ -1160,7 +1160,7 @@
       this.buttonFlashBoule25.TabIndex = 25;
       this.buttonFlashBoule25.Text = "25";
       this.buttonFlashBoule25.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule25.Click += new System.EventHandler(this.buttonFlashBoule25_Click);
+      this.buttonFlashBoule25.Click += new System.EventHandler(this.ButtonFlashBoule25_Click);
       // 
       // buttonFlashBoule24
       // 
@@ -1171,7 +1171,7 @@
       this.buttonFlashBoule24.TabIndex = 24;
       this.buttonFlashBoule24.Text = "24";
       this.buttonFlashBoule24.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule24.Click += new System.EventHandler(this.buttonFlashBoule24_Click);
+      this.buttonFlashBoule24.Click += new System.EventHandler(this.ButtonFlashBoule24_Click);
       // 
       // buttonFlashBoule23
       // 
@@ -1182,7 +1182,7 @@
       this.buttonFlashBoule23.TabIndex = 23;
       this.buttonFlashBoule23.Text = "23";
       this.buttonFlashBoule23.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule23.Click += new System.EventHandler(this.buttonFlashBoule23_Click);
+      this.buttonFlashBoule23.Click += new System.EventHandler(this.ButtonFlashBoule23_Click);
       // 
       // buttonFlashBoule22
       // 
@@ -1193,7 +1193,7 @@
       this.buttonFlashBoule22.TabIndex = 22;
       this.buttonFlashBoule22.Text = "22";
       this.buttonFlashBoule22.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule22.Click += new System.EventHandler(this.buttonFlashBoule22_Click);
+      this.buttonFlashBoule22.Click += new System.EventHandler(this.ButtonFlashBoule22_Click);
       // 
       // buttonFlashBoule21
       // 
@@ -1204,7 +1204,7 @@
       this.buttonFlashBoule21.TabIndex = 21;
       this.buttonFlashBoule21.Text = "21";
       this.buttonFlashBoule21.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule21.Click += new System.EventHandler(this.buttonFlashBoule21_Click);
+      this.buttonFlashBoule21.Click += new System.EventHandler(this.ButtonFlashBoule21_Click);
       // 
       // buttonFlashBoule20
       // 
@@ -1215,7 +1215,7 @@
       this.buttonFlashBoule20.TabIndex = 20;
       this.buttonFlashBoule20.Text = "20";
       this.buttonFlashBoule20.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule20.Click += new System.EventHandler(this.buttonFlashBoule20_Click);
+      this.buttonFlashBoule20.Click += new System.EventHandler(this.ButtonFlashBoule20_Click);
       // 
       // buttonFlashBoule18
       // 
@@ -1226,7 +1226,7 @@
       this.buttonFlashBoule18.TabIndex = 19;
       this.buttonFlashBoule18.Text = "18";
       this.buttonFlashBoule18.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule18.Click += new System.EventHandler(this.buttonFlashBoule18_Click);
+      this.buttonFlashBoule18.Click += new System.EventHandler(this.ButtonFlashBoule18_Click);
       // 
       // buttonFlashBoule17
       // 
@@ -1237,7 +1237,7 @@
       this.buttonFlashBoule17.TabIndex = 18;
       this.buttonFlashBoule17.Text = "17";
       this.buttonFlashBoule17.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule17.Click += new System.EventHandler(this.buttonFlashBoule17_Click);
+      this.buttonFlashBoule17.Click += new System.EventHandler(this.ButtonFlashBoule17_Click);
       // 
       // buttonFlashBoule16
       // 
@@ -1248,7 +1248,7 @@
       this.buttonFlashBoule16.TabIndex = 17;
       this.buttonFlashBoule16.Text = "16";
       this.buttonFlashBoule16.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule16.Click += new System.EventHandler(this.buttonFlashBoule16_Click);
+      this.buttonFlashBoule16.Click += new System.EventHandler(this.ButtonFlashBoule16_Click);
       // 
       // buttonFlashBoule15
       // 
@@ -1259,7 +1259,7 @@
       this.buttonFlashBoule15.TabIndex = 16;
       this.buttonFlashBoule15.Text = "15";
       this.buttonFlashBoule15.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule15.Click += new System.EventHandler(this.buttonFlashBoule15_Click);
+      this.buttonFlashBoule15.Click += new System.EventHandler(this.ButtonFlashBoule15_Click);
       // 
       // buttonFlashBoule14
       // 
@@ -1270,7 +1270,7 @@
       this.buttonFlashBoule14.TabIndex = 15;
       this.buttonFlashBoule14.Text = "14";
       this.buttonFlashBoule14.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule14.Click += new System.EventHandler(this.buttonFlashBoule14_Click);
+      this.buttonFlashBoule14.Click += new System.EventHandler(this.ButtonFlashBoule14_Click);
       // 
       // buttonFlashBoule13
       // 
@@ -1281,7 +1281,7 @@
       this.buttonFlashBoule13.TabIndex = 14;
       this.buttonFlashBoule13.Text = "13";
       this.buttonFlashBoule13.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule13.Click += new System.EventHandler(this.buttonFlashBoule13_Click);
+      this.buttonFlashBoule13.Click += new System.EventHandler(this.ButtonFlashBoule13_Click);
       // 
       // buttonFlashBoule12
       // 
@@ -1303,7 +1303,7 @@
       this.buttonFlashBoule11.TabIndex = 12;
       this.buttonFlashBoule11.Text = "11";
       this.buttonFlashBoule11.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule11.Click += new System.EventHandler(this.buttonFlashBoule11_Click);
+      this.buttonFlashBoule11.Click += new System.EventHandler(this.ButtonFlashBoule11_Click);
       // 
       // buttonFlashBoule10
       // 
@@ -1314,7 +1314,7 @@
       this.buttonFlashBoule10.TabIndex = 11;
       this.buttonFlashBoule10.Text = "10";
       this.buttonFlashBoule10.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule10.Click += new System.EventHandler(this.buttonFlashBoule10_Click);
+      this.buttonFlashBoule10.Click += new System.EventHandler(this.ButtonFlashBoule10_Click);
       // 
       // buttonFlashBoule8
       // 
@@ -1325,7 +1325,7 @@
       this.buttonFlashBoule8.TabIndex = 10;
       this.buttonFlashBoule8.Text = "8";
       this.buttonFlashBoule8.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule8.Click += new System.EventHandler(this.buttonFlashBoule8_Click);
+      this.buttonFlashBoule8.Click += new System.EventHandler(this.ButtonFlashBoule8_Click);
       // 
       // buttonFlashBoule7
       // 
@@ -1336,7 +1336,7 @@
       this.buttonFlashBoule7.TabIndex = 11;
       this.buttonFlashBoule7.Text = "7";
       this.buttonFlashBoule7.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule7.Click += new System.EventHandler(this.buttonFlashBoule7_Click);
+      this.buttonFlashBoule7.Click += new System.EventHandler(this.ButtonFlashBoule7_Click);
       // 
       // buttonFlashBoule6
       // 
@@ -1347,7 +1347,7 @@
       this.buttonFlashBoule6.TabIndex = 10;
       this.buttonFlashBoule6.Text = "6";
       this.buttonFlashBoule6.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule6.Click += new System.EventHandler(this.buttonFlashBoule6_Click);
+      this.buttonFlashBoule6.Click += new System.EventHandler(this.ButtonFlashBoule6_Click);
       // 
       // buttonFlashBoule5
       // 
@@ -1358,7 +1358,7 @@
       this.buttonFlashBoule5.TabIndex = 9;
       this.buttonFlashBoule5.Text = "5";
       this.buttonFlashBoule5.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule5.Click += new System.EventHandler(this.buttonFlashBoule5_Click);
+      this.buttonFlashBoule5.Click += new System.EventHandler(this.ButtonFlashBoule5_Click);
       // 
       // buttonFlashBoule4
       // 
@@ -1370,7 +1370,7 @@
       this.buttonFlashBoule4.TabIndex = 8;
       this.buttonFlashBoule4.Text = "4";
       this.buttonFlashBoule4.UseVisualStyleBackColor = false;
-      this.buttonFlashBoule4.Click += new System.EventHandler(this.buttonFlashBoule4_Click);
+      this.buttonFlashBoule4.Click += new System.EventHandler(this.ButtonFlashBoule4_Click);
       // 
       // buttonFlashBoule3
       // 
@@ -1381,7 +1381,7 @@
       this.buttonFlashBoule3.TabIndex = 7;
       this.buttonFlashBoule3.Text = "3";
       this.buttonFlashBoule3.UseVisualStyleBackColor = true;
-      this.buttonFlashBoule3.Click += new System.EventHandler(this.buttonFlashBoule3_Click);
+      this.buttonFlashBoule3.Click += new System.EventHandler(this.ButtonFlashBoule3_Click);
       // 
       // buttonFlashBoule2
       // 

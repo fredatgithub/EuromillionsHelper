@@ -1604,7 +1604,14 @@ namespace EuroMillionsHelper
 
     private void ButtonFlashBoule1_Click(object sender, EventArgs e)
     {
-
+      if (buttonFlashBoule1.BackColor == Color.OrangeRed)
+      {
+        buttonFlashBoule1.BackColor = Color.Transparent;
+      }
+      else
+      {
+        buttonFlashBoule1.BackColor = Color.OrangeRed;
+      }
     }
 
     private void ButtonFlashBoule2_Click(object sender, EventArgs e)
@@ -1612,232 +1619,232 @@ namespace EuroMillionsHelper
 
     }
 
-    private void buttonFlashBoule3_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule3_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule4_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule4_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule5_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule5_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule6_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule6_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule7_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule7_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule8_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule8_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule9_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule9_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule10_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule10_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule11_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule11_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule39_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule39_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule29_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule29_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule19_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule19_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule50_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule50_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule48_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule48_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule47_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule47_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule46_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule46_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule45_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule45_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule44_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule44_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule43_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule43_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule42_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule42_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule41_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule41_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule40_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule40_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule38_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule38_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule37_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule37_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule36_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule36_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule35_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule35_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule34_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule34_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule33_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule33_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule32_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule32_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule31_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule31_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule30_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule30_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule28_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule28_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule27_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule27_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule26_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule26_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule25_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule25_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule24_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule24_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule23_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule23_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule22_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule22_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule21_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule21_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule20_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule20_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule18_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule18_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule17_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule17_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule16_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule16_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule15_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule15_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule14_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule14_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashBoule13_Click(object sender, EventArgs e)
+    private void ButtonFlashBoule13_Click(object sender, EventArgs e)
     {
 
     }
@@ -1892,12 +1899,12 @@ namespace EuroMillionsHelper
 
     }
 
-    private void buttonFlashEtoile2_Click(object sender, EventArgs e)
+    private void ButtonFlashEtoile2_Click(object sender, EventArgs e)
     {
 
     }
 
-    private void buttonFlashEtoile10_Click(object sender, EventArgs e)
+    private void ButtonFlashEtoile10_Click(object sender, EventArgs e)
     {
 
     }
@@ -1954,6 +1961,43 @@ namespace EuroMillionsHelper
       int poids = tirage.PoidsDesBoules();
 
       return result;
+    }
+
+    private int NumberOfBallsSelected(params Control[] controls)
+    {
+      int result = 0;
+      if (buttonFlashBoule1.BackColor == Color.OrangeRed)
+      {
+        result++;
+      }
+
+      foreach (Control ctrl in controls)
+      {
+        if (ctrl.GetType() == typeof(Button))
+        {
+          if (((Button)ctrl).Name.StartsWith("buttonFlashBoule"))
+          {
+            result++;
+            break;
+          }
+        }
+      }
+
+      return result;
+    }
+
+    private static void SetBackColorButton(Color colour, params Control[] controls)
+    {
+      foreach (Control ctrl in controls)
+      {
+        if (ctrl.GetType() == typeof(Button))
+        {
+          if (((Button)ctrl).Name.StartsWith("buttonFlashBoule"))
+          {
+            ctrl.BackColor = colour;
+          }
+        }
+      }
     }
   }
 }
