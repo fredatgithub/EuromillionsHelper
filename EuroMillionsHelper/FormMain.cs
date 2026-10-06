@@ -44,7 +44,7 @@ namespace EuroMillionsHelper
       aboutBoxApplication.ShowDialog();
     }
 
-    public static string DisplayTitle()
+    public static string GetApplicationVersion()
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
@@ -149,7 +149,7 @@ namespace EuroMillionsHelper
 
     private void LoadSettingsAtStartup()
     {
-      Text += $" {DisplayTitle()}";
+      Text += $" {GetApplicationVersion()}";
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);

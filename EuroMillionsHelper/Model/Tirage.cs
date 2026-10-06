@@ -67,19 +67,19 @@ namespace EuroMillionsHelper.Model
       {
         switch (number)
         {
-          case int _ when number <= 10:
+          case int _ when number < 10:
             result[0]++;
             break;
-          case int _ when number > 10 && number <= 20:
+          case int _ when number >= 10 && number < 20:
             result[1]++;
             break;
-          case int _ when number > 20 && number <= 30:
+          case int _ when number >= 20 && number < 30:
             result[2]++;
             break;
-          case int _ when number > 30 && number <= 40:
+          case int _ when number >= 30 && number < 40:
             result[3]++;
             break;
-          case int _ when number > 40:
+          case int _ when number >= 40:
             result[4]++;
             break;
         }
