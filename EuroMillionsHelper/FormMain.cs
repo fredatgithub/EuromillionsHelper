@@ -1,7 +1,4 @@
 ﻿#define DEBUG
-using EuroMillionsHelper.HelperMethods;
-using EuroMillionsHelper.Model;
-using EuroMillionsHelper.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,10 +8,13 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using EuroMillionsHelper.HelperMethods;
+using EuroMillionsHelper.Model;
+using EuroMillionsHelper.Properties;
 
 namespace EuroMillionsHelper
 {
-  public partial class FormMain : Form
+  public partial class FormMain: Form
   {
     public FormMain()
     {
@@ -265,8 +265,6 @@ namespace EuroMillionsHelper
         int numberOfDays = (int)Math.Floor(days);
         listBoxLesPlusAnciens.Items.Add($"{zeroPadded}{pair.Key} - {numberOfDays}");
       }
-
-
     }
 
     private void InitializeDataGridView()
